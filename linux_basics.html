@@ -1,0 +1,63 @@
+<html lang='en'>
+<head>
+<link rel='stylesheet' href='../css/index.css' />
+</head>
+<h1>Basics of Linux</h1>
+
+
+
+        <h2>
+            Install Linux (USB-stick)
+        </h2>
+
+        <ul>
+            <li>
+                Download iso file from linux official website.
+
+            </li>
+            <li>
+                Make startup disk to make usb bootable. unetbootin is another option
+            </li>
+        </ul>
+
+<h2 id="command-line-details">Command line details</h2>
+<p>user@computer:directory usertype </p>
+<p>example santi@lenovo:~$ (regular user) or santi@lenovo:$# (root)</p>
+
+<h2 id="filesystem-hierarchy-standard">Filesystem hierarchy standard</h2>
+
+<ul>layout for the root folder
+ <li>bin: binaries=programs=applications. ex cat, ls.</li>
+ <li>sbin: same. </li>
+<li> both are necessary for basic operations.</li>
+<li> boot: all info the system needs to boot.</li>
+<li> dev: devices. hard drives and partitions sda, sda1, sda2 (numbers being partitions, sda the hard drive)</li>
+<li> etc: etcetera. contains system wide configuration and settings.
+ for example sources lists.</li>
+<li> lib, lib32, lib64 are files applications  in bin, sbin might require.</li>
+<li> media: all mounted devices &#39;d be there.</li>
+<li> proc:pseudofiles about processes.</li>
+<li> run, srv, tmp:erased when reset system.</li>
+<li> sys:system. advanced.</li>
+<li>usr applications used by the user are installed there, and are considered non essential for basic system applications.</li>
+ usually big apps go to share. installed from source code goes to .local
+ all is laid out on the fhs, but sometimes is not respected.</li> 
+ </ul>
+
+
+<h2 id="windows-and-linux">Windows and Linux</h2>
+<p>Linux start is on the root directory, instead of C drive. System &amp; program files are stores in different locations (bin, sbin, lib, usr) not  in one as C:program files. Linux cares about capitalisation. New users can be created similar to windows, and can&#39;t access other users accounts.</p>
+
+<h2>Differences between linux flavors &amp; distros.</h2>
+<p>TAKE UBUNTU. It comes with a desktop (Unity) and some repos in sources list. Mint uses same repos but different desktop (MATE). 
+Lubuntu uses same repos and again, different desktop.
+They use a different subset of programs from the main repos it updates more frequently than debian. All are different DISTROS, same flavor.</p>
+<p>At the same time, linux derives from DEBIAN but has its own repos. So these are different FLAVORS.</p>
+
+
+
+<h2 id="add-a-program-to-path">Add a program to $PATH</h2>
+<p>echo $PATH  prints all directories added to the path variable. Variables in linux are with the pound sign. Add them on 
+.profile by editing it like so: PATH=/directory/to/add:$PATH</p>
+<p>On sass, for example, for global installing, the package can be downloaded from github and then the file added to the path, where the path points to the binarie/program/executable. A similar (but not equivalent) installatino  can be achieved using &#39;npm install -g sass&#39;</p>
+</html>

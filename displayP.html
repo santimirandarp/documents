@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <h1 id="display-property">Display Property & Floats</h1>
+    <h2>Display</h2>
+    <p>Blocks can be thought as boxes. Always start on a new line and extends to the full available width.<br> To center
+        a block-element horizontally respect to its parent container add: <code>margin:auto;</code>
+        Note: it has no effect if the width is not set (or is set to 100%).</p>
+    <p>Inline-blocks don&#39;t start on a new line (as the name indicates) and do not
+        extend to the full width but occupy minimum amount required.
+        Width and height can be set for inline block elements.
+        To center an image set
+        <pre>
+    <code>.centerImage{margin: auto; display:block;}</code>
+</pre> They behave as blocks
+
+        in the sense that either wraps completely or do not wrap at all.</p>
+    <p>Inline elements do not start on a new line and
+        take up as much width as necessary. There are many ways to center a line vertically: line height for one line,
+        padding for one or multiple lines, position relative, and so on.
+        Only width and line-height can be tweak through css, not height.
+        To just center the text inside an element, use text-align: center;</p>
+    <p> &lt;img&gt; and &lt;a&gt; are inline elements, but the state can be modified with display property.
+    </p>
+    <h3 id="more-values-for-display">More values for display</h3>
+    <p>Another value for display is none.
+        And a similar one is visibility:hidden (but the space remains).</p>
+    <h2>Floats</h2>
+    <p>As the word says a floated element floats on its parent element.
+        We tell this through <abbr title="cascading style sheets">CSS</abbr>
+        by using <code>float:right|left|none*|inherit;</code>. As indicated by the
+        * <code>float: none;</code> is the default value.
+    </p>
+    <h3><code>float:right|left;</code>. What happens here?</h3>
+    <p></p>
+</body>
+
+</html>

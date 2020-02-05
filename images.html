@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+
+<main>
+<article>
+    <div style='text-align:center;'>
+    <h1 id="images">Images</h1>
+    <span>Loading, Best Practices, Theory </span>
+    </div>
+   
+    <h2>Loading</h2>
+    <p>In the most straightforward approach images can be loaded using</p>
+    <code>&lt;img src='path/to/images/sourceImage.format'&gt;</code>
+    
+    <h2>Best Practices</h2>
+    <dl>
+	<dt>store on an <em>/images</em> folder &amp; use <em>descriptive_filename</em></dt>
+  	<dd>for <abbr title="Search Engine Optimization">SEO</abbr> purposes.</dd>
+	<dt>on the same server (avoid using external urls).</dt>
+        <dd>avoid links breaks or modified images.</dd>
+        <dd>A DNS search + GET takes more time to load the image.</dd>
+           
+        <dt>Use <code>alt</code> attribute. Text is useful for
+	users with:</dt>
+            <dd>impaired vision</dd>
+            <dd>turned off images (ex. in many phones) </dd>
+            <dd>text-only browsers as Lynx</dd> 
+  	    <dd>search engines</dd>
+     
+	    <dt>decorative images use background-image.</dt>
+	    <dd>they dont add to the content and do not need to be described</dd>
+	    <dd>if you really need a decorative &lt;img&gt; use alt=&#39;&#39;</dd>
+	   
+	    <dt>If an external image is used, be it on the public domain.
+            Two useful resources: <dt>
+                <dd>unsplash.it/h/w</dd>
+                <dd>picsum.photos/h/w/?random</dd>
+		<dt>width and height</dt>
+		<dd>Use always to avoid flickering and reserve space</dd>
+    </dl>
+
+	    <h3>About the <em>alt</em> attribute</h3>
+
+	    <ul>
+       		 <li>alt attribute is required for validation
+       		(use html validator) </li>
+        	<li>images inside links add border:0 (to prevent IE9 and earlier
+            	of displaying a border)</li>
+            	<li>Minify the images to reduce load time + 
+                data-transfer.</li>
+    	    </ul>
+
+    <h3>Loading Time, Resolution, Retina Displays</h3>
+    <p>In the bare minimum and image loading should look like this:
+    <code>&lt;img alt='description' width='300' height='400' src='path/to/pic'/&bg;</code></p>
+    <p>Common computer-screen resolutions are 72dpi</p>
+    <p>    An image should be displayed on its natural size (area covered by its number of pixels). 
+    Why? Too big sizes make it grainy, too small (if too small) waste bandwidth and increase load time.</p>
+    <p>It's ok to strech/shrink but avoiding extremes. <em>srcset</em> attribute 
+    allows to include many different resolutions and sizes.</p>
+    <!-- In case of having a set of images we should try to edit them properly to the same size, or at least same ratio. -->
+    
+    <h4>Example Case</h4>
+    <p>Let's say we want to upload a 1500px square image, and make it available for retina displays and responsive.</p>
+    <p>We could <code>.image {width:100%}</code> for responsiveness. But yet it loses resolution when stretching out or 
+    wastes bandwidth when shrinking in. We can add <em>srcset</em> and upload diff sizes for different viewports. 
+    So it still streches or shrinks but not that much. </p>
+    <!--be careful not altering the aspect ratio of the image -->
+	
+    <h3>Control Of Backgrounds</h3>
+
+    <p>This is an interesting approach to control the 
+ display of a background for different devices. It uses 
+ min-device-width instead of device-width, the difference being that min-device-width doesnt pay attention to the viewport. 
+ Both can be used though.</p>
+
+</article>
+	</main>
+</body>
+
+</html>

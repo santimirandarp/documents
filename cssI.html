@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="../css/index.css">
+
+</head>
+
+<body>   
+    <h1 id="css-basics">CSS basics</h1>
+    <ul>
+        <li>Cascading style sheets,</li>
+        <li>Best practice: css in external file.</li>
+        <li>Cascade: how the browser decides which rule to apply to each element. </li>
+    </ul>
+    <h2 id="how-to-write-css">How to Write CSS</h2>
+    <p><u>Syntaxis</u> <pre><code>selector {property: value;}</code></pre></p>
+    <p><u>Selectors</u>: .class, #id, tag, attribute value.</p>
+    <p><u>Multiple Classes</u>
+        <pre><code>&lt;div class= 'className1 className2'&gt; Some Random Text&lt;div&gt;</code></pre>
+    </p>
+
+
+
+    <h2 id="the-cascade-or-who-wins-">The Cascade or &#39;Who Wins&#39;?</h2>
+
+    <p>HTML5 controls a webpage's structure and semantics.
+        CSS controls how the page looks.</p>
+        <p>
+            It has its own syntaxis: <code>selector {css rules}</code>. The <em>selector</em>
+            points to an HTML element.
+        </p>
+        <h3 id="inheritance">Inheritance &amp; Overwritting</h3>
+    <p>Some properties are inherited (passed on from parents to children). This is
+        another way of styling.
+        If children are re-styled on the same property -than the parent, the property gets overwritten. </p>
+    <p>width, margin, border, padding <strong>are not inherited</strong>.</p>
+<p>color, font-family, text-align, background are inherited.</p>
+    <h3 id="clashes">Clashes</h3>
+    <p>An elements styling then, can be set on it own or inherited.</p>
+    <pre>
+        body{color:black;}
+
+        h1 {color:red;} //overwrittes black
+        
+        h1 span {color:green;} //overwrittes red
+        
+        .h2bgcolor {background-color:grey;} // set on its own
+
+        p, h3, h4 {//inherit color from body!} //inherit
+    </pre>
+    <p>If they refer to the same element, the algorithm decides which one to apply.</p>
+    <p>Two concepts matter here:</p>
+    <ul>
+        <li>Specificity: <u>The Rule of 4 places</u></li>
+        <li>Source Order: Last rule defined applies.</li>
+    </ul>
+
+</body>
+</html> 

@@ -1,0 +1,153 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <h1 id="css-level-2">CSS II</h1>
+  <h2 id="universal-selector">Universal Selector & All property</h2>
+  <p>The Star ( * ) selects each element. Super useful. Example:</p>
+<pre>
+  <code>html {margin:value;}.</code> //won't do.</code>
+  
+  <code>* {margin:0;}</code> // will do.
+  
+  <code>element {all:value;}</code>
+</pre>
+  <p>Resets all properties.</p>
+  <p><em>Universal selector selects elements, all selects properties.</em></p>
+
+  <h2 id="pseudoelements">Pseudoelements</h2>
+  <h3 id="essentials">Essentials</h3>
+  <p><u>Syntaxis</u> selector::PE {code}</p>
+  <p><u>Example</u> <code>h1::after {content: &#39;url(/images/xxx)&#39;}</code></p>
+  <p><u>Specificity</u> same than elements.</p>
+  <h3 id="and-they-are-">And they are...</h3>
+  <ul>
+    <li>first-line, first-letter</li>
+    <li>before, after</li>
+    <li>selection</li>
+  </ul>
+  <p>Single colon also works, for cc1 &amp; 2 compatibility.</p>
+  <p>before,after insert content before/after an element&#39;s content.</p>
+  <p>selection applies to the selection made by a user. Can be
+    applied to color, background, cursor, outline. </p>
+  <h2 id="pseudoclass">Pseudoclass</h2>
+  <h3 id="essentials">Essentials</h3>
+  <p><u>Syntaxis</u> selector:PC {code}</p>
+  <p><u>Example</u> p:first-child {code}</p>
+  <p><u>Specificity</u> same than classes.</p>
+  <h3 id="and-they-are-">And they are...</h3>
+  <ul>
+    <li>:focus useful for input text or area.</li>
+    <li>:hover :visited :active</li>
+    <li>:first-child :last-child :nth-child</li>
+    <li>p:last-of-type (all elements last ps on any parent)</li>
+    <li>:not(selector) selects all that is not selector !</li>
+  </ul>
+  <p>p {
+    display: none;
+    background-color: yellow;
+    padding: 20px;
+    }</p>
+  <p>div:hover p {
+    background-color:red;
+    }</p>
+  <p>When the div is hovered, it sets the display property of the paragraph </p>
+  
+    <h2 id="position">Position</h2>
+  <p><u>Syntaxys</u> <code>selector{position:value;}</code></p>
+  <p><u>Values</u> relative, absolute, fixed, sticky,
+    static.</p>
+  <p><u>Offset</u> top, bottom, right and left offsets. </p>
+  <h3 id="a-bit-more-">Common Values</h3>
+  <ul>
+    <li>Static: default.</li>
+    <li>Relative: to the position in the normal flow.
+      ~ removes the element from normal flow (element not ignored)</li>
+    <li>Absolute: respect to body or first relative positioned parent.
+      <u>Removes element from normal flow.</u></li>
+    <li>Fixed: is absolute positioning relative to the browser window!</li>
+    <li>Sticky: not sure.</li>
+    <li>Float: right or left.</li>
+  </ul>
+  <p>Normal flow is the arrange of elements without using position abs or float.</p>
+  <h3 id="fixed-v-absolute">Fixed v Absolute</h3>
+  <p>Difference: fixed elements stay fixed to the window when scrolling.</p>
+  <blockquote>
+    <p>When setting float:x or position:absolute, \n the rest of the elements ignore these elements.</p>
+  </blockquote>
+
+  <h3 id="float">More on Floats</h3>
+  <p>It makes the floated element <em>boyar</em> around other element.
+      It&#39;s very useful for images and sidebars. </p>
+  <p>Flex and Grids are interesting variants to flots with a nicer behaviour and
+      properties. </p>
+  <h3 id="issues">Issues</h3>
+  <p>Floats are absolute positioned i.e `recognized&#39; height is $0$ and do not affect other elements&#39; position.
+      If inside a container,
+      container&#39;s height will be zero.\footnote{try: write a background color. It will stay the same.} </p>
+  <h3 id="solutions">Solutions</h3>
+  <p>To the parent:</p>
+  <ul>
+      <li>overflow:hidden; (automatically measures childs&#39; height).</li>
+  </ul>
+  <p>To neighboring elements:</p>
+  <ul>
+      <li>If we want overflow visible and not to invade other elements, use clear:both; </li>
+  </ul>
+
+
+  <h2 id="how-to-center">How to center</h2>
+  <ul>
+    <li>Use position absolute in element, and position relative in the parent element.</li>
+    <li>Use flexbox.</li>
+  </ul>
+  <h4 id="center-text">Center Text</h4>
+  <ul>
+    <li>Flexbox or</li>
+    <li>Line height + align center.</li>
+  </ul>
+
+
+  <h3 id="z-index">z-Index</h3>
+  <p>This is relevant when using position or background property (cause it allows to stack elements).
+    By default, the element coming last on the <u>html</u> document is put on the top.</p>
+  <p>By giving z-index values we can alter this &#39;z-stack order&#39;.</p>
+
+
+  <h2 id="transform">Transform</h2>
+  <ul>
+    <li>Scale,</li>
+    <li>Rotate, </li>
+    <li>Translate, </li>
+    <li>
+      <p>Skew.</p>
+      <pre><code>              (HEY! can b
+          e used w TRANSITIONS! And
+</code></pre>
+      <p>ANIMATIONS!)</p>
+    </li>
+  </ul>
+  <h2 id="font-loading">Font Loading</h2>
+
+    <ol type='A'> 
+ <li> Include link (href attr) in html file </li>
+    <li>
+   @font-face{specs} in css file. src attribute with path, font-family, font-weight, font-variant. Otherwise uses
+      defaults.
+    </li>
+  </ol>
+
+  <h2>Anchors' target values</h2>
+  <p>target values: _self, _blank, _parent, _top, _nameframe</p>
+<p>
+  
+      _self opens in the same window, _blank on newTab/newWindow
+      The rest are
+      deprecated.
+</p>
+</body>
+
+</html>
