@@ -1,0 +1,77 @@
+    /* FONTS SPECS 
+           font stacks, 'layers' separated by commas. Using meowni 
+https://meowni.ca/font-style-matcher/  
+and scales copied from type-scale.
+*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+html {font-size: 100%;} /*16px*/
+
+body {
+  background-color: #d9d9d9;  
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #222;
+
+
+}
+a {text-decoration:none;
+}
+code {background-color:#b1b1b1;
+padding:3px;
+border-bottom:grey 1px solid}
+p {margin-bottom: 1.15rem;}
+
+h1, h2, h3, h4, h5 {
+  margin: 2.75rem 0 1.05rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052em;
+}
+
+h2 {font-size: 2.441em;}
+
+h3 {font-size: 1.953em;}
+
+h4 {font-size: 1.563em;}
+
+h5 {font-size: 1.25em;}
+
+small, .text_small {font-size: 0.8em;}
+
+
+
+    body {
+      font-family: 'Montserrat', 'sans';
+      max-width: 800px;
+      margin:100px auto 150px;
+    }
+
+    figure {
+      width: 50%;
+      margin: 3rem auto;
+    }
+
+    figure img {
+      width: 100%;
+      height:auto;
+    }
+
+    h2 {
+      padding-top: 40px;
+      border-top: 3px solid #3d7e9a;
+      padding-top: 40px;
+    }
+
+dt {font-weight:bold;
+font-size:1.3rem;
+letter-spacing:1px;
+}
+  li::marker{color:#3d7e9a}
+
