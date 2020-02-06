@@ -4,4 +4,4 @@ On this repo I store part of the things I've been learning the last couple of mo
 
 The stuff is mostly web-related stuff and linux. Probably will add latex and mathematics at some point (not in the near future).
 
-You can access the website through (https://santimirandarp.github.io/documents/)[this link].
+You can access the website through [this link](https://santimirandarp.github.io/documents/).
