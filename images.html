@@ -19,12 +19,15 @@
     
     <h2>Best Practices</h2>
     <dl>
-	<dt>store on an <em>/images</em> folder &amp; use <em>descriptive_filename</em></dt>
-  	<dd>for <abbr title="Search Engine Optimization">SEO</abbr> purposes.</dd>
-	<dt>on the same server (avoid using external urls).</dt>
-        <dd>avoid links breaks or modified images.</dd>
-        <dd>A DNS search + GET takes more time to load the image.</dd>
-           
+	<dt>On Storage</dt>
+	<dd>Store under <em>/images</em> folder. Also use <em>descriptive_filename</em>.
+	This optimizes <abbr title="Search Engine Optimization">SEO</abbr> (and we get more views).</dd>
+	<dd>
+	Store Locally, i.e  on the same server than the website, and avoid using external urls.
+        Use external links is prone to links breaks or modified images. Also a DNS search + GET takes more time to load the image.
+	</dd>
+           <dd>If an external image is used, be it on the public domain.
+            example picsum.photos/h/w?random </dd>
         <dt>Use <code>alt</code> attribute. Text is useful for
 	users with:</dt>
             <dd>impaired vision</dd>
@@ -32,19 +35,20 @@
             <dd>text-only browsers as Lynx</dd> 
   	    <dd>search engines</dd>
      
-	    <dt>decorative images use background-image.</dt>
-	    <dd>they dont add to the content and do not need to be described</dd>
-	    <dd>if you really need a decorative &lt;img&gt; use alt=&#39;&#39;</dd>
-	   
-	    <dt>If an external image is used, be it on the public domain.
-            Two useful resources: <dt>
-                <dd>unsplash.it/h/w</dd>
-                <dd>picsum.photos/h/w/?random</dd>
+	    <dt> Background-image</dt>
+	    <dd>When images do not add to the content use background images. 
+	    Also those do not need to be described (as with alt).</dd>
+	    <dd>if really need to include decorative &lt;img&gt; use alt=&#39;&#39;</dd>
+ 
 		<dt>width and height</dt>
-		<dd>Use always to avoid flickering and reserve space</dd>
+		<dd>Use to avoid flickering and reserve space</dd>
+		<dt>use of srcset</dt>
+		<dd>The <strong>picture</strong> element can be used to include an image and sources with media queries 
+		to select an image depending on the device. I can be also optimized for different than 72 dpis.</dd>
     </dl>
+    <p> So basically: store locally, use <strong>alt</strong> attribute, width and height whenever possible. Background-images for non content/decorative images.</p>
 
-	    <h3>About the <em>alt</em> attribute</h3>
+    <h3>About the <em>alt</em> attribute</h3>
 
 	    <ul>
        		 <li>alt attribute is required for validation
@@ -55,29 +59,25 @@
                 data-transfer.</li>
     	    </ul>
 
-    <h3>Loading Time, Resolution, Retina Displays</h3>
+   <h2>srcset attribute</h2>
     <p>In the bare minimum and image loading should look like this:
-    <code>&lt;img alt='description' width='300' height='400' src='path/to/pic'/&bg;</code></p>
-    <p>Common computer-screen resolutions are 72dpi</p>
-    <p>    An image should be displayed on its natural size (area covered by its number of pixels). 
-    Why? Too big sizes make it grainy, too small (if too small) waste bandwidth and increase load time.</p>
-    <p>It's ok to strech/shrink but avoiding extremes. <em>srcset</em> attribute 
+    <code>&lt;img alt='description' width='300' height='400' src='path/to/images/pic'/&bg;</code></p>
+    <p>Common computer-screen resolutions are 72dpi. 
+    An image should be displayed on its natural size (area covered by its number of pixels). 
+    Why? Too big sizes make it grainy, too small (if too small) waste bandwidth and increase load time.
+    But this is not practical. It's ok to strech/shrink but avoiding extremes. <em>srcset</em> attribute 
     allows to include many different resolutions and sizes.</p>
     <!-- In case of having a set of images we should try to edit them properly to the same size, or at least same ratio. -->
     
-    <h4>Example Case</h4>
+    <h2>Example Case</h2>
     <p>Let's say we want to upload a 1500px square image, and make it available for retina displays and responsive.</p>
-    <p>We could <code>.image {width:100%}</code> for responsiveness. But yet it loses resolution when stretching out or 
-    wastes bandwidth when shrinking in. We can add <em>srcset</em> and upload diff sizes for different viewports. 
-    So it still streches or shrinks but not that much. </p>
+    <p>We could <code>.image {width:100%; /*height:auto; is default*/}</code> for responsiveness. But yet it loses resolution when stretching out or 
+    wastes bandwidth when shrinking in. We can add <em>srcset</em> and upload diff sizes for different viewports. </p>
     <!--be careful not altering the aspect ratio of the image -->
 	
-    <h3>Control Of Backgrounds</h3>
+    <h2>Control Of Backgrounds</h2>
 
-    <p>This is an interesting approach to control the 
- display of a background for different devices. It uses 
- min-device-width instead of device-width, the difference being that min-device-width doesnt pay attention to the viewport. 
- Both can be used though.</p>
+    <p>Backgrounds can be selectively included using media queries.</p>
 
 </article>
 	</main>
