@@ -1,0 +1,230 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1>Internet and Data Transfer</h1>
+
+
+
+
+
+
+<ul>
+<li>ssh</li>
+<li>scp (secure copy i.e works the same than cp command)</li>
+<li>sftp (CLI or Filezilla common &amp; nice GUI)</li>
+<li>sshfs, (like having another system mounted on ours)</li>
+<li>nfs, samba, giver</li>
+</ul>
+<p>First 4 are all ssh-dependent, i.e they work behind the same security principles than ssh.</p>
+<p>scp and sshfs follow a very similar syntaxis. &#39;command source destination&#39;</p>
+<p>=====================symlinks and aliases==============</p>
+<p>Ok, there are errors in both of the above posts. Power users of MacOS X should understand that there are three types of file links available under MacOS X. They are known as hard links, soft links (or symlinks), and aliases. The first two come from Unix/UFS, the second from MacOS/HFS.</p>
+<p>A hard link is essentially a second entry in the file system pointing to the same data. If you create a hard link to a file, there is no sense in which one of the links is the &quot;original&quot; file and the other is a link. They are both equivalent. If you edit the data under one name, and then look at the other file, it will be edited as well, because they share the same data. A hard link necessarily must point to a file on the same file system (partition). I believe that some unix systems let you make hard links to directories, but only if you are root, and only under certain circumstances. I don&#39;t know much about this.</p>
+<p>A soft link is a seperate file which points to another file via its path. A soft link can exist even if the original file is deleted or moved, but it just points to nothing. Different unix programs (for example &quot;ls&quot;) treat soft links differently. Because it is a seperate file, a program has to distinguish between the pointer and the file itself. For example, if you delete a softlink with &quot;rm&quot; you are deleting the link, not the thing it points to.</p>
+<p>An alias is very similar to a soft link, except that it points to a file via its HFS handle. So, if you move or rename a file, the alias still works. If you move it to another file system, however, it doesn&#39;t (I think). While in general this method is more robust than softlinks, it still has its disadvantages. For example, if a program saves a file by writing a new file and then deleting the original, rather than editing the original, then an alias will be broken. I think that most Mac and Unix do this, though, but for different reasons (Mac programs do it so aliases will still work, Unix programs do it so hardlinks will still work).</p>
+<p>Under OS X, I think you can <em>only</em> create aliases from the finder. Soft links look like aliases in the finder, but aren&#39;t. I&#39;m pretty sure you can create hard links as well, but the Darwin team had to use some virtual file system trickery to make it work, as HFS doesn&#39;t support it natively (I think). for more info on this, check out:</p>
+<p><a href="http://www.mit.edu/people/wsanchez/papers/USENIX_2000/">http://www.mit.edu/people/wsanchez/papers/USENIX_2000/</a></p>
+<p>For a great article on these issues and more.</p>
+
+
+
+
+
+
+
+
+
+<h2>FTP, HTTP, HTTPS: Sharing Data Through Internet (ethernet & wifi).</h2>
+
+<p>Comment:there are possibly similar internet methods like 
+for infrared, bluetooth, etc. We won't go through those.
+</p>
+
+<h3>
+File Transfer Protocol (FTP)
+</h3>
+<ul>
+<li> uses port 21</li>
+<li> It allows to get files from/to a ftp-server or to retrieve them.</li> 
+<li> It's not a secure way to transfer files.</li>
+</ul>
+
+<p>FTP is for upload/download files to the memory of devices, 
+HTTP is for accessing (view) files.
+</p>
+<dl>
+<dt>FTP Usage
+</dt>
+
+<dd>On a browser's address bar:
+
+ftp://ftpupload.net <!-- asks for username and password -->
+</dd>
+
+<dt>On a terminal / command line
+</dt>
+<dd>ftp ftpupload.net 
+</dd>
+
+<dt>GUI Clients
+<dt><dd>
+Filezilla.
+</dd>
+
+<p>For delicate data SFTP should be used instead.
+ SFTP uses secure shell, encrypts the data.
+ Port 22.
+</p>
+
+<p>In any case, it asks for a web domain, a user and a password.
+</p>
+
+<h3>HyperText Transfer Protocol (HTTP)</h3>
+
+<p>(uses port 80)
+HyperText Transfer Protocol
+Access/view files of a http-server. Essentially html files.
+Does not ask for passwords. It's possible (very easy) to download the 
+html though.
+</p>
+
+<ul>
+<li>On a Browser Address Bar: http://www.domainName.subDomain
+</li>
+<li>Using wget and curl: wget/curl [options] webaddress
+</li>
+<li>Using GET/POST and http methods
+</li>
+
+<h2>Internet NETWORKS
+</h2>
+
+<p>First Something Superfluos:
+WAN, LAN, WLAN, CAN etc, etc are just names for networks depending on how 
+big the area spanned is.
+</p>
+
+<h3>The role of the Wi-fi Router
+</h3>
+
+<p>Router means 'the one who draws the route'. This route is 
+a path between two devices connected to wi-fi network.
+</p>
+<p>
+The device itself contains an antenna/boost, ethernet switches
+and a wan or internet port where the modem connects!
+</p><p>
+Local Area Network (or LAN) are devices connected to the same 
+wifi-router. 
+</p>
+<p>
+To transfer and access data the router needs the port and ip address of the other computer. 
+It also assigns and IP to our computer that we can find out with some skill.
+The router also controls which IPs and Applications are connecting by 
+allowing/disabling ports and IPs (in the router config page).
+This is the way we can block facebook, youtube, and any other IP address. 
+</p>
+
+<p>The port is specific of the application, 8080 for webs, 3636 for windows 
+remote desktop (WRD) etc etc. 
+</p>
+<p>
+A typical connection might be depicter PC--router--modem--antennas
+</p>
+<p>
+In big places we may want to extend the router wifi-range.
+</p>
+
+<p>*Modem + wifi Router Combos (of course the router also contains switches for ethernet conn) 
+are referred to as a Gateway*
+For this we can use another router, wap, or booster/wifi extender. 
+</p>
+<p>
+There are differences between those but wap and booster seem to be more similar:
+these do not have switches allowing ethernet(internet cable connection) for devices, they do not assign 
+IPs to devices in the network (the router does and this is called DHCP service). a firewall config is not necessary 
+because again this is done in the router. WAPs do not have a WAN port.
+*These do need wired connection to the router*
+wifi extenders or boosters instead do not need a cable connection to the router.
+</p>
+<p>
+Waps connect to the router using ethernet cables. That's when we see those phone-like plugs
+on the wall, it's just to switch a ethernet cable on each side of the wall, to reach the 
+router<->wap.
+A firewall is more like a plasmatic membrane: it's selective to the interchange of 
+data/information. (Anyways, it can be thought of literally as a firewall).
+It controls the allowed IPs, type of connection, port, destination as indicated 
+on the firewall control list.
+</p>
+
+<p>
+* Host-based firewalls are the ones set up on a computer, and protect 
+only that computer. Windows comes with firewall and also 3rd parties can be 
+installed. Also antivirus might come with firewall. 
+* Network-based firewall: the rules are applied to the entire network.
+Both can be used. 
+</p>
+
+
+<p>The 2 type of Routers:
+
+Modem comes from modulate/demodulate. It converts the signal 
+from computer-friendly to antenna friendly and viceversa. 
+A Modem and a Router might be integrated in one unit.
+
+The modems connect straight to the ISP (internet service providers). 
+
+Cable internet means that the modem connects to the ISP by a cable.
+Downside:share bandwidth w neighbours.
+25-400
+DSL uses common telephone lines (but it's not slow).
+In this case you see a phone cable attached to the modem/router(gateway)
+1-100
+Fiber Internet
+fastest (1000). 
+</p>
+
+
+<h3>DNS
+</h3>
+<p>
+In the case of the web, the domain name is converted to IP through DNS. 
+In the case of WRD we need to know the IP of the other computer and the app-port
+and set it into the Router configuration, which is accesses by typing the router IP 
+(every wi-fi enabled device has an IP) on a browser. 
+The IP of the router is retrieved by using: ip route
+in linux, and similar in windows.
+</p><p>
+I believe in browsers by typing the protocol the browser and the router knows the port, 
+so they send ftp to port 21, http to port 80 of the other computer.
+</p>
+<h3>
+Proxy Server
+</h3>
+<p>
+It's a computer that asks for a webpage for us, so our IP remains hidden.
+Instead of asking for an address straight to the web-server, we ask to 
+the proxy and this (with its IP) asks for the webpage or data.
+</p>
+<p>
+The benefit is surfing the web anonymously.
+One problem, it doesn't encrypt data, so in the worse scenario 
+user/pass could be detected by hackers.
+</p>
+
+<h3>VPN
+</h3>
+<p>
+Virtual Private Network
+It encrypts data, and keeps it private. Ex NordVPN
+</p>
+
+<h3>DNS servers
+</h3>
+<p>
+It's like phone book (we know the name, get the number). Resolves names to IPs.
+</p>
+</body>
+</html>
