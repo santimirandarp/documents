@@ -1,0 +1,61 @@
+@use 'base';
+// LAYOUT ONLY USING FLOATS
+
+body {
+  max-width: 900px;
+  margin: auto;
+}
+
+nav.mainNav {
+  margin-bottom: calc(#{base.$margin}* 2);
+  height: base.$navheight;
+  overflow: hidden; // ==> so it takes into account the floats height for calculatin its own height
+
+  div.links {
+    float: left;
+    a {
+      display: inline-block;
+      @extend %navlinksalign;
+      margin-left: base.$navchildrenmargin;
+    }
+  }
+  div.search {
+    float: right;
+    margin-right: base.$navchildrenmargin;
+    @extend %navlinksalign;
+    > * {
+      height: 2.5rem;
+    }
+    button {
+      padding: 0 2rem;
+    }
+  }
+}
+
+.floatContainer {
+  overflow: hidden;
+  height: 1100px;
+}
+//main weakness. we need to give the floatcontainer a fixed height.
+
+article,
+aside {
+  float:left;
+  padding: base.$articlepadding;
+  height: 100%;
+  width: calc(30% - #{base.$margin});
+}
+article {
+  float: right;
+  width: calc(70% - #{base.$margin});
+  margin-left: #{base.$margin};
+}
+
+aside {
+  margin-right: #{base.$margin};
+}
+
+footer {
+  margin-top: calc(#{base.$margin}* 2);
+  padding: 1.5em;
+}

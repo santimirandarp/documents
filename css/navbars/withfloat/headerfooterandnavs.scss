@@ -1,0 +1,59 @@
+$theyellow: rgb(247, 247, 45); 
+@mixin myanchor($color, $boldness, $textdec, $padding) {
+    color: $color;
+    text-decoration: $textdec;
+    font-weight: $boldness;
+    padding: $padding;
+  }
+  @mixin flex($direction, $mainax, $crossax) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $crossax;
+    justify-content: $mainax;
+  } 
+$headFooter: rgb(90, 138, 111);
+$asideAndNavAndWebs: rgb(173, 169, 169);
+header.externavs {
+    @include flex(row, flex-start, stretch);
+    background-color: $headFooter;
+    border-bottom: 1px solid rgba(31, 30, 30, 0.795);
+    #logo {
+      font-size: 2em;
+      color: white;
+      padding: 18px;
+      background: repeating-linear-gradient(
+        45deg,
+        rgb(15, 131, 67),
+        rgb(90, 138, 111) 20px
+      );
+  
+      //shadow to text in logo
+      text-shadow: 3px 3px 3px purple;
+      text-decoration: none;
+    }
+    a {
+      //flex centers the text in the middle of the block.
+      @include flex(column, center, stretch);
+      @include myanchor($theyellow, bold, none, 10px);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  ul.internavs {
+    text-align: center;
+    margin-top: 10px;
+    z-index: 999;
+    border-radius: 5px;
+    background-color: $asideAndNavAndWebs;
+    @include flex(column, center, stretch);
+    a {
+      @include myanchor(blue, default, none, 20px);
+      &:first-child {
+        border-bottom: 1px rgba(0, 0, 0, 0.3) solid;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }

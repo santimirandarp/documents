@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basics of Floats</title>
+    <link rel="stylesheet" href="floats.css">
+</head>
+
+<body>
+    <h1>Basics of Floats</h1>
+    <p>List of useful default values:</p>
+    <ol>
+        <li>overflow:visible</li>
+        <li>float:none</li>
+        <li></li>
+        <li></li>
+    </ol>
+    <h2>Example 0: no float</h2>
+    <p class='alignmiddle'> <img src="https://picsum.photos/200/300?random" alt="alternative text"> The default value
+        for float is <em>none</em>. Image are inline elements</p>
+    <h2>Example I: img in par</h2>
+    <p class="imgright">
+        <img src="https://picsum.photos/200/300?random" alt="alternative text">
+        Paragraph with an image on right side. Image taller than element (on big screen). Default value for overflow is
+        <strong>visible</strong>. The image overflows, doesnt add to element's height but the space is reserved.
+<strong>Hey!</strong> <em>this image hanging out looks nice!</em>
+    </p>
+
+    <div class="test">
+        <p class="imgleft">
+            <img src="https://picsum.photos/200/300?random" alt="alternative text">
+            paragraph with an image on left side. Right cleared to avoid image from first paragraph. Overflow auto set
+            to
+            avoid images from next paragraph. Now the image is taken into account as part of the element's height.
+
+        </p>
+    </div>
+
+    <p class="imgboth">
+        <img src="https://picsum.photos/200/300?random" alt="alternative text">
+        <img src="https://picsum.photos/200/300?random" alt="alternative text">
+        paragraph with an image on both sides. <br />
+        paragraph with an image on both sides.paragraph with an image on both sides.paragraph with an image on both
+        sides.paragraph with an image on both sides.
+    </p>
+
+    <p class='imgboth'> <img src="https://picsum.photos/200/300?random" alt="alternative text">
+        <img src="https://picsum.photos/200/300?random" alt="alternative text"></p>
+    <p class="imgboth imgbothcleared">
+        paragraph with images cleared on both sides. <br />
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni exercitationem nesciunt laboriosam illum dicta
+        asperiores eveniet voluptatibus soluta, consequatur, cupiditate perspiciatis doloremque nihil accusantium quis
+        facilis mollitia sequi vero eos?
+    </p>
+    <p>We only need clear on elements after the floats, the elements <em>before</em> the floats are not affected.</p>
+
+
+    <h3>Source order matters</h3>
+    <p class='imdifferent'>A float only affects elements coming <em>after</em> it.</p>
+
+    <div>
+        <img src="https://picsum.photos/200/300?random" alt="alternative text">
+    </div>
+
+    <p> For example, this paragraph is written after the image element. Floats change the behavior of siblings coming
+        after it (and only after it). </p>
+
+    <p>
+        So the first paragraph behaves as a
+        block element and this ones wrap around.
+    </p>
+    <h2>Summary (wrapping around!)</h2>
+    <p>Floated elements lead <strong>subsequent</strong> text and sibling elements to wrap them around.</p>
+    <h2>test</h2>
+    <div class="test1">
+        <p>
+            <img src="https://picsum.photos/200/300?random" alt="alternative text">
+            paragraph with an image on left side. Right cleared to avoid image from first paragraph. Overflow auto set
+            to
+            avoid images from next paragraph. Now the image is taken into account as part of the element's height.
+
+        </p>
+    </div>
+
+    <h2>Floats II: clearfix hack</h2>
+
+    Insted of <code>overflow:auto</code> a more general solution is used:
+    <pre><code>.clearfix::after{
+            content:'';
+        clear:both;
+    display:table;}</code></pre>
+
+    <h2>Set of Boxes</h2>
+
+    <div class="container">
+        <div class="box1">box 1</div>
+        <div class="box2">box 2</div>
+        <div class="box3">box 3</div>
+        <div class="box4">box 4</div>
+        <div class="box5">box 5</div>
+    </div>
+    <p>Boxes could be, 4example a set of pictures.</p>
+
+    <h2>Comparison Boxex</h2>
+    <div class="container2">
+        <div class="box6">
+            Here we are clearing the container (grey) and setting overflow auto, otherwise the container dissapears
+            (height of floats is 'unseen'). Also each float has a defined height (300px) assigned so they look exactly
+            the same independently of the content! Same effect produced with :after, <code>
+                :before {
+                clear:both; content:''; display:block/table}
+            </code>
+
+        </div>
+        <div class="box7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, tempora.</div>
+    </div>
+</body>
+
+</html>

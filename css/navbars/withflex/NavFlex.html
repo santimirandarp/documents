@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>topNav with Flexbox</title>
+    <link rel="stylesheet" href="NavFlex.css" />
+  </head>
+  <body>
+    <h1>Nav Bars II</h1>
+
+    <h2>Plain Nav</h2>
+    <ul class="basenav">
+      <li class="a"><a href="#">Not</a></li>
+      <li class="b"><a href="#">with</a></li>
+      <li class="c"><a href="#">Flexbox</a></li>
+    </ul>
+    <p>
+      So...block elements normally doesnt take full height of the parent. They do take full width though.
+      In this example, the
+      anchors cant fill the list item (yellow area). Neither do the list items fill the ul,
+      as expected.
+    </p>
+
+    <p>Here anchors are inline-block, and don't fill horizontal space.</p>
+
+    <h2>Nav Using Flexbox</h2>
+    <ul class="basenav trialist">
+      <li class="trialist__li--flex a"><a href="#">li</a></li>
+      <li class="trialist__li--flex b"><a href="#">with</a></li>
+      <li class="trialist__li--flex c"><a href="#">Flexbox</a></li>
+    </ul>
+
+    <p>
+      Flex containers' children do fill the cross axis (not
+      the main axis). To occupy 100% of main <!--axis width if we select row, height
+      if column,--> we have to set 100% of children length manually.
+    </p>
+
+  <p>Here anchors are displayed as blocks, and do fill hspace.</p>
+    <p>
+      Conclusion: I'd rather use flex to build navigation bars. Also 
+      positioning the elements is way easier.
+    </p>
+    <h2>Responsive FlexNav</h2>
+     <div class="flexlogo">
+
+      <div class="logo">LOGO</div>
+      <ul class="realist">
+        <li ><a class='realist__anchors' href="#">li</a></li>
+        <li ><a class='realist__anchors' href="#">with</a></li>
+        <li ><a class='realist__anchors' href="#">Flexbox</a></li>
+      </ul>
+    </div>
+
+    <p></p>
+    <p></p>
+  </body>
+</html>

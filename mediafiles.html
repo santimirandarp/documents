@@ -1,0 +1,61 @@
+-- General Part I
+Embedding content in the web:
+
+* img self closing.
+* figure (and/or picture?), audio and video. double tag accepts source attri
+butte.
+* iframe, canvas. double tag
+
+iframe is used to embed 'big elements' through src='...'
+like youtube videos and google maps.
+Example:
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d34510.172409980034!2d-5.732528299999999!3d57.275678049999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1581131376120!5m2!1sen!2suk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+From MDN:
+
+'This is great for incorporating third-party content into your website that you might not have direct control over and don't want to have to implement your own version of — such as video from online video providers, commenting systems like Disqus, maps from online map providers, advertising banners, etc.'
+
+Embedding content or if your content is embedded is quite a serious matter security-wise, so be careful when using.
+
+-- General Part II
+
+6  wMedia files can an image, video, audio. Common 'formats' are jpg, png, webm, mp4, mp3, wav.
+But are called containers. They define the file structure. Usually all containers 
+define the file structure as a set of layers. One layer is metadata, 
+then there are channels (as video channel and audio channel in a movie), a text channel. 
+
+Those channels are encoded in some format like H.264 for video and MPEG for audio.
+
+This are called codecs and really speak about how all the raw  data is converted 
+to something else, so it's important to have a general idea.
+
+-A  concrete example
+
+webm is a container. Video codec is VP8 or VP9; audio codec is Vorbis or Opus. 
+This format is not supported by older browsers and probably older software in general.
+
+-Extra bites
+
+Programs use the metadata to know what format (codec) every channel is in.
+
+-Why do codecs exist instead of just raw media data?
+
+The reason why there are so many codecs for the raw data is -apparently- the filesize.
+Media and video files are huge and they need to be compressed. They are many compression algorithms 
+and that's why there are many codecs and formats.
+
+-Interesting to see on config
+
+Programs like kazam encode the data-stream using both audio and video codecs!
+
+- SVG 
+
+* Highly scalable (don't pixellate)
+* small file size
+
+can be embedded into html using <svg options> </svg> or <img src='path/to/images/svg.svg /'> or an iframe.
+
+Drawing with svg
+
+This is very stimulant for the mind, could be nice to try with a live server. Inkscape allows vector graphics too.

@@ -1,0 +1,48 @@
+.inlinecode {
+  font-family: monospace;
+}
+
+.codefield {
+  padding: 4px;
+  div.bbox {
+    font: monospace 1em/1.5;
+    color: white;
+    background-color: #444;
+    border: 1px solid green;
+    padding: 10px 10px 40px;
+    position: relative;
+    div.mynicefooter {
+      background-color: rgb(42, 113, 219);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 4px;
+      width: 100%;
+    }
+  }
+  p.topbox {
+    font-weight: bold;
+    display: inline-block;
+    color: rgb(16, 189, 16);
+    background-color: black;
+    //there is no offset neither hz nor vt, only a blurred effect
+    text-shadow: 0px 0px 0.5px white;
+    padding: calc(3px + 0.5vw);
+    border-radius: 1px;
+  }
+}
+
+.button-show {
+  background-color: rgb(55, 126, 55);
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+}
+div#out {
+  display: none;
+}
+div#outNum {
+  display: none;
+}

@@ -1,0 +1,491 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.inlinecode {
+  font-family: monospace;
+}
+
+.codefield {
+  padding: 4px;
+}
+
+.codefield div.bbox {
+  font: monospace 1em/1.5;
+  color: white;
+  background-color: #444;
+  border: 1px solid green;
+  padding: 10px 10px 40px;
+  position: relative;
+}
+
+.codefield div.bbox div.mynicefooter {
+  background-color: #2a71db;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 4px;
+  width: 100%;
+}
+
+.codefield p.topbox {
+  font-weight: bold;
+  display: inline-block;
+  color: #10bd10;
+  background-color: black;
+  text-shadow: 0px 0px 0.5px white;
+  padding: calc(3px + 0.5vw);
+  border-radius: 1px;
+}
+
+.button-show {
+  background-color: #377e37;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+}
+
+div#out {
+  display: none;
+}
+
+div#outNum {
+  display: none;
+}
+
+div.niceline {
+  height: 3px;
+  margin: 10px;
+  background-image: radial-gradient(black, white);
+}
+
+header.externavs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-color: #5a8a6f;
+  border-bottom: 1px solid rgba(31, 30, 30, 0.795);
+}
+
+header.externavs #logo {
+  font-size: 2em;
+  color: white;
+  padding: 18px;
+  background: repeating-linear-gradient(45deg, #0f8343, #5a8a6f 20px);
+  text-shadow: 3px 3px 3px purple;
+  text-decoration: none;
+}
+
+header.externavs a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #f7f72d;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+}
+
+header.externavs a:hover {
+  text-decoration: underline;
+}
+
+ul.internavs {
+  text-align: center;
+  margin-top: 10px;
+  z-index: 999;
+  border-radius: 5px;
+  background-color: #ada9a9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul.internavs a {
+  color: blue;
+  text-decoration: none;
+  font-weight: default;
+  padding: 20px;
+}
+
+ul.internavs a:first-child {
+  border-bottom: 1px rgba(0, 0, 0, 0.3) solid;
+}
+
+ul.internavs a:hover {
+  text-decoration: underline;
+}
+
+.ulprops {
+  list-style-type: none;
+  background-color: #bd4747;
+}
+
+section.floatingbar ul#navbar_plain li, section.floatingbar ul#height_test li {
+  font-weight: bold;
+  float: left;
+  margin-right: 15px;
+}
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.overflauto {
+  overflow: auto;
+}
+
+.overflowFinalFix {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  background-color: #5e4444;
+  font: 18px/1.4em "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  color: orangered;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px 0px 15px;
+  margin-bottom: 20px;
+  line-height: 1.5em;
+}
+
+h2 {
+  text-align: left;
+  padding: 15px 5px 10px;
+  font: monospace small-caps 1.4em/1.5em;
+  line-height: 1.5em;
+}
+
+h3 {
+  text-align: left;
+  padding: 10px 10px 5px;
+}
+
+aside {
+  display: none;
+}
+
+span.jS {
+  text-shadow: 3px 3px 3px purple;
+}
+
+#goaltime {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+p.intropar {
+  text-align: justify;
+}
+
+div.grid {
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 30px;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas: "internavs" "article" "webs" "footer";
+  margin: 10px;
+  text-align: justify;
+}
+
+ul.internavs {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: internavs;
+}
+
+div.article {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: article;
+  background-color: #cbec7e;
+  padding: 15px;
+}
+
+div.webs {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: webs;
+}
+
+footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: footer;
+}
+
+div.webs {
+  background-color: #ada9a9;
+  padding: 10px;
+}
+
+div.webs h2 {
+  color: black;
+}
+
+div.webs li {
+  margin: 10px;
+}
+
+div.webs li a {
+  color: #0105fd;
+  text-decoration: none;
+  font-weight: default;
+  padding: 0;
+}
+
+div.webs li a:hover {
+  text-decoration: underline;
+}
+
+.further {
+  margin-top: 8vw;
+}
+
+footer {
+  font-weight: 600;
+  background-color: #5a8a6f;
+  padding: 1.5vw;
+}
+
+#aha {
+  float: left;
+  font-size: 2em;
+  background-color: white;
+  padding: 5px;
+}
+
+section.floatingbar ul#height_test {
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+section.floatingbar ul#navbar_plain_complete_l {
+  margin: 20px 0px;
+}
+
+section.floatingbar ul#navbar_plain_complete_l:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+section.floatingbar ul#navbar_plain_complete_l li {
+  float: left;
+}
+
+section.floatingbar ul#navbar_plain_complete_l li a {
+  color: #bd4747;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 20px;
+  display: block;
+  background-color: #ccc;
+}
+
+section.floatingbar ul#navbar_plain_complete_l li a:hover {
+  background-color: rgba(223, 60, 60, 0.1);
+  color: #ccc;
+}
+
+section.floatingbar ul#navbar_plain_complete_r {
+  margin: 20px 0px;
+}
+
+section.floatingbar ul#navbar_plain_complete_r li {
+  float: right;
+}
+
+section.floatingbar ul#navbar_plain_complete_r li a {
+  padding: 20px;
+  display: block;
+  background-color: #ccc;
+}
+
+section.floatingbar ul#navbar_plain_complete_r li a:hover {
+  background-color: rgba(129, 72, 129, 0.61);
+}
+
+section.floatingbar div.phones {
+  width: 25%;
+}
+
+section.floatingbar div.phones ul#navbar_plain_complete_phone {
+  margin: 20px 0px;
+  list-style-type: none;
+  background-color: red;
+}
+
+section.floatingbar div.phones ul#navbar_plain_complete_phone:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+section.floatingbar div.phones ul#navbar_plain_complete_phone li {
+  float: none;
+}
+
+section.floatingbar div.phones ul#navbar_plain_complete_phone li a {
+  padding: 20px;
+  display: block;
+  background-color: #ccc;
+}
+
+section.floatingbar div.phones ul#navbar_plain_complete_phone li a:hover {
+  background-color: rgba(129, 72, 129, 0.61);
+}
+
+@media only screen and (min-width: 600px) {
+  .intropar {
+    text-align: center;
+    margin: 10px 0px;
+  }
+  #logo {
+    padding: 20px;
+  }
+  aside {
+    display: none;
+  }
+  #goaltime {
+    text-align: center;
+  }
+  #goaltime ul {
+    width: 65%;
+    margin: auto;
+  }
+  .codefield div.bbox {
+    font-size: 1.1em;
+    line-height: 2;
+    padding: 10px 20px 50px;
+  }
+  .codefield div.bbox div.mynicefooter {
+    padding: 4px;
+  }
+  ul.content {
+    width: 90%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: stretch;
+            flex-direction: stretch;
+    -webkit-box-align: row wrap;
+        -ms-flex-align: row wrap;
+            align-items: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  ul.content a {
+    border: none;
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .codefield {
+    max-width: 800px;
+  }
+  section {
+    padding: 10px 25px;
+    display: block;
+    max-width: 750px;
+  }
+  aside {
+    display: block;
+    background-color: #ada9a9;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+    grid-area: myaside;
+    padding: 10px;
+  }
+  aside h3 {
+    color: black;
+  }
+  aside p {
+    margin-top: 15px;
+  }
+  div.grid {
+    grid-gap: 15px;
+    -ms-grid-columns: 75% 22%;
+        grid-template-columns: 75% 22%;
+    -ms-grid-rows: (auto)[4];
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "index ." "article myaside" "webs myaside" "footer myaside";
+  }
+}
+/*# sourceMappingURL=navbars.css.map */

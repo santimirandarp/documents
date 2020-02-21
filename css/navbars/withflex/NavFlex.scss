@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+%flexcolumncentered {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+%basestylenav {
+  list-style-type: none;
+  background-color: rgb(64, 64, 175);
+}
+a {text-decoration:none;}
+body {
+  padding: 1em;
+  font: sans-serif 1.3em;
+  line-height: 1.5em;
+  background-color: rgba(252, 210, 3, 0.5);
+}
+
+.trialist__li--flex {
+  display: flex; //this makes the a's to fill vertically the list item.
+
+  a {
+ width:100%;
+  }
+}
+.basenav {
+  @extend %basestylenav;
+  height: 20em;
+  margin: 1em;
+  li {
+    background-color: rgb(235, 235, 82);
+    height: 70px;
+  }
+  li.b,
+  li.c {
+    padding: 1.5em;
+  }
+  li.c {
+    margin: 2em;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-weight: 100;
+}
+h2 {
+  padding: 1em 0;
+  color: lightcoral;
+}
+
+.flexlogo {
+  background:rgb(173, 171, 171);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 1em white;
+height:15em;
+overflow:scroll;
+  .logo {
+    padding:1em;
+    text-align: center;
+    //    font: "Segoe UI" Tahoma Geneva  Verdana sans-serif 100  italic;
+    text-transform: lowercase;
+    border-bottom:1px dotted black
+  }
+  .realist {
+    display: flex;
+    flex-direction: column;
+    list-style-type:none;
+  }
+
+.realist__anchors {
+@extend %flexcolumncentered;
+padding:2em;
+    }
+}
+
+
+@media (min-width: 768px) {
+  .flexlogo {
+    flex-direction: row;
+    flex-basis: 100%;
+    overflow: visible;
+    box-shadow: 0 -1em 1em white;
+  }
+
+}

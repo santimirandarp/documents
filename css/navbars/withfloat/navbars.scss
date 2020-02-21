@@ -1,0 +1,317 @@
+//global
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//sass functions and defs
+@import "codefield.scss";
+@import "niceline.scss";
+@import "headerfooterandnavs.scss";
+@mixin vCenter($height, $align) {
+  height: $height;
+  line-height: $height;
+  vertical-align: $align;
+}
+@mixin myanchor($color, $boldness, $textdec, $padding) {
+  color: $color;
+  text-decoration: $textdec;
+  font-weight: $boldness;
+  padding: $padding;
+}
+
+//useful setting for headers
+@mixin alignPad($textalign, $paddingt, $paddingsides, $paddingrb) {
+  text-align: $textalign;
+  padding: $paddingt $paddingsides $paddingrb;
+}
+@mixin flex($direction, $mainax, $crossax) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $crossax;
+  justify-content: $mainax;
+}
+//basic ul
+.ulprops {
+  list-style-type: none;
+  background-color: rgb(189, 71, 71);
+}
+//general defs
+%liprops {
+  font-weight: bold;
+  float: left;
+  margin-right: 15px;
+}
+//classes
+
+//fixings for float-bars
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.overflauto {
+  overflow: auto;
+}
+.overflowFinalFix {
+  clear: both;
+  content: "";
+  display: table;}
+ul {
+  list-style-type: none;
+}
+
+body {
+  background-color: rgb(94, 68, 68);
+  font: 18px/1.4em "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  color: orangered;
+}
+h1 {
+  @include alignPad(center, 20px, 0px, 15px);
+  margin-bottom: 20px;
+  line-height:1.5em;
+}
+h2 {
+  @include alignPad(left, 15px, 5px, 10px); //check because 'font' is not applied properly
+  font: monospace small-caps 1.4em/1.5em;
+  line-height:1.5em;
+}
+h3 {
+  @include alignPad(left, 10px, 10px, 5px);
+}
+//non-main content (quotes, twits etc.)
+aside {
+  //for phones
+  display: none;
+}
+span.jS {
+  text-shadow: 3px 3px 3px purple;
+}
+#goaltime {
+  @include flex(column, center, stretch);
+  text-align: center;
+}
+p.intropar{text-align: justify;}
+
+div.grid {
+  display: grid;
+  grid-row-gap: 30px;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "internavs"
+    "article"
+    "webs"
+    "footer";
+  margin: 10px;
+  text-align: justify;
+}
+ul.internavs {
+  grid-area: internavs;
+}
+div.article {
+  grid-area: article;
+  background-color: rgb(203, 236, 126);
+  padding: 15px;
+}
+div.webs {
+  grid-area: webs;
+}
+footer {
+  grid-area: footer;
+}
+
+div.webs {
+  h2 {
+    color: black;
+  }
+  background-color: $asideAndNavAndWebs;
+  padding: 10px;
+  li {
+    margin: 10px;
+    a {
+      @include myanchor(rgb(1, 5, 253), default, none, 0);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.further {
+  margin-top: 8vw;
+}
+footer {
+  font-weight: 600;
+  background-color: $headFooter;
+  padding: 1.5vw;
+}
+
+#aha {
+  //surprise!
+  float: left;
+  font-size: 2em;
+  background-color: white;
+  padding: 5px;
+}
+section.floatingbar {
+  ul#navbar_plain {
+    li {
+      @extend %liprops;
+    }
+  }
+
+  ul#height_test {
+    @include vCenter(50px, middle);
+    li {
+      @extend %liprops;
+    }
+  }
+
+  ul#navbar_plain_complete_l {
+    margin: 20px 0px;
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+    li {
+      float: left;
+      a {
+        @include myanchor(rgb(189, 71, 71), bold, none, 20px);
+         display: block;
+        background-color: #ccc;
+        &:hover {
+          background-color: rgba(223, 60, 60, 0.1);
+          color: #ccc;
+        }
+      }
+    }
+  }
+
+  ul#navbar_plain_complete_r {
+    margin: 20px 0px;
+
+    li {
+      float: right;
+      a {
+        padding: 20px;
+        display: block;
+        background-color: #ccc;
+        &:hover {
+          background-color: rgba(129, 72, 129, 0.61);
+        }
+      }
+    }
+  }
+  div.phones {
+    width: 25%;
+
+    ul#navbar_plain_complete_phone {
+      margin: 20px 0px;
+      &:after {
+        clear: both;
+        content: "";
+        display: block;
+      }
+
+      list-style-type: none;
+      background-color: red;
+      li {
+        float: none;
+        a {
+          padding: 20px;
+          display: block;
+          background-color: #ccc;
+          &:hover {
+            background-color: rgba(129, 72, 129, 0.61);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  %hcenter {
+    //for centering small chunks usually one line pars
+    text-align: center;
+    margin: 10px 0px;
+  }
+  #logo {
+    padding: 20px;
+  }
+  aside {
+    display: none;
+  }
+  //section pars padding
+  #goaltime {
+    text-align: center;
+    ul {
+      width: 65%;
+      margin: auto;
+    }
+  }
+  .intropar{@extend %hcenter; }
+
+  .codefield {
+    div.bbox {
+      font-size: 1.1em;
+      line-height: 2;
+      padding: 10px 20px 50px;
+      div.mynicefooter {
+        padding: 4px;
+      }
+    }
+  }
+  ul.content {
+    width: 90%;
+    position: sticky;
+    top: 0;
+    @include flex(stretch, flex-start, row wrap);
+    a {
+      border: none;
+      display: inline-block;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .codefield {
+    max-width: 800px;
+  }
+  section {
+    padding: 10px 25px;
+    display: block;
+    max-width: 750px;
+  }
+
+  aside {
+    display: block;
+    background-color: $asideAndNavAndWebs;
+    grid-area: myaside;
+    padding: 10px;
+    h3 {
+      color: black;
+    }
+    p {
+      margin-top: 15px;
+    }
+  }
+
+  div.grid {
+    grid-gap: 15px;
+    grid-template-columns: 75% 22%;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "index ."
+      "article myaside"
+      "webs myaside"
+      "footer myaside";
+  }
+}

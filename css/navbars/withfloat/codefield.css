@@ -1,0 +1,53 @@
+.inlinecode {
+  font-family: monospace;
+}
+
+.codefield {
+  padding: 4px;
+}
+
+.codefield div.bbox {
+  font: monospace 1em/1.5;
+  color: white;
+  background-color: #444;
+  border: 1px solid green;
+  padding: 10px 10px 40px;
+  position: relative;
+}
+
+.codefield div.bbox div.mynicefooter {
+  background-color: #2a71db;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 4px;
+  width: 100%;
+}
+
+.codefield p.topbox {
+  font-weight: bold;
+  display: inline-block;
+  color: #10bd10;
+  background-color: black;
+  text-shadow: 0px 0px 0.5px white;
+  padding: calc(3px + 0.5vw);
+  border-radius: 1px;
+}
+
+.button-show {
+  background-color: #377e37;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+}
+
+div#out {
+  display: none;
+}
+
+div#outNum {
+  display: none;
+}
+/*# sourceMappingURL=codefield.css.map */

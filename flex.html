@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="flex.css">
+</head>
+
+
+<body>
+    <main>
+        <h1>Flexbox</h1>
+        <section title="parent elements">
+            <h2>
+                The Container
+            </h2>
+
+            <p>Default values displayed first </p>
+            <ol>
+                <li>flex-direction:row[-reverse]|column[-reverse];</li>
+                <li>flex-wrap:nowrap|wrap;</li>
+                <li>flex-flow combines previous 2. Example flex-flow:row wrap;</li>
+                <li>align-items:stretch|baseline|more values</li>
+                <li>justify-content:center|more values</li>
+                <li>align-content:space-around|more velues. It's for the <strong>flex lines</strong> (rows or columns)
+                </li>
+            </ol>
+
+            <p>Default style distribute whole width according to the amount of content (text). <strong>I'm a fat
+                    paragraph,
+                    give me more
+                    space!</strong></p>
+	    <p>The reason for this is the default value of flex-basis:auto as well as flex-grow:0. 
+	    Using flex-grow 1 and minmax() the children could look good.
+	    </p>
+
+            <p>All elements, by default, stretch to the tallest element's height.</p>
+
+            <h3>Perfect Centering</h3>
+            <p>This beautifully centers a single child on the parent (container) vertically and horizontally:
+                <pre>
+                <code>
+                    .flex-container {
+                        display: flex;
+                        height: 300px;
+                        justify-content: center;
+                        align-items: center;
+                      }
+                </code>
+            </pre>
+            </p>
+        </section>
+
+        <section title="child elements">
+            <h2>Direct Children</h2>
+            <p>Any element inside a flex container should be thought as a flex item and not as an actual element.</p>
+            <p>The items properties are:</p>
+            <ul>
+                <li>order. Use order:number. Same numbers go in document order.</li>
+                <li>flex-grow:0|any number. extra space fraction for item will occupy </li>
+                <li>flex-shrink:1|any number. how to shrink if they don't fit.</li>
+                <li>flex-basis:initial length</li>
+                <li>flex: flex-basis flex-grow flex-shrink.
+                    Example default: flex: auto 0 1;
+                </li>
+                <li>align-self: overrides align-items.</li>
+            </ul>
+            <p>This same idea that any direct children of a flex container becomes a <em>flex item</em>
+                also applies to grids. As extracted from <cite><a
+                        href="https://www.w3schools.com/css/css_grid.asp">W3.schools</a></cite>
+                <blockquote cite='https://www.w3schools.com/css/css_grid.asp'>All direct children of a the grid
+                    container automatically become <em>grid items</em></blockquote>
+            </p>
+        </section>
+	<section>
+		<h2>Auto and Fraction</h2>
+
+		<p>It's important to understand common values like <em>auto </em>and <em>fr</em>s</p>
+<p>
+<em>Auto</em> pushes width relative to amount of content. Once this is yield, the remaining space is distributed evenly.
+In a set of steps it would be: 
+
+</p>
+<ul>
+	<li>Shrink children to minimum width</li>
+	<li>Evaluates: is there more content? Yes, then increase size. No, then 
+		keep it small. </li>
+	<li> If the content fits on the container, then distributes the remaining space 
+		evely</li>
+</ul>
+<p>
+Instead of adding more space on the more populated item, 
+it restricts the width relative (fraction) to the 
+width of the container. 
+
+</p>	</section>
+    </main>
+
+</body>
+
+</html>

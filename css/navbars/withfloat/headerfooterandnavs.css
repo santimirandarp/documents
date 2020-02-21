@@ -1,0 +1,87 @@
+header.externavs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-color: #5a8a6f;
+  border-bottom: 1px solid rgba(31, 30, 30, 0.795);
+}
+
+header.externavs #logo {
+  font-size: 2em;
+  color: white;
+  padding: 18px;
+  background: repeating-linear-gradient(45deg, #0f8343, #5a8a6f 20px);
+  text-shadow: 3px 3px 3px purple;
+  text-decoration: none;
+}
+
+header.externavs a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #f7f72d;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+}
+
+header.externavs a:hover {
+  text-decoration: underline;
+}
+
+ul.internavs {
+  text-align: center;
+  margin-top: 10px;
+  z-index: 999;
+  border-radius: 5px;
+  background-color: #ada9a9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul.internavs a {
+  color: blue;
+  text-decoration: none;
+  font-weight: default;
+  padding: 20px;
+}
+
+ul.internavs a:first-child {
+  border-bottom: 1px rgba(0, 0, 0, 0.3) solid;
+}
+
+ul.internavs a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=headerfooterandnavs.css.map */

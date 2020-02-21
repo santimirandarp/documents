@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,GAAG,AAAA,SAAS,CAAC;EACX,MAAM,EAAE,GAAG;EACX,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,6BAA6B;CAChD",
+    "sources": [
+        "niceline.scss"
+    ],
+    "names": [],
+    "file": "niceline.css"
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>NavBars</title>
+
+    <link rel="stylesheet" href="navbars.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/b10493c4b7.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="externavs">
+      <a href="#" id="logo">Navs.tut</a>
+      <a href="../index.html">Home</a>
+      <a href="#">More Tuts</a>
+      <!-- create a website with list of tutorials -->
+    </header>
+
+    <div class="grid">
+      <!--top for phones, not sure for laps and ipads-->
+      <ul class="internavs">
+        <a href="#basics">The Basics</a>
+        <a href="#pleaSetUp">Set Up</a>
+        <a href="#responsiveNav">Responsive NavBar</a>
+      </ul>
+      <div class="article">
+        <h1>Building up NavBars</h1>
+        <section id="goaltime" title="abstract, codepen and reading time">
+          <ul class="metainfo">
+            <li>
+              <i class="fas fa-angle-right"></i>
+              Detailed discussion of floats.
+            </li>
+            <li>
+              <i class="fas fa-angle-right"></i>
+              Play with the code in
+              <a href="santimirandarp" target="_blank">codepen.io</a>.
+            </li>
+            <li>
+              <i class="fas fa-angle-right"></i>
+              Estimated reading time 15 min.
+            </li>
+          </ul>
+        </section>
+        <div class="niceline"></div>
+
+        <section class="floatingbar" title="simplestfloatbar">
+          <p class="intropar">
+            For new developers hacks and tricks are a discouraging part
+            of web design. And setting up a nice, well behaved navigation bar is
+            an important part of any website. Let's explore some NavBars.
+          </p>
+          <h2 id="basics">
+            Basics
+          </h2>
+          <p>
+            <strong>Float</strong>: the element freely moves through its
+            <u>parent container</u>, to some specified position (left, right,
+            ...).
+            <!--See detailed description in
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/float"
+              >MDN website</a
+            >.<br /> -->
+            Let's float the list items in an unordered list:
+          </p>
+
+          <ul class="ulprops" id="navbar_plain">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+          hello hello!
+
+          <div class="codefield in">
+            <p class="topbox">HTML</p>
+            <div class="bbox">
+            
+              <ul class="ulprops" id="navbar_plain">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+      
+              <div class="mynicefooter">
+                A nice footer <i class="far fa-smile-beam"></i>
+              </div>
+            </div>
+          </div>
+      
+      
+      
+          <!-- the js must be improved-->
+          <button class="button-show" onclick="myToggle()">
+            Show output
+          </button>
+          <div id="out" class="codefield">
+            <p class="topbox">Output</p>
+            <div class="bbox">
+              Somestuff
+              <div class="mynicefooter">
+                A nice footer <i class="far fa-smile-beam"></i>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            <span id="aha">AHA!</span> Floats are removed from the normal flow
+            of the document. The browser measures
+            <span class="inlinecode">ul</span>'s height before throwing in the
+            children, then <span class="inlinecode">height = 0</span> as <u>default height for blocks is auto</u>. 
+            It also explains the absence of bgcolor.
+          </p>
+          <p class="hCenter">
+            But why are the items displayed at all?
+          </p>
+          <p>
+            The default value for <span class="inlinecode">overflow</span> is
+            'visible', so we are actually seeing the content-overflow.
+          </p>
+          <p class="hCenter">
+            But does the element has a width?
+          </p>
+          <p>
+            We can test it by assigning a height:
+          </p>
+          <ul class="ulprops " id="height_test">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+          hello hello!
+
+          <p>
+            The <span class="inlinecode">ul</span> has 100% width, as it is a
+            block element. If height is 0 it is not 'seen' by the browser, and
+            we are left with only three inline elements (list items).
+          </p>
+          <p>
+            We may try to add anchors and some padding though it must suit the
+            container's height. Not the easy way if we need to re-set the
+            height. Also, we know that height:auto is not an option.
+          </p>
+        </section>
+        <div class="niceline"></div>
+        <section class="floatingbar" title="a little more">
+          <h2 id="pleaSetUp">Set a simple, nice Navigation Bar</h2>
+          <p>
+            All previous issues are fixed with a hack called clearfix (see <a href="#readShots">ReadShots</a>). 
+            The <span class="inlinecode">ul</span> with floating children
+            will behave as a block (and resizes automatically according to the
+            children's height.)
+          </p>
+
+          <ul class="ulprops clearfix" id="navbar_plain_complete_l">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          Another elegant way to solve the problem is just changing changing the
+          default <span class="inlinecode">overflow:visible;</span> to
+          <span class="inlinecode">overflow:auto;</span> and this will resize
+          the block to fit the content.
+
+          <ul class="ulprops overflauto" id="navbar_plain_complete_l">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          <p>
+            The last, robust trick recommended by
+            <a href="https://www.w3schools.com/howto/howto_css_clearfix.asp"
+              >W3 schools</a
+            >
+            consists in adding the following class to the float's parent element
+            CSS CODE
+          </p>
+          <h3>Sorting</h3>
+          <p>
+            Let's see how the items are sorted out when floating right:
+          </p>
+
+          <ul class="ulprops overflauto" id="navbar_plain_complete_r">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          <p>
+            Notice the items are sorted in the order they appear in the
+            document-flow. So <strong>Item 1</strong> in any case is floated
+            first.
+          </p>
+        </section>
+        <div class="niceline"></div>
+        <section>
+          <h2 id="responsiveNav">Responsive NavBar</h2>
+          <p>
+            So far the nav looks fine but we need to scale down when the width
+            of the window, or the container is smaller than certain width.
+          </p>
+
+          <div class="phones">
+            <ul id="navbar_plain_complete_phone">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <aside>
+        <h3 id='readShots'>ReadShots</h3> <!-- the readshots should occur at the respective positions in the text, 
+        and for this purpose the gride should be modified. HOWWWWW??-->
+        <p>
+          <a href="#">Floats' zero-height problem</a>. 
+        </p>
+          
+        <p>
+          Default values of blocks:<br/> 
+          <ul>
+         <li><span class="inlinecode">height:auto;</span></li>
+         <li><span class="inlinecode">width:100%;</span></li>
+         <li><span class="inlinecode">overflow:visible;</span></li>
+        </ul>
+      </p>
+       
+      <p>Clearfix <br/>
+        <a
+              href="https://stackoverflow.com/questions/8554043/what-is-a-clearfix
+                "
+              >this stackoverflow post</a
+            >
+            or
+            <a href="https://www.w3schools.com/howto/howto_css_clearfix.asp"
+              >W3C Schools</a
+            >
+        </p>
+          
+        <h3>Tweets</h3>
+        <h3>Supporters</h3>
+      </aside>
+      <div class="webs">
+        <h2>Further reading</h2>
+        List of related and suggested reading:
+        <div class="further">
+          javaScript tutorials:
+          <ul>
+            <li><a href="">jS w3s website</a></li>
+            <li><a href="">freecodecamp js website</a></li>
+          </ul>
+        </div>
+        <div class="relwebs">
+          Other languages:
+          <ul>
+            <li><a href="">HTML5</a></li>
+            <li><a href="">CSS3</a></li>
+          </ul>
+        </div>
+      </div>
+      <footer>
+        Santiago Miranda 2019 &copy;
+      </footer>
+    </div>
+
+    <script src="jstuff.js"></script>
+  </body>
+</html>

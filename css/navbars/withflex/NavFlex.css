@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.flexlogo .realist__anchors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.basenav {
+  list-style-type: none;
+  background-color: #4040af;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  padding: 1em;
+  font: sans-serif 1.3em;
+  line-height: 1.5em;
+  background-color: rgba(252, 210, 3, 0.5);
+}
+
+.trialist__li--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.trialist__li--flex a {
+  width: 100%;
+}
+
+.basenav {
+  height: 20em;
+  margin: 1em;
+}
+
+.basenav li {
+  background-color: #ebeb52;
+  height: 70px;
+}
+
+.basenav li.b,
+.basenav li.c {
+  padding: 1.5em;
+}
+
+.basenav li.c {
+  margin: 2em;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 100;
+}
+
+h2 {
+  padding: 1em 0;
+  color: lightcoral;
+}
+
+.flexlogo {
+  background: #adabab;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 0 1em white;
+          box-shadow: 0 0 1em white;
+  height: 15em;
+  overflow: scroll;
+}
+
+.flexlogo .logo {
+  padding: 1em;
+  text-align: center;
+  text-transform: lowercase;
+  border-bottom: 1px dotted black;
+}
+
+.flexlogo .realist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style-type: none;
+}
+
+.flexlogo .realist__anchors {
+  padding: 2em;
+}
+
+@media (min-width: 768px) {
+  .flexlogo {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    overflow: visible;
+    -webkit-box-shadow: 0 -1em 1em white;
+            box-shadow: 0 -1em 1em white;
+  }
+}
+/*# sourceMappingURL=NavFlex.css.map */
