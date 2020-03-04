@@ -1,0 +1,76 @@
+<html>
+
+	<head>
+<style>
+/*Resets*/
+* {padding:0;margin:0;box-sizing:border-box;}
+ul {list-style-type:none;}
+
+/*svg hamburger*/
+svg > line{
+	stroke:black;
+	stroke-width:4;
+	stroke-linecap:round
+}
+
+/*BAR ITSELF*/
+.navbar, .navbar__ul, .navbar__hamburger{
+	position:absolute;
+}
+header {height:100vh;}
+/*overflow has to be visible*/
+.navbar{
+top:0;
+right:0;
+}
+.navbar__hamburger{
+z-index:1;
+/*next lines are 'margins'*/
+right:10px;
+top:10px;
+}
+.navbar__ul{
+display:grid;
+place-items:center;
+padding-top: 48px;
+overflow:hidden;
+right:0;
+width:0;
+height:100vh;
+background-color:rgba(135, 116, 78,0.5);
+transition: width 0.5s ease-out;
+}
+.trigger__navbar{
+width:100vw;
+}
+
+
+</style>
+
+	</head>
+	<body>
+		<header>		
+<nav id='navbar' class="navbar"> 
+<div class='navbar__hamburger' onclick=clickBurger()>
+<svg  height="48" width="48">
+<line x1="4" y1="10" x2="44" y2="10"/>
+<line x1="4" y1="24" x2="34" y2="24"/>
+<line x1="4" y1="38" x2="24" y2="38"/>
+</svg>
+</div>
+    
+<ul id='navbar__ul' class='navbar__ul'>
+<li><a class='navbar__link' href="#">Home</a></li>
+<li><a class='navbar__link' href="#">Contact</a></li>
+<li><a class='navbar__link' href="#">About</a></li>
+</ul>
+</nav>
+		</header>
+	<script>
+		function clickBurger(){
+		const navBar=document.getElementById('navbar__ul');
+		navBar.classList.toggle("trigger__navbar");
+		}
+	</script>
+  </body>
+</html>
