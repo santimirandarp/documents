@@ -54,6 +54,21 @@ They use a different subset of programs from the main repos it updates more freq
 <p>At the same time, linux derives from DEBIAN but has its own repos. So these are different FLAVORS.</p>
 
 
+<h2>Setting a Variable in Linux </h2>
+<p>Every now and then we have to set up a variable. There are many ways to do it.</p>
+<ol>
+    <li><code>MYVAR=name</code> sets up a session variable (useful on the same terminal).</li>
+    <li>for user-scoped <code>~/.bashrc</code> (or similars): <code>export MYVAR=name</code></li> 
+     <li>System wide, persitent can be set on <code>/etc/profile</code> as <code> export MYVAR=name</code>
+    </li>
+    <li>System Wide, persistent are also set on <code>/etc/environment/</code>
+    </li>
+
+</ol>
+<p>This type of variables are used by other programs. For example, when typing <code> :edit </code> in <em> broot
+</em> the program invokes the $EDITOR variable that should be set to <code>/usr/bin/vim</code> or some editor. 
+</p>
+<p>the command env outputs all the environment variables. set prints all the shell variables.</p>
 
 <h2 id="add-a-program-to-path">Add a program to $PATH</h2>
 <p>echo $PATH  prints all directories added to the path variable. Variables in linux are with the pound sign. Add them on 

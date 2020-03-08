@@ -269,6 +269,11 @@ follow the similar paths <code>~/.local/bin</code>. This installation do not req
 In case we add a new directory, the path to the bin can be set into <code>~.profile</code> or changing <code>/etc/environment
 </code>. In any case afterwards <<code>source ~.profile</code> or <code>source /etc/environment
 </code> has to be run to activate the changes. If we change <code> /etc/environment</code> it might be necessary to source the 
-profile anyways. We can check that typing <code>echo $PATH</code> on the terminal.</p></body>
+profile anyways. We can check that typing <code>echo $PATH</code> on the terminal.</p>
+<h3>Another Anomaly</h3>
+<p>If we do not write <code>sudo npm 'node_module_name' </code>, and this might be a good idea as we don't know how safe node is, the packages will 
+be in the user directory <code>~/node_modules/bin</code>. My Laptop for example contains <em>gulp, sass and live-server</em>. This is important because for running those commands we need to add that directory to the $PATH variable!</p>
+
+</body>
 
 </html>
