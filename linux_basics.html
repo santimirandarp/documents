@@ -25,27 +25,64 @@
 <p>example santi@lenovo:~$ (regular user) or santi@lenovo:$# (root)</p>
 
 <h2 id="filesystem-hierarchy-standard">Filesystem hierarchy standard</h2>
-
-<ul>layout for the root folder
- <li>bin, sbin: binaries=programs=applications. ex cat, ls.
-	 Both are necessary for basic operations.</li>
+<p>Layout for the root (<code>/</code>), the beginning of the OS</p>
+<ul><li>usr: System Wide apps are installed there. 
+<ul><li>/usr/bin:program files live here.</li>
+    <li>/usr/sbin:program files only accessible to the root live here.</li> 
+    <li>/usr/lib*: libraries are small pieces of software shared by programs.</li>
+    <li>/usr/share: share contains many things like wallpapers, icons, and much more stuff. </li>
+    <li> /usr/local/: contains programs installed from source. For example <code>youtube-dl</code> 
+    was installed using github instructions and sits therein.</li>
+</ul>
+</li>
+<li> etc: etcetera. contains system wide configuration and settings. For example
+ <code>/etc/apt/</code> contains config files for <em>apt</em>. In this case, the config file is 
+the source of software. Config files can be many things.</li>
+    <li>opt:contains some propietary software. Example: google chrome.</li>
+    <li>snap:programs installed through snap package manager live on this folder and are isolated, self contained 
+        packages.</li>
+    <li>home: this contains a list of users. We can access normally only to ours, and any of them with root 
+        privileges. Under <code>/home/username/</code> there is a whole bunch of new things detailed on the next section</code></li>
 <li> boot: all info the system needs to boot.</li>
 <li> dev: devices. hard drives and partitions sda, sda1, sda2 (numbers being partitions, sda the hard drive)</li>
-<li> etc: etcetera. contains system wide configuration and settings.
  for example sources lists.</li>
-<li> lib, lib32, lib64 are files applications  in bin, sbin might require.</li>
 <li> media: all mounted devices &#39;d be there.</li>
 <li> proc:pseudofiles about processes.</li>
 <li> run, srv, tmp:erased when reset system.</li>
 <li> sys:system. advanced.</li>
-<li>usr applications used by the user are installed there, and are considered non essential for basic system applications.</li>
- usually big apps go to share. installed from source code goes to .local
- all is laid out on the fhs, but sometimes is not respected.</li> 
+<li>root</li>
  </ul>
 
-
+ <h2>Symlinks in the filesystem</h2>
+ <p>bin, sbin and all libs are symlinks, not real folders. All of them link 
+ to a correspondent folder under <code>usr</code>. For example, <code>bin</code>
+  is really a link to <code>usr/bin</code> and so on. </p>
 <h2 id="windows-and-linux">Windows and Linux</h2>
 <p>Linux start is on the root directory, instead of C drive. System &amp; program files are stores in different locations (bin, sbin, lib, usr) not  in one as C:program files. Linux cares about capitalisation. New users can be created similar to windows, and can&#39;t access other users accounts.</p>
+<h2>The Home Directory</h2>
+<p>So the root directory contains many folders. The most important ones for beginners are: usr and etc.
+Programs and even wallpapers are on usr. Config files on etc. All of these are system-scoped settings, 
+and this means for all users. </p>
+<p>The home directory contains the following directories:Desktop, Downloads..., dirs and files we create, 
+and .dotfiles as well as .dotdirectories. dot in a file hides the file. There are some important 
+dot directories and files:</p>
+<ol>
+    <li>.bashrc, .bash_aliases, .profile</li>
+    <li>.local, .config, .cache</li>
+    <li>.program (.vimrc etc. etc.)</li>
+</ol>
+
+<p>
+The first one are config files where variables are stored, exported, etc.
+The second ones are directories. .local contain user scoped programs; .config contains user-scoped 
+config files (this config overwrittes etc config files as expected). The lastone might be a files or a directory. 
+They should be placed under .config but for some reason they are not, and this cant be changed as the files are 
+created on every program-session (if they do not exist). They are usually config files.
+</p>
+<h2>Filesystem Brief</h2>
+<p>There are global settings and programs as well as user-scoped settings and programms. 
+The first ones can be found under universal system resourses (usr). The second ones 
+under <code>home/username</code>.</p>
 
 <h2>Differences between linux flavors &amp; distros.</h2>
 <p>TAKE UBUNTU. It comes with a desktop (Unity) and some repos in sources list. Mint uses same repos but different desktop (MATE). 
@@ -57,11 +94,13 @@ They use a different subset of programs from the main repos it updates more freq
 <h2>Setting a Variable in Linux </h2>
 <p>Every now and then we have to set up a variable. There are many ways to do it.</p>
 <ol>
-    <li><code>MYVAR=name</code> sets up a session variable (useful on the same terminal).</li>
-    <li>for user-scoped <code>~/.bashrc</code> (or similars): <code>export MYVAR=name</code></li> 
+    <li><code>MYVAR=name</code> sets up a session variable (useful on the same terminal). ex:
+    LINUX='cd ~/a/b/c' and executed as $LINUX.</li>
+    <li>for user-scoped <code>~/.bashrc</code>, <code>~/.profile/</code> etc. <code>export MYVAR=name</code>. It seems to be the case that for Lubuntu the variables should be declared on .bashrc for user-scoped, as the .profile file starts declaring to be not read when shell is set to bash, as it is the case in Lubuntu. After testing, notice .profile is being read by the system, so variables can be safely exported from therein.</li> 
      <li>System wide, persitent can be set on <code>/etc/profile</code> as <code> export MYVAR=name</code>
     </li>
     <li>System Wide, persistent are also set on <code>/etc/environment/</code>
+        <li>Some system wide stuff can be found at <code>/etc/bash.bashrc</code>. In fact this seems to be a very important file. This file is overwritten by user-scoped bash config file (bashrc)!. I've changed the way it outputs the PS1 which is the prompt, so it doesn't prints the absolute path, but only the last folder (pwd helps with the full path f it is needed). This way the prompt is not overloaded of words. See https://www.tutorialspoint.com/unix/unix-environment.htm for help. </li>
     </li>
 
 </ol>
