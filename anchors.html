@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Basics about Anchors</h1>
+
 <h2>Brief</h2>
 <p>adapted from HTML <a href='https://developer.mozilla.org/en-US/docs/Web/HTML' title='
 Introduction to HTML'><cite> docs Mozilla</cite></a> licensed under CC-BY-SA2.5.</p>
@@ -24,7 +25,7 @@ Introduction to HTML'><cite> docs Mozilla</cite></a> licensed under CC-BY-SA2.5.
 <p>An anchor tag contains 4 interesting and frequent attributes: </p>
 <ul>
 <li>
-  href for hypertext reference,
+href for hypertext reference,
 </li>
 <li>target:[self|blank]
 </li>
@@ -32,7 +33,6 @@ Introduction to HTML'><cite> docs Mozilla</cite></a> licensed under CC-BY-SA2.5.
 <li>download: &lt;a href='file.extension' download='nicename.ext'&gt; good text &lt;a&gt;</li>
 </ul>
 <p>Download only works for same origin URLs, this is, relative paths</p>
-
 <p><code>&#91;title&#93;</code> attribute is available in many other elements.
 Screenreaders, touch screens, keyboard-only users, text-only browsers do not see this feature as it <strong>requires hovering</strong>.</p>
 
@@ -47,14 +47,11 @@ Screenreaders, touch screens, keyboard-only users, text-only browsers do not see
 </pre> can be linked in an anchor's <strong>h</strong>ypertext <strong>ref</strong>erence attribute too,
 just using <code>href='/path/to/file#idName'</code>. <code>/path/to/file</code> should be omitted for a section in the same
 document (as we are already there).</p>
-
 <h3>URLs enconding</h3>
 <p>URLs have to be <abbr>ASCII</abbr> encoded, otherwise, the browsers handle the
 conversion using %0F, hexadecimal chars. For example
 the space is converted to %20 or to a + sign too.</p>
-
 <h3></h3><code>&#91;href&#93;='mailto:'</code>
-
 <p><a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
 Send mail with cc, bcc, subject and body
 </a></p>
@@ -63,8 +60,5 @@ Send mail with cc, bcc, subject and body
 <li>finish recipient using question mark <code>?</code></li>
 <li>end mail field using ampersand &</li>
 </ul>
-
-
-
 </body>
 </html>

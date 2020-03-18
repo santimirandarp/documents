@@ -13,8 +13,8 @@
         Note: it has no effect if the width is not set (or is set to 100%).
     </p>
 	<p>Inline-blocks don&#39;t start on a new line (as the name indicates) and do not
-        extend to the full width but occupy minimum amount required.
-They behave as blocks
+        extend to the full width but occupy minimum amount required (by the content).
+        They behave as blocks
         in the sense that either wrap completely or do not wrap at all.</p>
     &lt;img&gt; and &lt;a&gt; are inline elements, the state can be modified with display property.
     </p>
@@ -28,12 +28,10 @@ They behave as blocks
         * <code>float: none;</code> is the default value.
     </p>
   <h2> Inner and Outer display</h2>
-
 <ul>
 <li> <strong>Inner:</strong> changes the way direct children behave. Ex: flex, grid, table</li>
 <li> <strong>Outer:</strong> changes the element's itself display.  inline, block, inline-block.</li>
 </ul>
-
 <p>Both can be specified sometimes. Example display:inline-flex; will set a
 inline outer display and flex inner display (for its children).
 Remember that even though we can change the display, the real display is not changed.
@@ -84,7 +82,7 @@ html {
   </ul>
   <p>Normal flow is the arrange of elements without using position abs or float.</p>
   <blockquote>
-    When setting float:x or position:absolute, \n the rest of the elements ignore these elements but not in the same 
+    When setting float:x or position:absolute, the rest of the elements ignore these elements but not in the same 
     way. <strong>For floated elements the space is still reserved.</strong>
   </blockquote>
 
@@ -96,7 +94,7 @@ html {
   <h3 id="issues">Issues</h3>
   <p>
       If inside a container,
-      container&#39;s height will be zero.\footnote{try: write a background color. It will stay the same.} </p>
+      container&#39;s height will be zero. Try: write a background color. It will stay the same.</p>
   <h3 id="solutions">Solutions</h3>
   <p>To the parent:</p>
   <ul>
@@ -120,13 +118,13 @@ may not notice something missed if overflow is hidden.
     <li>Use flexbox.</li>
     <li>Use even paddings</li>
     <li>Use grids </li>
-    <li> Use margin auto to center horizontally</li>
+    <li> Use margin auto to center horizontally or align center</li>
     
-    <li>ror one liners Line height + aligr center also works fine.</li>
+    <li> one liners Line height/vertical align and aligr center also works fine.</li>
   </ul>
   <h4 id="center-text">Center Text in a box</h4>
   <ul>
-    <li>Flexbox or</li>
+    <li>Flexbox</li>
   </ul>
 
 
