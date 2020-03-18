@@ -1,31 +1,29 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-  <h1 id="css-level-2">CSS II</h1>
-
-  <h2>Brief</h2>
-  <p>Resets, combinators, pseudoelements, pseudoclasses. </p>
-  <h2 id="universal-selector">Universal Selector & All property</h2>
-  <p>The Star ( * ) selects each elements' property. all selects a property from 
-  one element. Used for <strong>resets</strong>. Example:
- <em>Universal selector selects elements, all selects properties.</em>
-  </p>
-  <h2>Combinators</h2>
-  <ul>
-	  <li> descendant body p</li>
-<li> general sibling p ~ p  (siblings: under same parent)</li>
-<li> adjacent sibling li + li (li that is after an li).</li>
-	<li> direct children ul>li</li>
+<h1 id="css-level-2">CSS II</h1>
+<h2>Brief</h2>
+<p> * and all. Combinators, pseudoelements, pseudoclasses.</p>
+<h2 id="universal-selector">Universal Selector & All property</h2>
+<p>The Star ( * ) selects each elements' property. all selects all properties from one element. Used for <strong>resets</strong>.
+</p>
+<h2>Combinators</h2>
+<ul>
+    <li>descendant <em>body p</em></li>
+    <li>general sibling <em>p ~ p</em>  (siblings: under same parent)</li>
+    <li>adjacent sibling <em>li + li</em> (li that is after an li).</li>
+    <li>direct children <em>ul>li</em></li>
   </ul>
 
   <h2 id="pseudoelements">Pseudoelements</h2>
-  <h3 id="essentials">Essentials</h3>
   <p><u>Syntaxis</u> selector::PE {code}</p>
-  <p><u>Example</u> <code>h1::after {content: &#39;url(/images/xxx)&#39;}</code></p>
+  <p><u>Example</u> <code>h1::after {content: " ";
+      /*or */
+      content:"url{img} }</code></p>
   <p><u>Specificity</u> same than elements.</p>
   <h3 id="and-they-are-">And they are...</h3>
   <ul>
@@ -34,11 +32,10 @@
     <li>selection</li>
   </ul>
   <p>Single colon also works, for cc1 &amp; 2 compatibility.</p>
-  <p>before,after insert content before/after an element&#39;s content.</p>
-  <p>selection applies to the selection made by a user. Can be
+  <p><strong>before, after</strong> insert content before/after an element&#39;s content.</p>
+  <p><strong>selection</strong> applies to the selection made by a user. Can be
     applied to color, background, cursor, outline. </p>
   <h2 id="pseudoclass">Pseudoclass</h2>
-  <h3 id="essentials">Essentials</h3>
   <p><u>Syntaxis</u> selector:PC {code}</p>
   <p><u>Example</u> p:first-child {code}</p>
   <p><u>Specificity</u> same than classes.</p>
@@ -49,53 +46,44 @@
     <li>p:last-of-type (all elements last ps on any parent)</li>
     <li>:not(selector) selects all that is not selector !</li>
   </ul>
-  <pre>p {
+  <pre>
+  p {
     display: none;
     background-color: yellow;
     padding: 20px;
     }
   div:hover p {
     background-color:red;
-    }</pre>
+    }
+  </pre>
   <p>When the div is hovered, it sets the display property of the paragraph.</p>
-  
+  <p>Keep in mind that hovering is useless for phones and other devices.</p> 
+
   <h2 id="transform">Transform</h2>
   <ul>
     <li>Scale,</li>
     <li>Rotate, </li>
     <li>Translate, </li>
-    <li>
-    Skew.
-    </li>
+    <li>Skew.</li>
   </ul>
   <p>Transforms are animatable</p>
-
-<p>
-  
-      _self opens in the same window, _blank on newTab/newWindow
-      The rest are
-      deprecated.
-</p>
-<p>
 
 <h2>Forms</h2>
 <p>
 There is quite a lot of incompatibility on browser styling and also
-usually forms do not inherit font, etc,etc. So a few resets can be found
-elsewhere or just use normalize (a stylesheet of resets).
+usually forms do not inherit font, etc, etc. So a few resets can be found
+elsewhere or just use normalize (a popular stylesheet).
 </p>
 
 <h2>Organizing css</h2>
 <dl>
-	<dt>Writing Techniques</dt>
-	<dd>OOCSS (good for small projects), BEM (very good but too much effort for a small project).</dd>
-
+	<dt>Styling Methods</dt>
+    <dd>OOCSS (good for small projects),</dd>
+    <dd>BEM (very good but too much effort for a small project).</dd>
 	<dt>Preprocessors</dt> 
 	<dd>SASS,LESS</dd>
-
 	<dt>PostProcessors</dt>
 	<dd> cssnano (compress the file).</dd>
 </dl>
 </body>
-
 </html>

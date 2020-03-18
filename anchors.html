@@ -1,84 +1,70 @@
 <html>
-	
-	<head>
-		<link href='index.css' rel='text/stylesheet'>
-		
-	</head>
-	<body>
-	<h1>Basics about Anchors</h1>
-<h2>Best Practices</h2>
+
+<head>
+<link href='index.css' rel='text/stylesheet'>
+
+</head>
+<body>
+<h1>Basics about Anchors</h1>
+<h2>Brief</h2>
 <p>adapted from HTML <a href='https://developer.mozilla.org/en-US/docs/Web/HTML' title='
 Introduction to HTML'><cite> docs Mozilla</cite></a> licensed under CC-BY-SA2.5.</p>
+<dl>
+    <dt><strong>Use relative paths</strong></dt>
+    <dd>relative (local) paths reduce number of GETS and make code reading easier.</dd>
+    <dt><strong>Meaningful Text</strong></dt>
+    <dd>meaningful hypertext for SEO and reading / hearing.</dd>
+    <dt><strong>Link to elements</strong></dt>
+    <dd>link to section of a different HTML by the url plus #sectionId.</dd>
+    <dt><strong>Improve URL</strong><dt>
+    <dd><em>index.html</em> technique to improve the URL shown to the users.</dd>
+</dl>
+
+<h2>Anchors' Attributes</h2>
+<p>An anchor tag contains 4 interesting and frequent attributes: </p>
 <ul>
-<li>Use relative paths so the browser doesnt has to do a GET</li>
-<li>relative paths also make reading easier.</li>
-<li>Use meaningful hypertext</li>
-<li>Using meaningful Htext helps SEO indexing and screen readers.</li>
-<li>download attribute: &lt;a href='path/to/downloadable/file.extension' download='nicename.extension'&gt; good text &lt;a&gt;</li>
+<li>
+  href for hypertext reference,
+</li>
+<li>target:[self|blank]
+</li>
+<li>title w supplementary info about the link.</li>
+<li>download: &lt;a href='file.extension' download='nicename.ext'&gt; good text &lt;a&gt;</li>
 </ul>
+<p>Download only works for same origin URLs, this is, relative paths</p>
 
-  <h2>Anchors' target values</h2>
-  <p>target values: _self, _blank, _parent, _top, _nameframe</p>
-<p>
-      _self opens in the same window, _blank on newTab/newWindow
-      The rest are
-      deprecated.
+<p><code>&#91;title&#93;</code> attribute is available in many other elements.
+Screenreaders, touch screens, keyboard-only users, text-only browsers do not see this feature as it <strong>requires hovering</strong>.</p>
+
+<h3>Clean <abbr title='universal resource locator'>URL</abbr></h3>
+<p>Browsers look for index.html automatically. Indeed, the path can be contracted to the folder.
+<strong>Bonus</strong>: the filename doesn't appears in the browser's URL.
 </p>
-
-
-
-
-    <h2>Anchors' Attributes</h2>
-      <p>An anchor tag contains three interesting and frequent attributes: </p>
-
-
-      <ul>
-        <li>
-          href for hypertext reference,
-        </li>
-        <li>target with values blank or self (default) as the most relevant ones,
-        </li>
-        <li>title supplementary info about the link.</li>
-      </ul>
-
-      <p><code>&#91;title&#93;</code> attribute is available in many other elements. Shouldn't be used for important
-        things though,
-        as screen readers and keyboards do not usually have access to it.
-      </p>
-
-      <h3>Clean <abbr title='universal resource locator'>URL</abbr></h3>
-      <p>Comprobado: browsers look of index.html automatically. Indeed, the path can be contracted to the folder.
-        If index.html is on directory <code>a</code> then we can link the path as hyperlink with <code>&#91;href=
-      './a/' &#93;</code> or just <code>&#91;href=
-        'a/' &#93;</code>. <strong>Bonus</strong>: the filename doesn't appears in the browser's URL.
-      </p>
-      <p>Tidy up. Say we have a <code>about.html</code> file. Create a folder named
-        <em>about</em>, move <code>about.html</code> into it and rename the file to <code>index.html</code>. Our URLs will look way cleaner
-	    when linked as <code>./about/</code> or <code>contact/</code> or <code>./anything/</code>.
-      </p>
-      <p>Elements with an id as in
-        <pre>
-  <code>&lt;section id="idName"&gt; content &lt;section/&gt;</code>
+<h3>Linking to a section of any HTML page</h3>
+<p>Elements with an id as in
+<pre>
+<code>&lt;section id="idName"&gt; content &lt;section/&gt;</code>
 </pre> can be linked in an anchor's <strong>h</strong>ypertext <strong>ref</strong>erence attribute too,
-        just using <code>href='/path/to/file#idName'</code>. <code>/path/to/file</code> should be omitted for a section in the same
-        document (as we are already there).</p>
+just using <code>href='/path/to/file#idName'</code>. <code>/path/to/file</code> should be omitted for a section in the same
+document (as we are already there).</p>
 
-<p>URLs have to be ASCII encoded, otherwise, the browsers handle the
+<h3>URLs enconding</h3>
+<p>URLs have to be <abbr>ASCII</abbr> encoded, otherwise, the browsers handle the
 conversion using %0F, hexadecimal chars. For example
 the space is converted to %20 or to a + sign too.</p>
 
 <h3></h3><code>&#91;href&#93;='mailto:'</code>
 
 <p><a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
-  Send mail with cc, bcc, subject and body
+Send mail with cc, bcc, subject and body
 </a></p>
 <ul>
-  <li>Spaces percent-escaped <code>%20</code></li>
-  <li>finish recipient using question mark <code>?</code></li>
-  <li>end mail field using ampersand &</li>
+<li>Spaces percent-escaped <code>%20</code></li>
+<li>finish recipient using question mark <code>?</code></li>
+<li>end mail field using ampersand &</li>
 </ul>
 
 
 
-	</body>
+</body>
 </html>

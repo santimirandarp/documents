@@ -4,48 +4,34 @@
 	</head>
 	<body>
 
-<h2>Background
+<h2>Properties & Values
 </h2>
-
-<p>Background common props and vals
-</p>
-
 <ul>
-
-<li> background-color
+<li> background-color:color;
 </li>
-<li> background-image (by default on top of the color).
-Values: url(pathtoimage), gradients like radial-gradient(vals).
-As a default, because of background-size, it will cover the element.
+<li>background-image:url(pathToImg)|gradients. 
+As per default background-size is cover, then this will cover the element.
 </li>
-
-<li> background-size: cover| val1 val2 | keywords.
-We can give it pixels, %, etc. Or one keyword: contain or cover. (They are self explanatory).
+<li>background-size: cover|contain|val1 val2.
+val1 val2 might be pixels, %.
 </li>
-<li> background position: left offset top offset| many options (read docs if needed). Tells where to position the image
-in the defined box space. We can add offsets. Its a shorthand for background-position-x and bgp-y.
+<li>background position: left offset top offset|options. Tells where to position the image 
+in the defined box space. We can add offsets (or it's 0). 
 </li>
-<li> background-origin: tells where to start 'drawing' the image. Defines the box space.                                                </li>
-
-<li> background-repeat: repeat (x and y) | no-repeat|repeat-x|repeat-y
+<li>background-origin: tells where to start 'drawing' the image. Defines the box space.                                                </li>
+<li>background-repeat: repeat (x and y) | no-repeat|repeat-x|repeat-y
 <li> background-attachment:scroll|fixed|local (experimental)
 scrolls with the page, then you see just the initial piece drawn.
 fixed it is fixed to the viewport, so it's possible to give it some movement.
 </ul>
-<h3>Accessibility Implications in backgrounds images and content images</h3>
+<h3>Accessibility</h3>
 <ul>
-<li>Text must be legible (contrast)</li>
+<li>Overbackground Text must be readable (contrast)</li>
 <li>Always provide a background-color as a fallback.</li>
-<li>Do not put content into background (screen readers).</li>
+<li>Do not put content into background images (screen readers).</li>
 </ul>
-
-<p>Multiple Layers is enabled by comma separating values. Last image goes on bottom.
-</p>
-
-    <h2>Control Of Backgrounds</h2>
-
-    <p>Backgrounds can be selectively included using media queries.</p>
-
-
+<p>Multiple Layers is enabled by comma separating values. Last image goes on bottom.</p>
+<h2>Control Of Backgrounds</h2>
+<p>Backgrounds can be selectively included using media queries.</p>
 </body>
 </html>
