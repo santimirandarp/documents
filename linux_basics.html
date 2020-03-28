@@ -9,9 +9,11 @@
     <li>The Filesystem</li>
     <li>Windows and Linux</li>
     <li>Linux Distros</li>
+    <li>Example Case: Lubuntu</li>
     <li>Software Sources</li>
     <li>Package Managers</li>
     <li>Sound Managers</li>
+    <li>Desktop Environment</li>
     <li>Window Managers</li>
     <li>Network Managers</li>
     <li>Login Managers</li>
@@ -114,6 +116,14 @@ Some system wide stuff can be found at <code>/etc/bash.bashrc</code>. This file 
 <p>echo $PATH  prints all directories added to the path variable. Variables in linux are with the pound sign. Add them on 
 .profile by editing it like so: PATH=/directory/to/add:$PATH</p>
 <p>On sass, for example, for global installing, the package can be downloaded from github and then the file added to the path, where the path points to the binarie/program/executable. A similar (but not equivalent) installatino  can be achieved using &#39;npm install -g sass&#39;</p>
+<h2>Example Case: Lubuntu</h2>
+<p>Lubuntu defaults on an Ubuntu core system, LXQt Desktop Environment allowing startup apps and its 
+configuration where we can configurate any manager as window managers, login managers; 
+brightness, appearance, icons themes, screensaver; also comes with  Openbox window manager, 
+Openbox Menu, Alsa as a sound manager, some Network Manager, etc. etc. All this can be 
+changed, even the Desktop Environment.</p>
+<p>In any distro, for example Ubuntu, we can install the server with different 
+desktop environments, and also tweak all the previous managers.</p>
 
 <h2 id="linux-installation-methods">Software Sources</h2>
 <p>Software Sources aka Package Repositories, it's the places where linux look at to find programs. In the end, any of them is a web address pointing to the <code>.deb</code> files. There are 3 main software sources (repos etc) depending on the web host.</p>
@@ -221,7 +231,6 @@ rpm instead of dpkg for others non dbs. File extesion .rpm
     Examples are Discover/Synaptic/Ubuntu Software Center, etc.
     There are also graphical interfaces for CLI programs like <abbr title="?">MUON</abbr> in lubuntu.
 </p>
-
 <p> Nodejs, for example,
     is not in discover but in muon.
 </p>
@@ -271,7 +280,6 @@ rpm instead of dpkg for others non dbs. File extesion .rpm
     Classically, running
 </p>
 <pre>
-
         ./configure
         make
         sudo make install
@@ -285,16 +293,14 @@ should do the job (tar files are different than .deb). (So make is some kind of 
         href='https://askubuntu.com/questions/25961/how-do-i-install-a-tar-gz-or-tar-bz2-file'>https://askubuntu.com/questions/25961/how-do-i-install-a-tar-gz-or-tar-bz2-file</a>
 </p>
 
-<h2>
+<h3>
     List Of Sources
-</h2>
-
+</h3>
 <ul>
     <li>
         <a
             href="https://askubuntu.com/questions/309113/what-is-the-difference-between-dpkg-and-aptitude-apt-get">https://askubuntu.com/questions/309113/what-is-the-difference-between-dpkg-and-aptitude-apt-get</a>
     </li>
-
     <li>
         <a
             href="https://opensourceforgeeks.blogspot.com/2014/11/how-to-install-google-chrome-on-ubuntu.htmlcomment-form">https://opensourceforgeeks.blogspot.com/2014/11/how-to-install-google-chrome-on-ubuntu.htmlcomment-form</a>
@@ -304,6 +310,35 @@ should do the job (tar files are different than .deb). (So make is some kind of 
             href="https://askubuntu.com/questions/25961/how-do-i-install-a-tar-gz-or-tar-bz2-file">https://askubuntu.com/questions/25961/how-do-i-install-a-tar-gz-or-tar-bz2-file</a>
     </li>
 </ul>
+<h2>Sound Manager</h2>
+<p>Alsa connects the system's kernel and the audio card. It also provides a user interface 
+through alsamixer, to change some settings. This last step can be also done using pulseaudio.</p>
+<h2>LXQt Desktop Environment</h2>
+The desktop environment comes with many applications or programs. Power management, 
+global keybindings, the runner. All config files for those apps. And the appearance, brightness. 
+<h2>Window Manager</h2> 
+<p>In lubuntu, the default WM is openbox. Openbox handles:
+</p>
+<ol>
+    <li>The window borders, decorations, placement</li>
+    <li>what is triggered with keybindings, clicks</li>
+    <li>the menu icons, text and arrangement</li>
+    <li>session start</li>
+</ol>
+<p>
+The first two can be found on the config file for openbox.
+You should copy the file from /etc/xdg/openbox/rc.xml to ~/.config/openbox/rc.xml to edit it, if that file does not already exist. The file contains a ton of options. 
+Most interesting stuff is keybindings. Again with a myriad of options.</p>
+<p>The third one is managed by openbox-menu, don't know where the config file is</p>
+<p>After installing openbox, or if it comes installed, a new session option is available
+for us. It is a complex thing and I don't know more than this.
+</p>
+<h3>Source</h3>
+<a href="http://openbox.org/wiki/Help:Bindings">Openbox Hotkeys Wiki</a>
+<h2>Network Manager</h2> 
+<p></p>
+<h2>Login (or Display) Manager</h2>
+<p>SSDM</p>
 
 <h2>Where do programs live in linux?</h2>
 <p>There are many package installers now. There is the traditional installers and snap, flatpack, umake.
