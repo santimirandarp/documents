@@ -11,9 +11,9 @@
     <li>Linux Distros</li>
     <li>Example Case: Lubuntu</li>
     <li>Software Sources</li>
+    <li>Desktop Environment</li>
     <li>Package Managers</li>
     <li>Sound Managers</li>
-    <li>Desktop Environment</li>
     <li>Window Managers</li>
     <li>Network Managers</li>
     <li>Login Managers</li>
@@ -34,39 +34,40 @@
 </ul>
 
 <h2 id="filesystem-hierarchy-standard">Filesystem hierarchy standard</h2>
-<p>Layout for the root (<code>/</code>), the beginning of the OS. Do not confuse w root folder. Here root means the beginning, the top of the system.</p>
-<ul><li><strong>usr</strong>: System Wide apps are installed there. 
-        <ul><li><strong>/usr/bin</strong>: program files live here.</li>
-            <li><strong>/usr/sbin</strong>: program files only accessible to the root live here.</li> 
+<p>Layout for the root (<code>/</code>), the beginning of the OS. Do not confuse w root folder. Here root means the top of the filesystem.</p>
+<ul><li><strong>usr</strong>: System Wide apps and files live here. 
+        <ul><li><strong>/usr/bin</strong>: program files aka binaries.</li>
+            <li><strong>/usr/sbin</strong>: root-user-only binaries.</li> 
             <li><strong>/usr/lib*</strong>: libraries are small pieces of software shared by programs.</li>
-            <li><strong>/usr/share</strong>: share contains many things like wallpapers, icons, and much more stuff. </li>
+            <li><strong>/usr/share</strong>: wallpapers, icons, manuals, fonts, etc. </li>
             <li><strong>/usr/local/</strong>: contains programs installed from source. For example <code>youtube-dl</code> 
-was installed using github instructions and sits therein.</li>
+was installed using github instructions and sits therein. Code we wrote and want available across users should be there.</li>
 </ul>
 </li>
-<li><strong>etc</strong>: etcetera. contains system wide configuration and settings. For example
+<li><strong>etc</strong>: etcetera. System wide configuration and settings. For example
 <code>/etc/apt/</code> contains config files for <em>apt</em>. In this case, the config file is 
-the source of software. Config files can be many things.</li>
-<li><strong>opt</strong>:contains some propietary software. Example: google chrome.</li>
-<li><strong>snap</strong>: programs installed through snap package manager live on this folder and are isolated, self contained 
+the source of software. <code>/etc/calendar/</code> contains config files for the calendar app. 
+Some relevant files are not under a directory. For example <code>/etc/bash.bashrc</code> is the config file for bash, default in many terminal emulators. </code>/etc/alacritty/</code> hosts the config file for the terminal emulator.
+</li>
+<li><strong>opt</strong>: contains some proprietary software. Example: google chrome.</li>
+<li><strong>snap</strong>: programs installed through snap package manager. They are isolated, self contained 
 packages.</li>
-<li><strong>home</strong>: this contains a list of users. We can access normally only to ours, and any of them with root 
-privileges. Under <code>/home/username/</code> there is a whole bunch of new things detailed on the next section</code></li>
+<li><strong>home</strong>: contains the users. We can access normally only to ours, and any of them with root 
+privileges. Under <code>/home/username/</code> there is a ton of data, detailed on the next section.</code></li>
 <li><strong>boot</strong>: all info the system needs to boot.</li>
 <li><strong>dev</strong>: devices. hard drives and partitions sda, sda1, sda2 (numbers being partitions, sda the hard drive)</li>
 for example sources lists.</li>
 <li><strong>media</strong>: all mounted devices &#39;d be there.</li>
-<li><strong>proc</strong>:pseudofiles about processes.</li>
-<li> <strong>run, srv, tmp</strong>:erased when reset system.</li>
-<li><strong>sys</strong>:system. advanced.</li>
+<li><strong>proc</strong>: pseudofiles about processes.</li>
+<li><strong>run, srv, tmp</strong>:erased when reset system.</li>
+<li><strong>sys</strong>: system. Advanced.</li>
 <li><strong>/root</strong></li>
 </ul>
 <h3>The Home Directory</h3>
-<p>So the root directory contains many folders. The most important ones for beginners are: usr and etc.
-Programs and even wallpapers are on usr. Config files on etc. All of these are system-scoped settings, 
-and this means for all users. </p>
-<p>The home directory contains the following directories:Desktop, Downloads..., dirs and files we create, 
-and .dotfiles as well as .dotdirectories. dot in a file hides the file. There are some important 
+<p>So the root directory contains many folders. The most important ones for beginners are: <code>/usr</code> and <code>/etc</code>.
+Programs and even wallpapers are on <em>usr</em> folder. Config files on <em>etc</em> folder. All of these are system-wide settings: they affect all users.</p>
+<p>The home directory contains the following directories: <em>Desktop</em>, <em>Downloads</em>..., dirs and files we create, 
+and <em>.dotfiles</code> as well as <em>.dotdirectories</em>. The dot (<code>.</code>) in a file hides the file. There are some important 
 dot directories and files:</p>
 <ol>
 <li>.bashrc, .bash_aliases, .profile</li>
@@ -74,11 +75,11 @@ dot directories and files:</p>
 <li>.program (.vimrc etc. etc.)</li>
 </ol>
 <p>
-The first one are config files where variables are stored, exported, etc.
-The second ones are directories. .local contain user scoped programs; .config contains user-scoped 
-config files (this config overwrittes etc config files as expected). The lastone might be a files or a directory. 
-They should be placed under .config but for some reason they are not, and this cant be changed as the files are 
-created on every program-session (if they do not exist). They are usually config files.
+The first ones are config files, and also where variables are stored, exported, etc.
+The second ones are directories. <em>.local</em> contain user scoped programs; <em>.config</em> contains user-scoped 
+config files (this config overwrittes etc config files as expected). The last one might be a files or a directory. 
+They should be placed under <em>.config</em> but for some reason they are not, and this can't be changed as the files are 
+created on every program-session (if they do not exist). They are configuration files.
 </p>
 <h3>Symlinks in the filesystem</h3>
 <p>bin, sbin and all libs are symlinks, not real folders. All of them link 
@@ -88,11 +89,14 @@ is really a link to <code>usr/bin</code> and so on. </p>
 <h2 id="windows-and-linux">Windows and Linux</h2>
 <p>Linux start is on the root directory, instead of C drive. System &amp; program files are stores in different locations (bin, sbin, lib, usr) not  in one as C:program files. Linux cares about capitalisation. New users can be created similar to windows, and can&#39;t access other users accounts.</p>
 
-<h2>Differences between linux flavors &amp; distros.</h2>
-<p>TAKE UBUNTU. It comes with a desktop (Unity) and some repos in sources list. Mint uses same repos but different desktop (MATE). 
-Lubuntu uses same repos and again, different desktop.
-They use a different subset of programs from the main repos it updates more frequently than debian. All are different DISTROS, same flavor.</p>
-<p>At the same time, linux derives from DEBIAN but has its own repos. So these are different FLAVORS.</p>
+<h2>Differences between linux versions, flavors &amp; distros.</h2>
+<p>Let's take Ubuntu. It comes with a Unity Desktop Environment and some repos in sources list. Mint uses same repos but different DE (MATE). 
+Lubuntu uses similar repos and again, different DE.
+They use a different subset of programs from the main repos. All are different <em>flavors</em> of the same distro.</p>
+<p>At the same time, Ubuntu derives from Debian but has its own repos. These are different <em>distros</em>.</p>
+<p>Everytime we pick up a flavor, it has many versions. There is usually a LTS version and another one suitable for curious users. Official ubuntu flavors all update nearly on the same time, and use the same version numbers. Right now the latest LTS is 19.04 and 19.10 is the short term version.</p>
+<p>There are also many unofficial distros and flavors.</p>
+
 <h2>Variables, Symlinks, Aliases</h2>
 <h3>Setting a Variable in Linux</h3>
 <p>Every now and then we have to set up a variable. There are many ways to do it.</p>
@@ -311,8 +315,12 @@ should do the job (tar files are different than .deb). (So make is some kind of 
     </li>
 </ul>
 <h2>Sound Manager</h2>
-<p>Alsa connects the system's kernel and the audio card. It also provides a user interface 
-through alsamixer, to change some settings. This last step can be also done using pulseaudio.</p>
+<p>Alsa connects the audio card and the operating system. It also provides an sound controller, i.e an user interface 
+called alsamixer, to tweak the volume. Another sound controller is pulseaudio. Pulseaudio still uses Alsa for audio card and OS communication.</p>
+<p>Jack is a more advanced sound controller. Where any given application makes use of sound control will be up to the application developers. Some applications will only use ALSA, some need PulseAudio, some need JACK.</p>
+<p>pavucontrol is the front end for this sound controlers (a volume controller).</p>
+<h3>Source</h3>
+<a href="https://askubuntu.com/questions/426983/how-can-i-tell-if-im-using-alsa-or-pulse-audio-by-default-switching-to-i3-wm">Alsa, Pulseaudio, Jack: Desktop and Applications</a>
 <h2>LXQt Desktop Environment</h2>
 The desktop environment comes with many applications or programs. Power management, 
 global keybindings, the runner. All config files for those apps. And the appearance, brightness. 
@@ -329,7 +337,7 @@ global keybindings, the runner. All config files for those apps. And the appeara
 The first two can be found on the config file for openbox.
 You should copy the file from /etc/xdg/openbox/rc.xml to ~/.config/openbox/rc.xml to edit it, if that file does not already exist. The file contains a ton of options. 
 Most interesting stuff is keybindings. Again with a myriad of options.</p>
-<p>The third one is managed by openbox-menu, don't know where the config file is</p>
+<p>The third one is managed by openbox-menu, don't know where the config file is, but right clicking on it there is a 'configure panel' option. We can customize the app itself and also the applications (widgets) running on it. <strong>A good alternative could be to autostart dmenu.</strong></p>
 <p>After installing openbox, or if it comes installed, a new session option is available
 for us. It is a complex thing and I don't know more than this.
 </p>
