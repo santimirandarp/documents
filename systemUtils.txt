@@ -1,0 +1,22 @@
+Utils are tools to get info about something.
+There are linux utils (systemwise), network utils, etc.
+
+free -h
+du -hd 1
+dmesg (probably more related to connected devices)
+tail /var/log/syslog (dmesg is under /log too)
+watch <programm> runs a program every certain amount of time, has some default if not specified.
+date tells us the date. 
+watch date updates it, & works as a clock.
+most of the outputs can be redirected to file as: progrun >> savedata
+journalctl (to look for error fly-by output of commands.) Is a systemd tool.
+top, htop
+ifconfig (network info).
+ping (when using server-only, it let us know if internet is working by asking for bites to websites)
+ex: ping www.youtube.com (are you there?)
+lsblck list the mounted devices (snaps shown too, as they are mounted).
+For mounting / unmounting a device use 
+sudo mount /dev/[deviceid] mountingPoint
+example sudo mount /dev/sda2 /media/ (or /mnt)
+sudo umount /dev/sda2 will unmount it.
+sudo fdisk -l //list all mounted devices, the id, and a description of the device.

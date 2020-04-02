@@ -1,0 +1,25 @@
+1) Installation, globally using -g, dev dependencies -D.
+npm install gulp-cli -g  
+mkdir projectfolder/
+cd projectfolder/
+npm init
+npm install gulp -D
+
+2) remove
+npm uninstall gulp gulp-cli --global -D
+
+3) version check
+This all reduces to try 
+gulp --version
+
+and both should be installed (cli and binary)
+gulp 'only' probably appears as [local] 
+which is alright.
+
+4)updates
+Versions and Updates can be checked with
+npm outdated
+npm update
+
+Common usages: define a function returning a stream (pipe or chain of tasks)
+return a callback, used as the ONLY argument of the function.
