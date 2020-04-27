@@ -1,15 +1,9 @@
 <html>
 <head>
-
+  <link href="index.css" rel="stylesheet"/>
 </head>
 <body>
 <h1>Internet and Data Transfer</h1>
-
-
-
-
-
-
 <ul>
 <li>ssh</li>
 <li>scp (secure copy i.e works the same than cp command)</li>

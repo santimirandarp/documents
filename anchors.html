@@ -1,9 +1,9 @@
 <html>
-
+  <!--the head should be improved programatically-->
 <head>
-<link href='index.css' rel='text/stylesheet'>
-
+<link href="index.css" rel="stylesheet">
 </head>
+
 <body>
 <h1>Basics about Anchors</h1>
 
@@ -12,7 +12,7 @@
 Introduction to HTML'><cite> docs Mozilla</cite></a> licensed under CC-BY-SA2.5.</p>
 <dl>
     <dt><strong>Use relative paths</strong></dt>
-    <dd>relative (local) paths reduce number of GETS and make code reading easier.</dd>
+    <dd>relative (local) paths reduce number of GETs and make code reading easier.</dd>
     <dt><strong>Meaningful Text</strong></dt>
     <dd>meaningful hypertext for SEO and reading / hearing.</dd>
     <dt><strong>Link to elements</strong></dt>
@@ -32,25 +32,52 @@ href for hypertext reference,
 <li>title w supplementary info about the link.</li>
 <li>download: &lt;a href='file.extension' download='nicename.ext'&gt; good text &lt;a&gt;</li>
 </ul>
-<p>Download only works for same origin URLs, this is, relative paths</p>
-<p><code>&#91;title&#93;</code> attribute is available in many other elements.
+<h3>Extended Discussion</h3>
+<p><code>href</code> include relative paths (relative to <em>index.html</em> file) 
+the data) and absolute paths (we use the full url to specify a computer plus
+a path to the file). 
+<code>target</code> has two main values indicated with <code>[</code>: self or
+blank. <em>self</em> opens up the reference on the same window
+<em>blank</em>does it on a new tab. <code>download</code> only works for same origin URLs, this is, relative paths.
+<code>&#91;title&#93;</code> attribute is available in many other elements.
 Screenreaders, touch screens, keyboard-only users, text-only browsers do not see this feature as it <strong>requires hovering</strong>.</p>
-
-<h3>Clean <abbr title='universal resource locator'>URL</abbr></h3>
-<p>Browsers look for index.html automatically. Indeed, the path can be contracted to the folder.
-<strong>Bonus</strong>: the filename doesn't appears in the browser's URL.
-</p>
+<h4>A concrete example</h4>
+<p>A full example using relative paths to <code>about.html</code> page 
+would be: </p><p><code>&lt;a href="about.html" title="Open a new tab on the about
+  page for this website" target="blank"&gt;Go to About Page&lt;/a&gt;</code></p>
+<p>A full example using absolute paths would be: </p><p><code>&lt;a
+href="http://cdimage.ubuntu.com/lubuntu/releases/20.04/release/lubuntu-20.04-desktop-amd64.iso"
+title=" lubuntu 20.04 will start downloading with the name: lubuntu.iso"
+target="self" download="lubuntu.iso"&gt;Download Lubuntu 20.04 64-bits
+iso&lt;/a&gt;</code></p>
+<h2>How to write nice and useful URLs</h2>
+<h3>Clean <abbr title="universal resource locator">URL</abbr></h3>
+Would you like to display <em>standardurl/about</em>
+ instead of <em>standardurl/about.html</em> ?
+<h4>Example</h4>
+<p>Suppose on the project folder there are all html files: index.html,
+about.html, contact.html, whatever.html. Now we make new directories named: about,
+contact, whatever. Next we put about.html under <em>about</em> directory and rename the
+file about.html as index.html. 
+Last, we follow the same procedure with all files.</p>
+<p>On the main index.html file we link to about as <code>href="about"</code>
+and analogous for the remaining files. When you click on <em>about</em> the
+browser will display a nicer url.</p>
 <h3>Linking to a section of any HTML page</h3>
 <p>Elements with an id as in
 <pre>
 <code>&lt;section id="idName"&gt; content &lt;section/&gt;</code>
 </pre> can be linked in an anchor's <strong>h</strong>ypertext <strong>ref</strong>erence attribute too,
 just using <code>href='/path/to/file#idName'</code>. <code>/path/to/file</code> should be omitted for a section in the same
-document (as we are already there).</p>
-<h3>URLs enconding</h3>
-<p>URLs have to be <abbr>ASCII</abbr> encoded, otherwise, the browsers handle the
+document (as we are already there).
+</p>
+<h3>URLs encoding</h3>
+<p>URLs have to be <abbr>ASCII</abbr> encoded, otherwise, the browser handles the
 conversion using %0F, hexadecimal chars. For example
 the space is converted to %20 or to a + sign too.</p>
+<p>In this sense, you don't want filenames with spaces or non-ascii characters.
+If you do, the browser will modify it and probably won't look good or
+trusty. And for sure it won't look professional.</p>
 <h3></h3><code>&#91;href&#93;='mailto:'</code>
 <p><a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
 Send mail with cc, bcc, subject and body

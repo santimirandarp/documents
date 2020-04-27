@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="flex.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 
@@ -40,7 +40,7 @@
             <p>All elements, by default, stretch to the tallest element's height.</p>
 
             <h3>Perfect Centering</h3>
-            <p>This beautifully centers a single child on the parent (container) vertically and horizontally:
+            <p>This beauty centers a single child on the parent (container) vertically and horizontally:
                 <pre>
                 <code>
                     .flex-container {
@@ -84,19 +84,23 @@
 In a set of steps it would be: 
 
 </p>
-<ul>
+<ol>
 	<li>Shrink children to minimum width</li>
 	<li>Evaluates: is there more content? Yes, then increase size. No, then 
 		keep it small. </li>
 	<li> If the content fits on the container, then distributes the remaining space 
 		evely</li>
-</ul>
+</ol>
 <p>
 Instead of adding more space on the more populated item, 
 it restricts the width relative (fraction) to the 
 width of the container. 
 
-</p>	</section>
+</p>	
+<p>The difference pops in when there are elements with <em>less</em> content.
+Using <em>frs</em> the step two increases size of all elements.
+  </section>
+
     </main>
 
 </body>
