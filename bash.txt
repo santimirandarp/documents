@@ -1,0 +1,46 @@
+From the user point of view a programming language 
+consist on a executer plus an instruction.
+
+The executer is either python, node, bash, etc. depending on the language we write the script (or instruction).
+
+Bash then, is a scripting language and an executer. We use it to interact with the system.
+
+It's sometimes confusing that we can use it easily to change, list, rename files/directories and run programms while other languages are not so common for those tasks.
+
+However, this can be done in any language and there are python terminals: but bash is way faster and a nice language.
+The terminal is already a program helping us to use bash.
+
+For example, we run <cd ourdir>, and this is executed by bash (kind of <bash cd ourdir>) when we press enter.
+We can think of the terminal as a 'file' where we write the code. The differentce being that we can get some 
+output in this file.
+
+In bash terminals the program runs everytime we press enter.
+But we can run bash 'the normal way' too, i.e we can run a file filled up with bash scripting as <bash filename.sh> on the terminal.
+
+To see which terminal we have run: echo $0. And we should get /bin/bash.
+
+
+As an example of a bash script in a file we could write, in example.sh, the following code:
+
+```
+#!/bin/bash
+echo "Hello World"
+```
+We execute this as `bash example.sh`. 
+
+You'll find the very first line in most languages. It tells the computer which executor to use 
+(and of course it depends on the language).
+
+An analogous example for Python will be, under example.py, the following code: 
+``` 
+#!/bin/python3 
+print("Hello World") 
+```
+
+that we execute as `python3 example.py`
+
+We could ask whats the point for the very first line if we are calling the executer (bash, python) either 
+way.
+
+A reason for this is that you might share the code, and the user can easily understand which version are you using
+ by reading that very first line.
