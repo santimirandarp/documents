@@ -1,0 +1,7 @@
+Variables: name for a piece of information. We set it and afterwards access it with the name.
+Bash:
+
+Python:
+
+Javascript:
+

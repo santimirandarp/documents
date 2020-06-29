@@ -47,6 +47,11 @@ A reason for this is that you might share the code, and the user can easily unde
  by reading that very first line. Another reason is that we can run the program as ./scriptname.
 For example: ./example.py or ./example.sh
 
+There is an extra step we can take here, and this is to add the script's directory to the PATH variable. 
+All scripts should be under ~/bin or ~/.local/bin
+Then we can add this dir to $PATH if it's not already there.
+
+
 For executing a file like that though, there is a permissions issue to solve. 
 
 If we list the files like 'ls -l' we can see there are no execution permissions, so the program won't run.
