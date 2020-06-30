@@ -1,7 +1,51 @@
 Variables: name for a piece of information. We set it and afterwards access it with the name.
-Bash:
 
-Python:
+Bash:
+string="my string"
+array=("elements" *.txt "globs")
+
+Python
+string = "my string"
+array= ["the", "comma", "separated list", "now", string, "strings"]
+object={"key":"value", "key2":"pairs} #access using object["key"], returns value.
 
 Javascript:
+ES6 are scoped. const can not be reassigned, but objects are allowed to mutate.
 
+let thiswordbe="my variable"
+const array=[1,2,3,"four"]
+let object={noquotes:"for singlewords", "quotes for": "non single words", "optional":"always fine to use quotes"}
+
+
+loops
+Bash
+
+for element in "${array[@]}"
+do 
+#comands here
+done
+A few useful bits:
+"${array[@]}" makes element="${array[i]}" each time.
+"${!array[@]}" makes element= array index each time.
+
+
+Javascript
+(many ways)
+
+for(let i=0; i<array.length; i++){
+//commands here.
+}
+array.forEach(callback)
+const array=[1,2,3,4,5]
+
+functions
+
+
+
+
+Python and Javascript
+
+built-in functions (methods) and properties.
+
+
+Some handy pieces of code for Bash

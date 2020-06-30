@@ -57,3 +57,11 @@ For executing a file like that though, there is a permissions issue to solve.
 If we list the files like 'ls -l' we can see there are no execution permissions, so the program won't run.
 
 Run sudo chmod +x “filename”, to make 'filename' executable!
+
+
+Find 
+
+Sed
+
+Grep
+
