@@ -62,6 +62,9 @@ GitHub is a service that provides Git repository hosting.
 
 SSH on github
 
+Advantage over http: we don't need to log in everytime, as long as the ssh-agent is 
+running in the background.
+
 If `ls -al $HOME/.ssh` is empty or 
 If it's not empty and we don't want to use a previous key, 
 
