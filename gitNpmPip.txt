@@ -61,15 +61,21 @@ Each of those files is stored a different location of the system.
 GitHub is a service that provides Git repository hosting. 
 
 SSH on github
-Using the SSH protocol, you can connect and authenticate to remote servers and services. 
 
-If we don't have one already (ls -al $HOME/.ssh should be empty or inexistent)
-we can set one.
+If `ls -al $HOME/.ssh` is empty or 
+If it's not empty and we don't want to use a previous key, 
+
 We create  ssh key 
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
+and put it under `ssh-add ~/.ssh/filename` 
 
+Whenever we want to connect to a server using ssh type:
+`eval "$(ssh-agent -s)"`
 
+We need to add filename.pub to github (settings-->sshkeys)
+
+The code can be copied after typing `cat filename.pub`
 
 =================================================
 
