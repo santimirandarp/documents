@@ -8,7 +8,7 @@
 <h1>Basics about Anchors</h1>
 
 <h2>Brief</h2>
-<p>adapted from HTML <cite><a href='https://developer.mozilla.org/en-US/docs/Web/HTML' title='
+<p>Adapted from HTML <cite><a href='https://developer.mozilla.org/en-US/docs/Web/HTML' title='
 Introduction to HTML'>docs Mozilla</a></cite> licensed under CC-BY-SA2.5.</p>
 <dl>
     <dt><strong>Use relative paths</strong></dt>
@@ -31,9 +31,9 @@ Introduction to HTML'>docs Mozilla</a></cite> licensed under CC-BY-SA2.5.</p>
 </ul>
 <h3>Extended Discussion</h3>
 <p>
-<code>href</code> accepts relative paths (relative to <em>index.html</em> file) 
-the data) and absolute paths (we use the full url to specify a computer plus
-a path to the file.)</p>
+<code>href</code> accepts relative paths (relative to <em>index.html</em>'s folder) and absolute paths (full url to specify a computer plus
+a path to the file.) HTTP protocol allows to access files in a different computer called server, plus some post processing.
+</p>
 <p>
 <code>target</code> has two main values: _self or
 _blank. <em>self</em> opens up the reference on the same window,
@@ -41,26 +41,23 @@ _blank. <em>self</em> opens up the reference on the same window,
 </p>
 <p>
 <code>&#91;title&#93;</code> attribute is available in many other elements.
-Screenreaders, touch screens, keyboard-only users, text-only browsers do not see this feature as it <strong>requires hovering</strong>.</p>
+Screenreaders, touch-screens, keyboard-only users, text-only browsers do not see this feature as it <strong>requires hovering</strong>.</p>
 <h4>A concrete example</h4>
 <p>A full example using relative paths to <code>about.html</code> page 
 would be: </p>
-
 <p><code>&lt;a href="./about.html" title="Opens a new tab on the about
-  page for this website" target="blank"&gt;Go to About Page&lt;/a&gt;</code></p>
-
+  page for this website" target="_blank"&gt;Go to About Page&lt;/a&gt;</code></p>
 <p>A full example using absolute paths would be:</p>
-
 <p><code>&lt;a
 href="http://cdimage.ubuntu.com/lubuntu/releases/20.04/release/lubuntu-20.04-desktop-amd64.iso"
 title=" lubuntu 20.04 will start downloading with the name: lubuntu.iso"
 target="_self" download="lubuntu.iso"&gt;Download Lubuntu 20.04 64-bits
-iso (opens on current window.)&lt;/a&gt;</code></p>
+iso (opens on current window).&lt;/a&gt;</code></p>
 
 <h2>How to write nice and useful URLs</h2>
 <h3>Clean <abbr title="universal resource locator">URL</abbr></h3>
-<p>Would you like to display <em>standardurl/about</em>
- instead of <em>standardurl/about.html</em>? Then read on.
+<p>Would you like to display <em>baseurl/about</em>
+ instead of <em>baseurl/about.html</em>? Then read on.
 </p>
 <h4>Example</h4>
 <p>Suppose on the project folder there are all html files: index.html,
@@ -80,8 +77,7 @@ just using <code>href='/path/to/file#idName'</code>. <code>/path/to/file</code> 
 document (as we are already there.)
 </p>
 <h3>URLs encoding</h3>
-<p>URLs have to be <abbr>ASCII</abbr> encoded, otherwise, the browser handles the
-conversion using %0F, hexadecimal chars. For example
+<p>URLs have to be <abbr>ASCII</abbr> encoded, otherwise, the browser handles the conversion using %0F, hexadecimal chars. For example
 the space is converted to %20 or to a + sign too.</p>
 <p>In this sense, you don't want filenames with spaces or non-ascii characters.
 If you do, the browser will modify it and probably won't look good or

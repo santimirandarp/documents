@@ -1,0 +1,34 @@
+'Break the UI into basic, meaningful parts, and those become your Components.'
+
+MIXING HTML and JS
+
+What is inside the <tags> will be interpreted as HTML, unless we use { }
+Off the tags it's just normal javascript.This is important to understand the code in the files.
+
+Example:
+
+//suposse libraries installed using npm
+from react import React
+from react-dom import ReactDOM; // --> allows us to put html into the .html doc
+const insertThis  = "but good"
+const JSX = <div id="myDiv"> <h1 className="reddish"> The little {insertThis//comment}{//comment} document</h1> </div>
+//Any HTML needs to be wrapped by a single wrapper-element, here the Div.
+ReactDOM.render(JSX, document.getElementById("root")) //replace all js, put the result into the html document.
+//There is also another render() for creating and chaining Components.
+
+
+COMPONENTS
+
+Can be created using functions or classes. The ones using functions are called stateless. 
+We can also render a js variable containing HMTL, as in the Example above.
+
+Function and classes in React start with a capital letter. And they are rendered as 
+<Name/> in any of the render methods. The variable should be rendered {variable} as it's javascript, not HTML.
+
+Components can be exported and imported in another file. For example we could export 
+<Nav/>, <Header/>, <Article/> and <Footer/> and import them in App.js
+Next we create a parent component, containing all the previous components. Finally we use React render to 
+get all done.
+
+Render to the html document. 
+Any HTML in the .html file with an ID can be a target for adding content using React.

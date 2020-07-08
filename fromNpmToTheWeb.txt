@@ -1,17 +1,15 @@
 Suppose we:
-* require many node modules in .js files
+* create a js file to interact with the html.
+* import/require many node modules in this .js file. 
 * link the file in <script> tags
-* compile the page etc.
 
-The problem is the browser has no idea what node modules are, so we need to 
-paste the code in our .js file.
+The browser has no idea what those node modules are, so we need to 
+'paste' the code in our .js file. For this we can use browserify or webpack.
 
-For this we can use browserify of webpack, or something else.
+1. Install browserify with `npm i browserify`
 
-Install browserify with `npm i browserify`
+2. run `npm browserify infile.js outfile.js`
 
-And run `npm browserify infile.js outfile.js`
-
-Link outfile.js in the script tags and the code will run.
+3. Link outfile.js in the script tags and the code will run.
 
 

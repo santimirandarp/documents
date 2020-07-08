@@ -3,6 +3,10 @@ Variables: name for a piece of information. We set it and afterwards access it w
 Bash:
 string="my string"
 array=("elements" *.txt "globs")
+echo ${string} # this could be problematic if string has a dash - cause will be interpreted as an option flag.
+# also, if the string starts with a glob (like *) will be impliying something we don't want. (unless we want globbing).
+echo "${string}" is the correct way.
+printf is another way to print out stuff.
 
 Python
 string = "my string"
@@ -49,3 +53,11 @@ built-in functions (methods) and properties.
 
 
 Some handy pieces of code for Bash
+
+
+Handy methods
+
+Js: push
+Py: append
+
+
