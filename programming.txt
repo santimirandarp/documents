@@ -42,10 +42,18 @@ for(let i=0; i<array.length; i++){
 array.forEach(callback)
 const array=[1,2,3,4,5]
 
-functions
+functions Javascript
 
+Function Statements/Declarations
+function name(){}
 
+Function Expressions
+let thisone = function [name](){
 
+}
+    Anonymoust Functions
+    IIFE
+    Arrow Functions.
 
 Python and Javascript
 
@@ -61,3 +69,36 @@ Js: push
 Py: append
 
 
+CONSTRUCTORS, Javascript.
+
+Constructors are functions that create new objects { }
+
+function Bird(name) {
+  this.name = name;
+  this.color = "blue";
+  this.numLegs = 2;
+}
+
+Then everytime we call this function, we create a new bird :-)
+The values inside all called Own Properties, but it's not all there really is.
+
+They are technically functions, but...
+1. write the name capitalized,
+2. use the word 'this'
+3. don't normally return a value, but define props and vals.
+
+A instance of B: instance means, was A created by B? 
+
+Prototypes: property shared between all instances of an object, 
+for example balls:"round"
+
+We sometimes find String.prototype...because it is shared between all instances of String object. Benefit: we do not define same props again and again for different calls of the constructor.
+
+Own properties are defined inside the object, and shouln't be shared. One example for string could be the length of a string.
+
+The this.prop in a constructor function, will overwrite (literally) anything in the prototype. So we have to be careful there. The same thing in a Constructor.prototype (we are re defining) 
+as prototypes for the object are just inherited from the constructor. 
+
+Javascript engine looks for properties in the object, then in the prototype, and then in the Object Class.
+
+Setting up prototype individually like MyCOnstructor.prototype.length=8 isn't a problem. Setting up MyConstructor.prototype={length:8} will re set the prototype object, and one property is missed forever, the Constructor. So we have to set it up again!!

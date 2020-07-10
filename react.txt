@@ -2,33 +2,44 @@
 
 MIXING HTML and JS
 
-What is inside the <tags> will be interpreted as HTML, unless we use { }
-Off the tags it's just normal javascript.This is important to understand the code in the files.
+- We write normal HTML as a return value of functions. 
+- Inside the HTML we can write any JS but between  { js here }. 
+- Out of the HTML tags we write normal js.
+
+
+HTML differences
+- All attributes are camelcase. className, onClick, etc.
+- Self closing elements STRICTLY NEED the closing slash <img />, <br/>, <input/>, <hr/>
+- All elements can be self closed: <div/>. This has a specific use case: 
+to render a component.
 
 Example:
 
-//suposse libraries installed using npm
+//from npm
 from react import React
-from react-dom import ReactDOM; // --> allows us to put html into the .html doc
+from react-dom import ReactDOM;
 const insertThis  = "but good"
-const JSX = <div id="myDiv"> <h1 className="reddish"> The little {insertThis//comment}{//comment} document</h1> </div>
-//Any HTML needs to be wrapped by a single wrapper-element, here the Div.
-ReactDOM.render(JSX, document.getElementById("root")) //replace all js, put the result into the html document.
-//There is also another render() for creating and chaining Components.
+const JSX = (<div id="myDiv"> <h1 className="reddish"> The little {insertThis} document</h1> </div>)
+//JSX is always equal to a wrapper element.
+ReactDOM.render(JSX, document.getElementById("root")) 
 
+RENDERING
+//1. runs all js, 
+//2. puts the result into the html document.
 
 COMPONENTS
+html can be created using variables, functions or  classes. The last 2 are called Components. If created using function is called **stateless functional component**. Other components are **Stateful**.
 
-Can be created using functions or classes. The ones using functions are called stateless. 
-We can also render a js variable containing HMTL, as in the Example above.
+Components in React start with a capital letter. And they are rendered as 
+<Name/> either in ReactDom.render([comp, var],targetElement) or render( ){ }. 
 
-Function and classes in React start with a capital letter. And they are rendered as 
-<Name/> in any of the render methods. The variable should be rendered {variable} as it's javascript, not HTML.
-
-Components can be exported and imported in another file. For example we could export 
+Components can be exported and imported. For example we could export 
 <Nav/>, <Header/>, <Article/> and <Footer/> and import them in App.js
-Next we create a parent component, containing all the previous components. Finally we use React render to 
-get all done.
+Next we create a parent component, containing all the previous components. Finally we use React render to get all done.
 
-Render to the html document. 
-Any HTML in the .html file with an ID can be a target for adding content using React.
+RENDER TO THE HTML DOCUMENT
+Any HTML in the .html file with an ID can be a target for adding content using React. Example ReactDOM.render(<App/>, document.getElementById('root'))
+
+EXAMPLE OF DOCUMENT USING EXPORT
+
+PROPERTIES
