@@ -23,12 +23,17 @@ const JSX = (<div id="myDiv"> <h1 className="reddish"> The little {insertThis} d
 //JSX is always equal to a wrapper element.
 ReactDOM.render(JSX, document.getElementById("root")) 
 
+
+
 RENDERING
 //1. runs all js, 
 //2. puts the result into the html document.
 
+
+
 COMPONENTS
-html can be created using variables, functions or  classes. The last 2 are called Components. If created using function is called **stateless functional component**. Other components are **Stateful**.
+html can be created using variables, functions or  classes. The last 2 are called Components. If created using function is called **stateless functional component**. Other components are **Stateful**. This components are always created using classes, and define this.state = {} in the constructor() of the class.
+More on it in STATES.
 
 Components in React start with a capital letter. And they are rendered as 
 <Name/> either in ReactDom.render([comp, var],targetElement) or render( ){ }. 
@@ -37,9 +42,37 @@ Components can be exported and imported. For example we could export
 <Nav/>, <Header/>, <Article/> and <Footer/> and import them in App.js
 Next we create a parent component, containing all the previous components. Finally we use React render to get all done.
 
+
+
 RENDER TO THE HTML DOCUMENT
 Any HTML in the .html file with an ID can be a target for adding content using React. Example ReactDOM.render(<App/>, document.getElementById('root'))
 
 EXAMPLE OF DOCUMENT USING EXPORT
 
+
+
 PROPERTIES
+
+<Name key={value}/>
+
+Name is a component either functional or class. If defined as a function we pass (props){props.key} but if using a class component we use render(){this.props.key} to achieve the same thing. 
+
+
+STATES
+
+class MyStatefulComponent extends React.Component    
+{
+constructor(props){
+    super(props);
+    this.state = { posts:"allpostsHere"}
+}
+render() {
+let JSX=<div><h2>New Posts</h2><ul><li>{this.state.name}</li></ul></div>
+return JSX
+}
+}
+
+Stateless functions and stateless components just do not have this 'state' object.
+
+We can also use const name = this.state.name right before the 'return JSX' and pass {name} in the JSX variable, instead of 
+{this.state.name} it's a matter of how readable is the code.
