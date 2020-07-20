@@ -102,3 +102,36 @@ as prototypes for the object are just inherited from the constructor.
 Javascript engine looks for properties in the object, then in the prototype, and then in the Object Class.
 
 Setting up prototype individually like MyCOnstructor.prototype.length=8 isn't a problem. Setting up MyConstructor.prototype={length:8} will re set the prototype object, and one property is missed forever, the Constructor. So we have to set it up again!!
+
+
+CLASSES
+
+Class Declaration
+class Name {
+constructor(optional variables) {
+
+this.variable1 = variablename
+this.variable2 = variablename2
+
+}
+method1 name(){}
+method2 name2(){}
+}
+
+Class Expression
+let Name = class optionalName{
+
+//same stuff
+}
+
+
+Neither class declarations nor class expressions are hoisted, so they have to be declared 
+before we use them.
+
+Methods and constructors are called members, and they are written inside the {} called body here.
+
+constructor(){} is a special method that creates the object when we call let a = new Name()
+
+constructor(){} has to be unique, another method with this name will clash.
+
+a constructor can use the super() keyword to call the constructor of a parent class

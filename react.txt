@@ -9,8 +9,6 @@ MIXING HTML and JS
 
 HTML differences
 - All attributes are camelcase. className, onClick, etc.
-- Self closing elements STRICTLY NEED the closing slash <img />, <br/>, <input/>, <hr/>
-- All elements can be self closed: <div/>. This has a specific use case: 
 to render a component.
 
 Example:
@@ -19,7 +17,7 @@ Example:
 from react import React
 from react-dom import ReactDOM;
 const insertThis  = "but good"
-const JSX = (<div id="myDiv"> <h1 className="reddish"> The little {insertThis} document</h1> </div>)
+const JSX = (<div id="myDiv"><h1 className="reddish"> The little {insertThis} document</h1></div>)
 //JSX is always equal to a wrapper element.
 ReactDOM.render(JSX, document.getElementById("root")) 
 
@@ -32,24 +30,55 @@ RENDERING
 
 
 COMPONENTS
-html can be created using variables, functions or  classes. The last 2 are called Components. If created using function is called **stateless functional component**. Other components are **Stateful**. This components are always created using classes, and define this.state = {} in the constructor() of the class.
+JSX can be created using variables, functions or  classes. The last 2 are called Components. If created using function is called **stateless functional component**. Other components are **Stateful**. This components are always created using classes, and define this.state = {} in the constructor() of the class.
 More on it in STATES.
 
 Components in React start with a capital letter. And they are rendered as 
-<Name/> either in ReactDom.render([comp, var],targetElement) or render( ){ }. 
+<Name/> either in ReactDOM.render([comp, var],targetElement) or render( ){ }. 
 
 Components can be exported and imported. For example we could export 
 <Nav/>, <Header/>, <Article/> and <Footer/> and import them in App.js
 Next we create a parent component, containing all the previous components. Finally we use React render to get all done.
 
+Class components are classes. Clases contain a constructor, and inside an optional super, to the constructor
+of the parent component. It's equivalent to setting a prototype using constructors.
 
+RENDER to html
+Any element with id. Example ReactDOM.render(<Component/>, getElementById("id")>
 
-RENDER TO THE HTML DOCUMENT
-Any HTML in the .html file with an ID can be a target for adding content using React. Example ReactDOM.render(<App/>, document.getElementById('root'))
+        DEFAULT EXPORT
 
-EXAMPLE OF DOCUMENT USING EXPORT
+        //file.js
+        import React from react
+        function Component(){
+        let JSX = <ul><li>Mue</li><li>Je Je</li></ul>
+        return JSX
+        }
+        default export Component
+        //file2.js
+        import React from react
+        import Component from './file'
 
+        function ParentComponent(){
+        let JSX = <div><p>Parent</p><Component/></div>
+        }
+        If we don't export it with a name (in this case Component), we can use any name in place of 
+        import Component from './file'
 
+EXPORT
+//file.js
+import React from react
+function Component1(){
+    let JSX = <ul><Child1/><Child2/></ul>
+        return JSX
+}
+function Component2(){
+    let JSX = <ul><li>Mue</li><li>Je Je</li></ul>
+        return JSX
+}
+//default export Component
+//this would export only Component and any child component
+export Component1, Component2
 
 PROPERTIES
 
@@ -60,19 +89,21 @@ Name is a component either functional or class. If defined as a function we pass
 
 STATES
 
-class MyStatefulComponent extends React.Component    
-{
-constructor(props){
-    super(props);
-    this.state = { posts:"allpostsHere"}
-}
-render() {
-let JSX=<div><h2>New Posts</h2><ul><li>{this.state.name}</li></ul></div>
-return JSX
-}
+class MyStatefulComponent extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = { posts:"allpostsHere"}
+    }
+    render() {
+        let JSX=(<div>
+                <h2>New Posts</h2>
+                <ul><li>{this.state.name}</li></ul>
+                </div>
+                return JSX)
+    }
 }
 
-Stateless functions and stateless components just do not have this 'state' object.
+Stateless functions and stateless components just do not have this 'state' object. On the other hand, props is not defined, and created automatically from the attributes/properties.
 
 We can also use const name = this.state.name right before the 'return JSX' and pass {name} in the JSX variable, instead of 
 {this.state.name} it's a matter of how readable is the code.
