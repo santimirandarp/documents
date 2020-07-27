@@ -91,7 +91,7 @@ STATES
 When react detects that this.state has changed, it re-renders the component.
 BUT states shouldnt be modified as we would do: this.state.something = 'new value'
 it should be modified using setState({new state here})
-The initial value of state is given in the constructor.
+The **initial value** of state is given in the constructor.
 
 class MyStatefulComponent extends React.Component{
     constructor(props){
@@ -99,37 +99,20 @@ class MyStatefulComponent extends React.Component{
         this.state = { posts:"allpostsHere"}
     }
     render() {
-        let JSX=(<div>
+    const myposts = this.state.posts
+    const JSX=(<div>
                 <h2>New Posts</h2>
-                <ul><li>{this.state.name}</li></ul>
-                </div>
-                return JSX)
+                <ul><li> We can render all posts like this: {this.state.posts}</li>
+                <li> Or we can render like this {myposts}</li>
+                <li>Second method pollutes less the markup</li>
+                </ul>
+                </div>)
+                return JSX
     }
 }
 
-Stateless functions and stateless components just do not have this 'state' object. On the other hand, props is not defined, and created automatically from the attributes/properties.
+Stateless functions and stateless components just do not have this 'state' object. 
 
-We can also use const name = this.state.name right before the 'return JSX' and pass {name} in the JSX variable, instead of 
-{this.state.name} it's a matter of how readable is the code.
-
-
-Props vs State
-We can access the props on a component, from the class itself, suing this.props.name
-But what if we want to change a prop like so:
-
+We pass state from parent to children using props (couldn't be easier).
 import React from "react"
-
-class App extends React.Component {
-    render() {
-        this.props.something = "some new value"
-        return (
-            <div>
-                <h1>Is state important to know?</h1>
-            </div>
-        )
-    }
-}
-
-Well, this is not recommended for React. And that's when state comes into place. 
-props are inmutable values, we set them, using a condition, or a function but that's it.
 
