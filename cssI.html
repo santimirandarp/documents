@@ -26,7 +26,7 @@
         <pre><code>&lt;div class= 'className1 className2'&gt; Some Random Text&lt;div&gt;</code></pre>
     </p>
 
-    <h2> Brief</h2>
+    <h2>Brief</h2>
 
     <p>Elements come with custom styling (user agent stylesheet), or inherit a property, 
     or can be styled using any selector. Inherited props can be overwritten, assigned props 
@@ -39,44 +39,27 @@
     <p><strong>Some</strong> properties are inherited (passed on from parents to children). An example 
     is color (with the exception of anchors), fonts (with exception of input forms), text-align, background.
     We expect those to be inherited.    
-	On the other hand width, margin, border, padding <strong>are not inherited</strong>.</p>
+	On the other hand width, margin, border, padding <strong>are not inherited</strong>.
     </p>
     <h3 id="clashes">Clashes</h3>
-    
-    <p>An elements styling then, can be set on its own (by us or agent's stylesheet)  or inherited.
-    If we reassing an inherited property, as we expect, it gets overwritten. 
-    </p>
     <pre>
         body{color:black;}
 
         h1 {color:red;} //overwrittes black
         
-        h1 span {color:green;} //overwrittes red
-        
-        p, h3, h4 {//inherit color from body!} //inherit
+        h1>span {color:green;} //overwrittes red
+        //What color would a "p"-element text be?    
     </pre>
-
-    <p>What happens when 2 rules refer to the same HTML element? The algorythm decides which one to apply.
+    <p>What happens when 2 rules refer to the same HTML element? The algorithm decides which one to apply.
     How?</p>
     <p>Two concepts matter here:</p>
     <ul>
         <li>Specificity: <u>The Rule of 4 places</u></li>
         <li>Source Order (aka Cascade): Last rule defined applies.</li>
     </ul>
-
     
     <h2>CSS and the Browser</h2>
-
-    <p>    Browsers ignore chunks of code they do not understand either properties-values or blocks (if the selector is
-    not understood).
-    Dom is different to View Source. The browser may correct errors,
-and modify the DOM if js is being applied.
-This error correction might be different in diff browsers. So it's a
-good idea to validate the code in html and css validator.
+    <p>Browsers ignore chunks of code they do not understand either property-value pairs or blocks (if the selector is not understood). DOM is different to View Source. The browser may correct errors, and modify the DOM if js is being applied. 
     </p>
-    <p>
-We can select inspect elements (selecting on the page) or in the DOM.
-The css rules appear on the right, crossed over rules might mean different things:
-overwritten rule, rule not understood by the browser, doesn't exist, etc.</p>
 </body>
 </html> 
