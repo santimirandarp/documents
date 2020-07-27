@@ -90,11 +90,18 @@ They are technically functions, but...
 A instance of B: instance means, was A created by B? 
 
 Prototypes: property shared between all instances of an object, 
-for example balls:"round"
+for example balls:"round". Prototype is an object appended to the constructor. 
+And prototypes are inherited, so always Constructor.protoype is inherited from Object.prototype
+In the Father object prototype there are methods shared between all instances. For example, 
+string.prototype contains a length, etc. etc. Whenever we want a function or property that should 
+be on every String, then chances are high that if it exists, ti will be in the prototype.
 
 We sometimes find String.prototype...because it is shared between all instances of String object. Benefit: we do not define same props again and again for different calls of the constructor.
 
-Own properties are defined inside the object, and shouln't be shared. One example for string could be the length of a string.
+Own properties are properties defined in the constructor function, not in the prototype.
+
+In the same way, when using classes, if we want a property or method to be shared between all instances 
+of the class, then we define className.prototype = {...}. Though in this case, functions can be defined out of the constructor but still inside the class, and I'm not sure what role this plays.
 
 The this.prop in a constructor function, will overwrite (literally) anything in the prototype. So we have to be careful there. The same thing in a Constructor.prototype (we are re defining) 
 as prototypes for the object are just inherited from the constructor. 
@@ -102,6 +109,28 @@ as prototypes for the object are just inherited from the constructor.
 Javascript engine looks for properties in the object, then in the prototype, and then in the Object Class.
 
 Setting up prototype individually like MyCOnstructor.prototype.length=8 isn't a problem. Setting up MyConstructor.prototype={length:8} will re set the prototype object, and one property is missed forever, the Constructor. So we have to set it up again!!
+
+Writing an equivalent Constructor  and Class
+function Animal(specie, genre){
+    this.specie = specie;
+    this.genre = genre;
+}
+Animal.prototype = {constructor:Animal, 
+fullName:this.specie + ' ' + this.genre}
+let myAnimal = new Animal("je", "je")
+
+class Animal2{
+constructor(specie, genre){
+    this.specie = specie;
+    this.genre = genre; }}
+//we dont need to declare the constructor when using classes.
+Animal2.prototype = {
+fullName:this.specie + ' ' + this.genre}
+let myAnimal2 = new Animal2("je", "je")
+
+console.log(myAnimal, myAnimal2)
+
+SUPERTYPES
 
 
 CLASSES

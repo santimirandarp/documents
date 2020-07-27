@@ -88,6 +88,10 @@ Name is a component either functional or class. If defined as a function we pass
 
 
 STATES
+When react detects that this.state has changed, it re-renders the component.
+BUT states shouldnt be modified as we would do: this.state.something = 'new value'
+it should be modified using setState({new state here})
+The initial value of state is given in the constructor.
 
 class MyStatefulComponent extends React.Component{
     constructor(props){
@@ -107,3 +111,25 @@ Stateless functions and stateless components just do not have this 'state' objec
 
 We can also use const name = this.state.name right before the 'return JSX' and pass {name} in the JSX variable, instead of 
 {this.state.name} it's a matter of how readable is the code.
+
+
+Props vs State
+We can access the props on a component, from the class itself, suing this.props.name
+But what if we want to change a prop like so:
+
+import React from "react"
+
+class App extends React.Component {
+    render() {
+        this.props.something = "some new value"
+        return (
+            <div>
+                <h1>Is state important to know?</h1>
+            </div>
+        )
+    }
+}
+
+Well, this is not recommended for React. And that's when state comes into place. 
+props are inmutable values, we set them, using a condition, or a function but that's it.
+

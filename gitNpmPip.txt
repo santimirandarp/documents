@@ -18,6 +18,9 @@ Added files are tracked. Unfortunately, there are too many words used for added 
 (option is optional, that's why it's between sq brackets)
 * git commit -am "indented gulpfile"
 Slightly more advanced commands
+* git push cleaning origin // git push --> git push currentBranch origin
+(git push what towhere) same fr git pull. for branches the origin isn't the master in the remote repo. 
+but it is the branch itself so we're pushing cleaning to cleaning
 * git pull & git push
 * git clone giturl
 * git remote add origin url

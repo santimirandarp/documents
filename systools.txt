@@ -9,7 +9,10 @@ sed change/write file
 apt dist-upgrade (full upgrade, also the kernel).
 wget url/fileToDownload/etc
 
-systools: watch, dmesg, journalctl, syslog, lsblock, fdisk, ping, e4defrag
+systools: watch, dmesg, journalctl, syslog, lsblock, fdisk, ping, e4defrag, crontab/cron
+
 
 shutdown  -h 20 (shutdown at a specific hour), reboot, etc.
 shutdown -c to cancel the shutdown.
+
+crontab -e to edit, cron runs commands at specific times of the day for us.
