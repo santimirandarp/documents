@@ -128,8 +128,9 @@ React Core Concepts
 * A method defined in the parent is inherited to children (class' body =  prototype) 
 * A parent's method can be invoked in the children to change the parent.
 * A method in the children is invoked just using the method's name. Example <Child onClick={this.handleClick}/>
-
+* An example that is not an event handler is <Child electroprop={this.electrofn}/> and then using this.prop in class components or just props.electronprop(parameters) to the functional component.
 * for methods == normal functions, binding is necessary. for methods==arrow functions no binding necessary (but there downsides probably).
+
 Design Paradigm 
                         -------------pass state as prop-----> 
         Parent(stateful)                                      children(stateless)
