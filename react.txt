@@ -114,5 +114,24 @@ class MyStatefulComponent extends React.Component{
 Stateless functions and stateless components just do not have this 'state' object. 
 
 We pass state from parent to children using props (couldn't be easier).
-import React from "react"
 
+From reactjs.org:
+
+* Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be extracted to a separate component.
+
+* The only place where you can assign this.state is the constructor.
+This implies that setState({prop:this.state...}) is wrong and that `let this.state  = this.state + 1` is also wrong. So now we now how to use state.
+
+React Core Concepts
+* Top Level Stateful component, and then functional, stateless children.
+* Parent affects child by passing state through props
+* A method defined in the parent is inherited to children (class' body =  prototype) 
+* A parent's method can be invoked in the children to change the parent.
+* A method in the children is invoked just using the method's name. Example <Child onClick={this.handleClick}/>
+
+* for methods == normal functions, binding is necessary. for methods==arrow functions no binding necessary (but there downsides probably).
+Design Paradigm 
+                        -------------pass state as prop-----> 
+        Parent(stateful)                                      children(stateless)
+                        <------------use method of parent----
+       
