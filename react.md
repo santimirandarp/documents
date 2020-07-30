@@ -29,16 +29,23 @@ _const JSX_ is assigned to this native react notation, JSX.
 2. Turns components into html
 3. Puts the result into the html document.
 
+### Render 
+
+JSX we write will be rendered to the HTML page, inside an element with an id. Example `ReactDOM.render(<Component/>, getElementById("id")>`. We can run React in the whole site or just parts.  
+
+Details of this will be understood by examples. 
+
+-----------------
+
 ## Components
+
+This is the main character of React. 
 
 _JSX_ code can be created using variables, functions or classes. The last 2 are called Components. Functions are **stateless functional components**; Classes can be stateless or stateful. Stateful components define `this.state = {}` in the `constructor()` of the class. More on it in later.
 
 * Components can be exported and imported as normal javascript. 
 
 Class components are classes. Clases contain a `constructor`, and inside an optional `super`, to the constructor of the parent component. It's equivalent to setting a prototype using constructors.
-
-## Render 
-Any element with id. Example ReactDOM.render(<Component/>, getElementById("id")>. We can run React in the whole site or just parts.
 
 ## Import Export
 
@@ -62,7 +69,7 @@ let JSX = <div><p>Parent</p><Component/></div>
 ```
 ------------------------------------------
 
-## PROPERTIES
+## Properties
 
 No easier way than an example. For functional components:
 
@@ -120,36 +127,40 @@ class MyStatefulComponent extends React.Component{
 * We pass state from parent to children using props (couldn't be easier).
 
 -------------------------
+## Some Cool Ideas
 
 From reactjs.org:
 
-* Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be extracted to a separate component.
+> Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be extracted to a separate component.
 
-* The only place where you can assign this.state is the constructor.
-This implies that setState({prop:this.state...}) is wrong and that `let this.state  = this.state + 1` is also wrong. So now we now how to use state.
+> The only place where you can assign this.state is the constructor.
 
-React Core Concepts
+This implies that `setState({prop:this.state...})` is wrong and that `let this.state  = this.state + 1` is also wrong. So now we now how to use state.
+
+## React Core Concepts
+
 * Top Level Stateful component, and then functional, stateless children.
 * Parent affects child by passing state through props
 * A method defined in the parent is inherited to children (class' body =  prototype) 
-* A parent's method can be invoked in the children to change parent's state ( are those the famous 'callbacks?').
-* A method in the children is invoked just using the method's name. Example <Child onClick={this.handleClick}/>
+* A parent's method can be invoked in the children to change parent's state.
+* A method in the children is invoked just using the method's name. Example `<Child onClick={this.handleClick}/>`
 * An example that is not an event handler is <Child electroprop={this.electrofn}/> and then using this.prop in class components or just props.electronprop(parameters) to the functional component.
 * for methods == normal functions, binding is necessary. for methods==arrow functions no binding necessary (but there downsides probably).
 
-Design Paradigm 
+
+### Design Paradigm 
                         -------------pass state as prop-----> 
         Parent(stateful)                                      children(stateless)
                         <------------use method of parent----
        
 
-Wait, where do I write my JS?
+## Wait, where do I write my JS?
 
-1. Remember we have class components and function components. We can write fn in the class body, sort of prototype. 
+1. Remember we have class components and function components. We can write fn in the **class body**, sort of prototype. 
 
-2. We can write fn inside the render method too. This is, either before the return value, or 
-inside the HTML tags, not as pure JS but as JSX. The JS/JSX that we write here is usually more standard, for example, if else statements, declare variables. Example I sometimes use let name = this.state.name
-which is just a way to avoid HTML/JSX cluttering later on.
+2. Inside the render method **before the return value** or inside the **HTML tags**. Not as pure JS but as JSX. 
 
-3. Another important way we can run JS. And this in built-in methods. Those are also written in the class body: ComponentDidMount() etc etc. They run in specific times, and so the inner code is executed on those particular times, without being called.
+3. In **built-in methods**. Those are also in the class body: `ComponentDidMount()` etc. These run at specific times.
+
+--------------------------
 
