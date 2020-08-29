@@ -1,6 +1,7 @@
 //preconceptions: there is no other way to write a method inside a constructor than
 //to use the keyword this. But there is a shortcut for objects and class' body.
 //its always a function expression, and preferably not an arrow function, or "this will be undefined".
+```js
     class InsideConstructor{
         constructor(name){
             this.name = name
@@ -52,8 +53,8 @@
     let ExampleInsideFunctionPrototype = new InsideFunctionPrototype(nam("Example 4")
     classInPrototype.nameByTwo()
     console.log(ExampleInsideConstructor, ExampleInsideClass, ExampleInsidePrototype, ExampleInsideFunctionPrototype)
-
-Conclusions
+```
+# Conclusions
   1. Example 1 and 2 are equivalent in a sense, but in example 1 the method is created in every object 
   2.a Do not use arrow fn in prototype, the this is undefined.
   2.b Arrow functions do work with the this keyword inside the constructor (in a constructor function or 
@@ -61,7 +62,7 @@ Conclusions
   4. We don't need to redefine constructor when using classes.
   5. Method in function prototype != method inside class prototype
 
-MAIN conclusion
+## Main conclusion
 Use functions inside body class, or in constructor function's prototype. Use Function expression (the shorthand).
 A method inside a class, that will execute the 'this' keyword, should be written 
 inside the class, and not in the class prototype.

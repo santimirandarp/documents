@@ -1,3 +1,0 @@
-remark.js is a script that allows us to write presentations in html, 
-so everyone can connect to a webpage. We could always link to a download file too, 
-and get a pdf or a md file.

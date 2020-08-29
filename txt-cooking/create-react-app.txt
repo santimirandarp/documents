@@ -1,5 +1,0 @@
-There are 2 files necessary for the project to work:
-
-1. src/index.js also called entry file
-2. public/index.html also called the file template.
-3. all new files have to be under src, either in the main dir or subdirs
