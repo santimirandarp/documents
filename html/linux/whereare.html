@@ -1,0 +1,27 @@
+<html>
+  <body>
+  <h1>Where do programs live in linux?</h1>
+  <p>There are many package installers now. There is the traditional installers and snap, flatpack, umake.
+  We can divide installations in 2 groups according to permissions:</p>
+    </p>
+    Sudo, cross-user installed programs (binary files) sit on <code>/usr/bin</code> or <code>/usr/local/bin</code>. Also <code>/snap/bin</code> for snap-installed packages. <code>/bin</code> and <code>/sbin</code> are 
+    the bare bones of linux and programs shouldn't be there. Sudo is needed on those programs exactly for the sake of putting the program and dependencies on the root directory structure. This are global-scoped installations. 
+    </p>
+    <p>
+    User scoped installations 
+    follow the similar paths <code>~/.local/bin</code>. This installation do not require sudo powers. 
+    <code>umake</code> installed packages sit on <code>/home/santi/.local/share/umake/bin</code>. </p>
+    <p> Some programs might ask for adding a the address to the $PATH variable, after putting the binary files somewhere. Of course we can put the binaries on <code>/usr/bin</code> or <code>~/.local/bin</code> and all should be good.
+    In case we add a new directory, the path to the bin can be set into <code>~.profile</code> or changing <code>/etc/environment
+    </code>. In any case afterwards <<code>source ~.profile</code> or <code>source /etc/environment
+    </code> has to be run to activate the changes. If we change <code> /etc/environment</code> it might be necessary to source the 
+    profile anyways. We can check that typing <code>echo $PATH</code> on the terminal.</p>
+    <h3>Another Anomaly</h3>
+    <p>If we do not write <code>sudo npm 'node_module_name' </code>, and this might be a good idea as we don't know how safe node is, the packages will 
+    be in the user directory <code>~/node_modules/bin</code>. My Laptop for example contains <em>gulp, sass and live-server</em>. This is important because for running those commands we need to add that directory to the $PATH variable!</p>
+    <h2>Firefox</h2>
+    <p> Developer Edition is installed with umake, installed with apt. Then the path must be added to the path variable and as the programm is user-scoped the variable should be declared accordingly. So the proper place is ~/.profile 
+    and remember we have to use export. There is a warning that populates the screen. It can be solved using 
+    <code>sudo apt-get remove fcitx; sudo apt-get autoremove </code>. Then the warning dissapears and everything seems to work fine.</p>
+  </body>
+</html>

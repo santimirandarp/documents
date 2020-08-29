@@ -1,0 +1,28 @@
+<html>
+  <body>
+
+  <h2>Variables, Symlinks, Aliases</h2>
+  <h3>Setting a Variable in Linux</h3>
+  <p>Every now and then we have to set up a variable. There are many ways to do it.</p>
+  <ol>
+    <li><code>MYVAR=name</code> sets up a session variable (useful on the same terminal). ex:
+      LINUX='cd ~/a/b/c' and executed as $LINUX.</li>
+    <li>for user-scoped <code>~/.bashrc</code>, <code>~/.profile/</code> etc. <code>export MYVAR=name</code>.</li> 
+    <li>System wide, persitent can be set on <code>/etc/profile</code> as <code> export MYVAR=name</code>
+    </li>
+    <li>System Wide, persistent are also set on <code>/etc/environment/</code>
+      Some system wide stuff can be found at <code>/etc/bash.bashrc</code>. This file is overwritten by user-scoped bash config file (bashrc). I've changed the way it outputs the PS1 which is the prompt, so it doesn't prints the absolute path, but only the last folder (pwd helps with the full path f it is needed). This way the prompt is not overloaded of words. 
+    </li>
+  </ol>
+  <h4>Sources</h4>
+  <p>See https://www.tutorialspoint.com/unix/unix-environment.htm for help.</p>
+  <p>This type of variables are used by other programs. For example, when typing <code> :edit </code> in <em> broot
+  </em> the program invokes the $EDITOR variable that should be set to <code>/usr/bin/vim</code> or some editor. 
+  </p>
+  <p>the command env outputs all the environment variables. set prints all the shell variables.</p>
+  <h3 id="add-a-program-to-path">Add a program to $PATH</h3>
+  <p>echo $PATH  prints all directories added to the path variable. Variables in linux are with the pound sign. Add them on 
+  .profile by editing it like so: PATH=/directory/to/add:$PATH</p>
+  <p>On sass, for example, for global installing, the package can be downloaded from github and then the file added to the path, where the path points to the binarie/program/executable. A similar (but not equivalent) installatino  can be achieved using &#39;npm install -g sass&#39;</p>
+  </body>
+</html>

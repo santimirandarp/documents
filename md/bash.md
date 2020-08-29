@@ -49,7 +49,7 @@ echo ${string}
 The `${}` is optional, but it's very useful if the string:
 
 * has a `-` to avoid being confused with a command's flag.
-* to avoid globbing (*), in case it contains a wildcard. 
+* to avoid globbing (\*), in case it contains a wildcard. 
 
 ${string} is better than $string, but sometimes it's just not necessary.
 
@@ -71,3 +71,61 @@ A few useful bits:
 ### Switches
 
 ### Functions
+
+
+## SysTools
+
+Search on the history file (~/bash_history)
+history | grep [-options] 'string' --> get the line number
+Execute `!line number`
+
+
+* Explore the file
+history | head  // takes only first lines (i.e old ones) of the stout.
+history|tail
+cat filename|less
+less filename // similar effect!
+* !name will execute the last instance of name. Example: !vim
+* !! --> last command.  ex: sudo !!
+* Aliases
+define on ~/.bash_aliases
+alias name='something/like/a/path'
+* Symlinks
+It's a file (folder or file) that acts like the original linked document.
+we run ln -s path/to/fileOrFolder /where/to/place/it 
+It's different and more powerful than aliases.
+* Help
+```
+man command
+tldr command
+```
+* Terminal Shortcuts
+```
+C + l to clear the cli
+C + u to remove (undo) the typed command
+C + a beginning of line
+C + e end of line.
+```
+* A few random commands
+ifconfig for network info
+iwconfig for wireless connection info
+lsusb list hardware/media connected to the computer
+lspci list pci devices (cards, keyboard, usbs, etc)
+lsblk list disks attached
+htop process viewer
+
+# Some gnu utilities
+
+* cat head tail less
+* find (file)
+* grep (find in file or STDOUT)
+* grep prints to stdout so it can be redirected like so
+* *.txt | grep Hello >> find.txt
+* sed change/write file
+* apt dist-upgrade (full upgrade, also the kernel).
+* wget url/fileToDownload/etc
+* systools: watch, dmesg, journalctl, syslog, lsblock, lspci, fdisk, e4defrag, crontab/cron
+* shutdown  -h 20 (shutdown at a specific hour), reboot, etc.
+* shutdown -c to cancel the shutdown.
+* crontab -e to edit, cron runs commands at specific times of the day for us.
+

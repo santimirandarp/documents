@@ -1,0 +1,24 @@
+
+<html>
+  <body>
+  <h1>Window Manager</h1> 
+  <p>In lubuntu, the default WM is openbox. Openbox handles:
+  </p>
+  <ol>
+    <li>The window borders, decorations, placement</li>
+    <li>what is triggered with keybindings, clicks</li>
+    <li>the menu icons, text and arrangement</li>
+    <li>session start</li>
+  </ol>
+  <p>
+  The first two can be found on the config file for openbox.
+  You should copy the file from /etc/xdg/openbox/rc.xml to ~/.config/openbox/rc.xml to edit it, if that file does not already exist. The file contains a ton of options. 
+  Most interesting stuff is keybindings. Again with a myriad of options.</p>
+  <p>The third one is managed by openbox-menu, don't know where the config file is, but right clicking on it there is a 'configure panel' option. We can customize the app itself and also the applications (widgets) running on it. <b>A good alternative could be to autostart dmenu.</b></p>
+  <p>After installing openbox, or if it comes installed, a new session option is available
+  for us. It is a complex thing and I don't know more than this.
+  </p>
+  <h3>Source</h3>
+  <a href="http://openbox.org/wiki/Help:Bindings">Openbox Hotkeys Wiki</a>
+  </body>
+</html>
