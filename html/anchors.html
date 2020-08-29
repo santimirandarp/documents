@@ -18,74 +18,80 @@ Introduction to HTML'>docs Mozilla</a></cite> licensed under CC-BY-SA2.5.</p>
     <dt><strong>Link to elements</strong></dt>
     <dd>link to section of a different HTML by the url plus #sectionId.</dd>
     <dt><strong>Improve URL</strong><dt>
-    <dd><em>index.html</em> technique to improve the URL shown to the users.</dd>
+    <dd><em>index.html</em> simplify the URL shown to the users.</dd>
 </dl>
-
 <h2>Anchors' Attributes</h2>
 <p>Frequent attributes: </p>
 <ul>
-<li>href for hypertext reference,</li>
-<li>target:[self|_blank]</li>
-<li>title w supplementary info about the link.</li>
+<li>href, target, title</li>
 <li>download: &lt;a href='file.extension' download='nicename.ext'&gt; good text &lt;a&gt;</li>
 </ul>
 <h3>Extended Discussion</h3>
 <p>
-<code>href</code> accepts relative paths (relative to <em>index.html</em>'s folder) and absolute paths (full url to specify a computer plus
+<b>href</b> accepts relative paths (relative to <em>index.html</em>'s folder) and absolute paths (full url to specify a computer plus
 a path to the file.) HTTP protocol allows to access files in a different computer called server, plus some post processing.
 </p>
 <p>
-<code>target</code> has two main values: _self or
+<b>target</b> has two main values: _self or
 _blank. <em>self</em> opens up the reference on the same window,
 <em>blank</em> does it on a new tab. <code>download</code> only works for same origin URLs, this is, relative paths (in the same computer i.e server.)
 </p>
 <p>
-<code>&#91;title&#93;</code> attribute is available in many other elements.
-Screenreaders, touch-screens, keyboard-only users, text-only browsers do not see this feature as it <strong>requires hovering</strong>.</p>
+<code>&#91;title&#93;</code> attribute is available in many other elements. This won't help for SR, phones, tablets.
+</p>
 <h4>A concrete example</h4>
-<p>A full example using relative paths to <code>about.html</code> page 
-would be: </p>
-<p><code>&lt;a href="./about.html" title="Opens a new tab on the about
-  page for this website" target="_blank"&gt;Go to About Page&lt;/a&gt;</code></p>
-<p>A full example using absolute paths would be:</p>
-<p><code>&lt;a
-href="http://cdimage.ubuntu.com/lubuntu/releases/20.04/release/lubuntu-20.04-desktop-amd64.iso"
+<p>Example for local and full paths</p>
+<pre>
+<code>
+&lt;a href="./about.html" 
+title="Opens a new tab on the about page for this website" 
+target="_blank"&gt;Go to About Page&lt;/a&gt;
+</code>
+</pre>
+<pre>
+<code>&lt;a
+href="https://domain.com/path/to/file"
 title=" lubuntu 20.04 will start downloading with the name: lubuntu.iso"
 target="_self" download="lubuntu.iso"&gt;Download Lubuntu 20.04 64-bits
-iso (opens on current window).&lt;/a&gt;</code></p>
-
+iso (opens on current window).&lt;/a&gt;
+</code>
+</pre>
 <h2>How to write nice and useful URLs</h2>
 <h3>Clean <abbr title="universal resource locator">URL</abbr></h3>
 <p>Would you like to display <em>baseurl/about</em>
  instead of <em>baseurl/about.html</em>? Then read on.
 </p>
 <h4>Example</h4>
-<p>Suppose on the project folder there are all html files: index.html,
-about.html, contact.html, whatever.html. Now we make new directories named: about,
-contact, whatever. Next we put about.html under <em>about</em> directory and rename the
-file about.html as index.html. 
-Last, we follow the same procedure with every file.</p>
+<p>Suppose on the project folder there are all html files: <b>index.html</b>,
+<b>about.html</b>, <b>whatever.html</b>. Now we make new directories named: about,
+ whatever. Next we put about.html under <em>about</em> directory and rename the
+file <b>about.html</b> &rarr; <b>index.html</b>. 
+Follow the same procedure with each file.</p>
 <p>On the main index.html file we link to about as <code>href="about"</code>
 and analogous for the remaining files. When you click on <em>about</em> the
 browser will display a nicer url.</p>
 <h3>Linking to a section of any HTML page</h3>
 <p>Elements with an id as in
 <pre>
-<code>&lt;section id="idName"&gt; content &lt;section/&gt;</code>
-</pre> can be linked in an anchor's <strong>h</strong>yper <strong>ref</strong>erence attribute too,
-just using <code>href='/path/to/file#idName'</code>. <code>/path/to/file</code> should be omitted for a section in the same
-document (as we are already there.)
+<code>
+&lt;section 
+id="idName"&gt;
+content &lt;section/&gt;
+</code>
+</pre> 
+can be linked in an anchor's href too, just using <code>href='/path/to/file#idName'</code>. <code>/path/to/file</code> should be omitted for a section in the same document (as we are already there.)
 </p>
-<h3>URLs encoding</h3>
-<p>URLs have to be <abbr>ASCII</abbr> encoded, otherwise, the browser handles the conversion using %0F, hexadecimal chars. For example
-the space is converted to %20 or to a + sign too.</p>
-<p>In this sense, you don't want filenames with spaces or non-ascii characters.
-If you do, the browser will modify it and probably won't look good or
-trusty. And for sure it won't look professional.</p>
-<h3></h3><code>&#91;href&#93;='mailto:'</code>
-<p><a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+<h3>Encoding</h3>
+<p>URLs have to be <abbr title='American Standard Code for Informtion Interchange'>ASCII</abbr> encoded, otherwise, the browser handles the conversion using %0F, hexadecimal chars. For example the space is converted to %20 or + .</p>
+<p>In this sense, you don't want filenames with spaces or non-ascii characters. If you do, the browser will modify it and probably won't look good, trusty or professional.</p>
+<p>Something similar happens for mails:</p>
+<code>&#91;href&#93;='mailto:'</code>
+<p>
+<a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
 Send mail with cc, bcc, subject and body
-</a></p>
+</a>
+because any parameter on the href is part of the URL, which is ascii encoded.
+</p>
 <ul>
 <li>Spaces percent-escaped <code>%20</code></li>
 <li>finish recipient using question mark <code>?</code></li>

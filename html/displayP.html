@@ -1,135 +1,126 @@
 <html>
 
-    <head>
-        <link rel="stylesheet" href="index.css">
-    </head>
+  <head>
+    <link rel="stylesheet" href="index.css">
+  </head>
 
-    <body>
-        <h1 id="display-property">Display Property & Floats</h1>
-        Any element in a page is either a block, inline-block or inline. Knowing the properties of those three, we know most of the page.
-        <h2>Block Element</h2>
-        <ul>
-            <li>
-                Blocks are boxes. Default is start on a new line, occupy parent width, have a line end (\n).
-            </li>
-            <li>
-                Centering. If width less than 100% <code>margin:0 auto;</code> h-centers the block on its parent container. <strong>Note</strong>: it has no effect if the width is not set (or is set to 100%).
-            </li>
-        </ul>
-        <h2>Inline-Block Element</h2>
-        <ul>
-            <li>Inline-blocks don&#39;t start on a new line. Cover just width+padding. Do not end a line (\n).</li> 
-            <li>Blocks behavior: wrap completely or do not wrap at all.</li>
-            <li>
-                &lt;img&gt; and &lt;a&gt; are inline-block elements, the display can be modified.
-            </li>
-        </ul>
-        <h3 id="more-values-for-display">More values for display</h3>
-        <p>More values for display are inline and none. None is close to visibility:hidden, but here the space remains, and the content does not dissapear from the DOM.</p>
-        <h2>Floats</h2>
-        <p>Floated elements floats on its parent element. We tell this by using <code>float:none|right|left|inherit;</code>. <code>float: none;</code> is the default value.
-        </p>
-        <h2> Inner and Outer display</h2>
-        <ul>
-            <li> <strong>Inner:</strong> changes the way direct children behave. Ex: flex, grid, table</li>
-            <li> <strong>Outer:</strong> changes the element's itself display.  inline, block, inline-block.</li>
-        </ul>
-        <p>Both can be specified sometimes. Example display:inline-flex; will set a
-        inline outer display and flex inner display (for its children).
-        Remember that even though we can change the display, the real display is not changed.
-        And so as block inside inlines is not allowed, an anchor with display:block won't be able to contain
-        a paragraph or might cause conflicts at some point. <strong> Do not put blocks inside inline elements.</strong> </p>
+  <body>
+    <h1 id="display-property">Display Property & Floats</h1>
+    <p>
+    Any element in a page is either a block, inline-block or inline. 
+    </p>
 
-        <h2>Size of Elements
-        </h2>
-        <p>
-        When there is no content default height is 0.
-        <br>
-        Padding and Margin dimensions % values are relative to the width (inline size), always.
+    <h2>Block Element</h2>
+    <ul>
+      <li>
+        Blocks are boxes. Starts on a new line, fills parent width, has a line end (\n).
+      </li>
+      <li>
+        Centering. If width less than 100% <code>margin:0 auto;</code> h-centers the block on its parent container. <strong>Note</strong>: it has no effect if the width is not set (or is set to 100%).
+      </li>
+    </ul>
 
-        This is why padding:10%, or margin:15% give a 'square feeling'.
+    <h2>Inline-Block Element</h2>
+    <ul>
+      <li>Inline-blocks don&#39;t start on a new line. Cover just width+padding. Do not end a line (\n).</li> 
+      <li>Blocks behavior: wrap completely or do not wrap at all.</li>
+      <li>
+        &lt;img&gt; and &lt;a&gt; are inline-block elements, the display can be modified.
+      </li>
+    </ul>
+    <h3 id="more-values-for-display">More values for display</h3>
+    <p>More values for display are inline and none. None is close to visibility:hidden, but here the space remains, and the content does not dissapear from the DOM.</p>
+    <h2>Floats</h2>
+    <p>Floated elements floats on its parent element. We tell this by using <code>float:none|right|left|inherit;</code>. <code>float: none;</code> is the default value.
+    </p>
 
-        We can now change height to vh units and make it change with viewport's height.
-        </p>
+    <h2> Inner and Outer display</h2>
+    <ul>
+      <li> <strong>Inner:</strong> changes the way direct children behave. Ex: flex, grid, table</li>
+      <li> <strong>Outer:</strong> changes the element's itself display.  inline, block, inline-block.</li>
+    </ul>
+    <p>Both can be specified sometimes. Example display:inline-flex; will set a
+    inline outer display and flex inner display (for its children).
+    Remember that even though we can change the display, the real display is not changed.
+    And so as block inside inlines is not allowed, an anchor with display:block won't be able to contain
+    a paragraph or might cause conflicts at some point. <strong> Do not put blocks inside inline elements.</strong> </p>
 
+    <h2>Size of Elements </h2>
+    <ul>
+      <li> When there is no content default height is 0.</li> 
+      <li> Padding and Margin dimensions % values are relative to the width (inline size), always.</li> 
+      <li> This is why padding:10%, or margin:15% give a 'square feeling'.</li> 
+      <li> We can now change height to vh units and make it change with viewport's height.</li> 
+    </ul>
 
-        <h2>Box Sizing</h2>
-        <pre>
-html {
-  box-sizing: border-box;
-}
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-        </pre>
+    <h2>Box Sizing</h2>
+    <pre>
+  html {
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+    </pre>
+    <p>h &amp; w do are not props for inline elements. Though pbm do applies.</p>
 
-        <p>h & w do are not props for inline elements. Though pbm do applies.</p>
+    <h2 id="position">Position</h2>
+    <p><u>Syntaxys</u> <code>selector{position:value;}</code></p>
+    <p><u>Values</u> relative, absolute, fixed, sticky,
+    static.</p>
+    <p><u>Offset</u> top, bottom, right and left offsets. </p>
+    <h3 id="a-bit-more-">Common Values</h3>
+    <ul>
+      <li>Static: default.</li>
+      <li>Relative: to the position in the normal flow.
+        ~ removes the element from normal flow (element not ignored)</li>
+      <li>Absolute: respect to body or first relative positioned parent.
+        <u>Removes element from normal flow.</u></li>
+      <li>Fixed: is absolute positioning relative to the browser window</li>
+      <li>Sticky: fixed on the parent element.</li>
+      <li>Float: right or left.</li>
+    </ul>
+    <p>Normal flow is the arrange of elements without using position abs or float.</p>
+    <blockquote>
+      When setting float:x or position:absolute, the rest of the elements ignore these elements but not in the same 
+      way. <strong>For floated elements the space is still reserved.</strong>
+    </blockquote>
 
-
-        <h2 id="position">Position</h2>
-        <p><u>Syntaxys</u> <code>selector{position:value;}</code></p>
-        <p><u>Values</u> relative, absolute, fixed, sticky,
-        static.</p>
-        <p><u>Offset</u> top, bottom, right and left offsets. </p>
-        <h3 id="a-bit-more-">Common Values</h3>
-        <ul>
-            <li>Static: default.</li>
-            <li>Relative: to the position in the normal flow.
-                ~ removes the element from normal flow (element not ignored)</li>
-            <li>Absolute: respect to body or first relative positioned parent.
-                <u>Removes element from normal flow.</u></li>
-            <li>Fixed: is absolute positioning relative to the browser window</li>
-            <li>Sticky: fixed on the parent element.</li>
-            <li>Float: right or left.</li>
-        </ul>
-        <p>Normal flow is the arrange of elements without using position abs or float.</p>
-        <blockquote>
-            When setting float:x or position:absolute, the rest of the elements ignore these elements but not in the same 
-            way. <strong>For floated elements the space is still reserved.</strong>
-        </blockquote>
-
-        <h3 id="float">More on Floats</h3>
-        <p>It makes the floated element <em>boyar</em> around other element.
-        It&#39;s very useful for images and sidebars. </p>
-        <p>Flex and Grids are interesting variants to flots with a nicer behaviour and
-        properties. </p>
-        <h3 id="issues">Issues</h3>
-        <p>
-        If inside a container,
-        container&#39;s height will be zero. Try: write a background color. It will stay the same.</p>
-        <h3 id="solutions">Solutions</h3>
-        <p>To the parent:</p>
-        <ul>
-            <li>overflow:hidden; (automatically measures childs&#39; height).</li>
-        </ul>
-        <p>Also elements can be cleared</p>
+    <h3 id="float">More on Floats</h3>
+    <p>It makes the floated element <em>boyar</em> around other element.
+    It&#39;s very useful for images and sidebars. </p>
+    <p>Flex and Grids are interesting variants to flots with a nicer behaviour and
+    properties. </p>
+    <h3 id="issues">Issues</h3>
+    <p>
+    If inside a container,
+    container&#39;s height will be zero. Try: write a background color. It will stay the same.</p>
+    <h3 id="solutions">Solutions</h3>
+    <p>To the parent:</p>
+    <ul>
+      <li>overflow:hidden; (automatically measures childs&#39; height).</li>
+    </ul>
+    <p>Also elements can be cleared</p>
 
 
-        <h2>Overflow
-        </h2>
+    <h2>Overflow</h2>
 
-        <p>Overflow: xval yval | both [scroll (scroll bars always, visible, hidden, auto (scroll only if necessary)]
-        change the font size from the browser (or body) to check if it still works properly there.
-        Why overflow visible is default? Because CSS tries to minimize data loss. Also, you or your readers
-        may not notice something missed if overflow is hidden.
-        </p>
+    <p>Overflow: xval yval | both [scroll (scroll bars always, visible, hidden, auto (scroll only if necessary)]
+    change the font size from the browser (or body) to check if it still works properly there.
+    Why overflow visible is default? Because CSS tries to minimize data loss. Also, you or your readers
+    may not notice something missed if overflow is hidden.
+    </p>
 
-        <h2 id="how-to-center">How to center</h2>
-        <ul>
-            <li>Use position absolute in element, and position relative in the parent element.</li>
-            <li>Use flexbox.</li>
-            <li>Use even paddings</li>
-            <li>Use grids </li>
-            <li> Use margin auto to center horizontally or align center</li>
+    <h2 id="how-to-center">How to center</h2>
+    <ul>
+      <li>Use position absolute in element, and position relative in the parent element.</li>
+      <li><a href='flex.html'>Use flexbox.</a></li>
+      <li>Use even paddings</li>
+      <li>Use grids </li>
+      <li> Use margin auto to center horizontally or align center</li>
 
-            <li> one liners Line height/vertical align and aligr center also works fine.</li>
-        </ul>
-        <h4 id="center-text">Center Text in a box</h4>
-        <ul>
-            <li>Flexbox</li>
-        </ul>
+      <li> one liners Line height/vertical align and aligr center also works fine.</li>
+    </ul>
 
-
-    </body>
-
+  </body>
 </html>
