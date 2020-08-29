@@ -1,4 +1,0 @@
-Flexible box layout, flexbox. Display row as default. Items stretch in height to the height of the container, 
-defined by the tallest item. In the inline axis they align to the start and do not grow to fill up the width or available space.
-
-
