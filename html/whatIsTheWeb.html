@@ -1,34 +1,23 @@
 <html>
-<head>
-<link rel="stylesheet" href="index.css">
-</head>
-<body>
-<h1 id="general-ideas-about-web-development">How does the Web work?</h1>
-<p>Web development is about building websites. There are 3 main actors: 
-</p>
-<ol> 
-<li>webpages</li>
-<li>web server</li>
-<li>browsers</li>
-</ol>
-<h2 id="what-is-a-website-and-a-web-server-">Webpage and Web Server</h2>
-<p>A website is a text file. Webpages are stored in Web Servers. 
-Web Servers are computers with a huge memory, and host clients&#39; files. 
-Sometimes web servers are referred to as hosts.</p>
-<h2 id="browsers-i">Browsers I</h2>
-<p>As Microsoft Word reads .doc files, Web Browsers read .html files. 
-Browsers read local files or request files to the server through a 
-protocol (HTTP). 
-Browsers need an address, called URL or IP, to find and retrieve the file (website). </p>
-<h2 id="the-process-of-seeing-a-webpage">The process of seeing a webpage</h2>
-<p>So you open the browser and write an URL. The browser looks for the file(s) in a remote computer! (the web server).
-And if succeds, the webpage is retrieved. The browser uses the GET 
-method (from the http protocol) for many other files (images, videos). They 
-add to the load time. Some of those are stored in cache memory to avoid downloading it everytime.</p>
-<h2 id="browsers-ii">Browsers II</h2>
-<p>The Browser also generates the DOM or Document Object Model. 
-This is a tree-like representation of our HTML document. 
-Each branch is a Node. Nodes are elements, attributes or text. 
-This structure allows us to learn how to manipulate the website. 
-Browsers offer also developer tools. </p>
-</body></html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1 id="general-ideas-about-web-development">How does the Web work?</h1>
+    <p>Web development is about building websites. There are 3 main actors: 
+    </p>
+    <ol> 
+      <li>webpages</li>
+      <li>web server</li>
+      <li>web client (browser)</li>
+    </ol>
+    <h2 id="browsers-i">Browsers I</h2>
+    <p>A webpage is very similar to a text file. As Microsoft Word reads .doc files, Web Browsers read .html files. Browsers read local files or request files to the server through a protocol (HTTP). Browsers need an address, called URL or IP, to find and retrieve the file (website).</p>
+    <h2 id="the-process-of-seeing-a-webpage">The process of seeing a webpage</h2>
+    <p>So you open the browser and type an URL. The browser looks for the file in a remote computer (the web server). Then a webpage or an error is retrieved and displayed on your screen. The browser uses the GET 
+    method (from the http protocol) to retrieve the html file, as well as image files (jpg, png) and some other files too. Each adds to the page load-time.</p>
+    <h2 id="browsers-ii">Browsers II</h2>
+    <p>Once the page is retrieved, many things occur. The Browser generates the DOM or Document Object Model. This is a tree-like representation of our HTML document. Each branch is a Node. Nodes are elements, attributes or text. This structure allows developers manipulate the website using javascript.
+    </p>
+  </body>
+</html>
