@@ -34,5 +34,16 @@
 <p>A common alias sometimes included in the .bashrc by default is `alias ..=cd ..`. There are many useful ones we can create just for our particular use case.</p>
 <p>Normally, I use only aliases either for changing dirs (cd) or some recurrent, simple commands. For more complex commands we need bash functions. If we are working with many directories deep into the directory-tree, and we don't remember the names, we can set a few symlinks on our home directory.</p>
 
-  </body>
-</html>
+<h2>Details</h2>
+
+<p>When commands is executed three files are open: stdin(0), stdout(1) and stderr(2).  Also, an exit code is generated **but no output**. It is accessed as $?, print using echo $?.  Counter intuitive: 0 sucessful, unsucessful.</p>
+<p>We can use the exit code in conditionals:</p>
+
+```
+ls bash_aliases && echo 'find it!' || echo 'didnt find it!'
+[ -n $VARIABLE ] && echo 'exists'
+```
+<p>Output redirection: redirection of anything appearing on the terminal to a file: firefox-developer 2 > /dev/null</p>
+<p>Processes: fg, bg, C-z: firefox-developer & # the ampersand sets it as a bg process.</p>
+
+</body></html>
