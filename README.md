@@ -18,6 +18,6 @@ I won't write many more documents, but instead will focus on make the workflow e
 
 ----
 
-You can access the Documents on [this link](https://santimirandarp.github.io/documents/).
+You can access the Documents on [this link](https://santimirandarp.github.io/documents/pages).
 
 DISCLAIMER: Docs may be wrong or incomplete, feel free to push changes and raise issues.
