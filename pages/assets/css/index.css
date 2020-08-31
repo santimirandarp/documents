@@ -59,7 +59,7 @@ small, .text_small {
 
 body {
   max-width: 800px;
-  padding: 100px auto 150px;
+  padding: 2rem 1rem;
   margin: auto;
 }
 
