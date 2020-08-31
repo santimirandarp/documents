@@ -17,10 +17,6 @@ body {
   line-height: 1.65;
 }
 
-a {
-  text-decoration: none;
-}
-
 code {
   background-color: #b1b1b1;
   padding: 3px;
@@ -64,6 +60,7 @@ small, .text_small {
 body {
   max-width: 800px;
   padding: 100px auto 150px;
+  margin: auto;
 }
 
 figure {
