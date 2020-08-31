@@ -53,59 +53,5 @@
   <p>bin, sbin and all libs are symlinks, not real folders. All of them link 
   to a correspondent folder under <code>usr</code>. For example, <code>bin</code>
   is really a link to <code>usr/bin</code> and so on. </p>
-
-  <h2 id="filesystem-hierarchy-standard">Filesystem hierarchy standard</h2>
-  <p>Layout for the root (<code>/</code>), the beginning of the OS. Do not confuse w root folder. Here root means the top of the filesystem.</p>
-  <ul><li><b>usr</b>: System Wide binaries and files they need live here. 
-      <ul><li><b>/usr/bin</b>: binaries.</li>
-        <li><b>/usr/sbin</b>: root-user-only binaries.</li> 
-        <li><b>/usr/lib*</b>: libraries are small pieces of software shared by programs.</li>
-        <li><b>/usr/share</b>: wallpapers, icons, manuals, fonts, etc. </li>
-        <li><b>/usr/local/</b>: contains programs installed from source. For example <code>youtube-dl</code> 
-          was installed using github instructions and sits therein. Code we wrote and want available across users should be there.</li>
-      </ul>
-    </li>
-    <li><b>etc</b>: etcetera. System wide configuration and settings. For example
-      <code>/etc/apt/</code> contains config files for <em>apt</em>. In this case, the config file is 
-      the source of software. <code>/etc/calendar/</code> contains config files for the calendar app. 
-      Some relevant files are not under a directory. For example <code>/etc/bash.bashrc</code> is the config file for bash, default in many terminal emulators. </code>/etc/alacritty/</code> hosts the config file for the terminal emulator.
-    </li>
-    <li><b>opt</b>: contains some proprietary software. Example: google chrome.</li>
-    <li><b>snap</b>: programs installed through snap package manager. They are isolated, self contained 
-      packages.</li>
-    <li><b>home</b>: contains the users. We can access normally only to ours, and any of them with root 
-      privileges. Under <code>/home/username/</code> there is a ton of data, detailed on the next section.</code></li>
-    <li><b>boot</b>: all info the system needs to boot.</li>
-    <li><b>dev</b>: devices. hard drives and partitions sda, sda1, sda2 (numbers being partitions, sda the hard drive)</li>
-    for example sources lists.</li>
-  <li><b>media</b>: all mounted devices &#39;d be there.</li>
-  <li><b>proc</b>: pseudofiles about processes.</li>
-  <li><b>run, srv, tmp</b>:erased when reset system.</li>
-  <li><b>sys</b>: system. Advanced.</li>
-  <li><b>/root</b></li>
-  </ul>
-  <h3>The Home Directory</h3>
-  <p>So the root directory contains many folders. The most important ones for beginners are: <code>/usr</code> and <code>/etc</code>.
-  Programs and even wallpapers are on <em>usr</em> folder. Config files on <em>etc</em> folder. All of these are system-wide settings: they affect all users.</p>
-  <p>The home directory contains the following directories: <em>Desktop</em>, <em>Downloads</em>..., dirs and files we create, 
-  and <em>.dotfiles</code> as well as <em>.dotdirectories</em>. The dot (<code>.</code>) in a file hides the file. There are some important 
-  dot directories and files:</p>
-  <ol>
-    <li>.bashrc, .bash_aliases, .profile</li>
-    <li>.local, .config, .cache</li>
-    <li>.program (.vimrc etc. etc.)</li>
-  </ol>
-  <p>
-  The first ones are config files, and also where variables are stored, exported, etc.
-  The second ones are directories. <em>.local</em> contain user scoped programs; <em>.config</em> contains user-scoped 
-  config files (this config overwrittes etc config files as expected). The last one might be a files or a directory. 
-  They should be placed under <em>.config</em> but for some reason they are not, and this can't be changed as the files are 
-  created on every program-session (if they do not exist). They are configuration files.
-  </p>
-  <h3>Symlinks in the filesystem</h3>
-  <p>bin, sbin and all libs are symlinks, not real folders. All of them link 
-  to a correspondent folder under <code>usr</code>. For example, <code>bin</code>
-  is really a link to <code>usr/bin</code> and so on. </p>
-
   </body>
 </html>
