@@ -10,8 +10,7 @@
 
 
 ### HTML differences
-- All attributes are camelCase. className, onClick.
-to render a component.
+- All attributes are camelCase. className, onClick.  to render a component.
 
 **Example**
 ```javascript
@@ -127,6 +126,7 @@ class MyStatefulComponent extends React.Component{
 * We pass state from parent to children using props (couldn't be easier).
 
 -------------------------
+
 ## Some Cool Ideas
 
 From reactjs.org:
@@ -162,5 +162,4 @@ This implies that `setState({prop:this.state...})` is wrong and that `let this.s
 
 3. In **built-in methods**. Those are also in the class body: `ComponentDidMount()` etc. These run at specific times.
 
---------------------------
 
