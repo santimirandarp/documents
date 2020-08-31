@@ -1,6 +1,0 @@
-#!/bin/bash
-
-sed -i /</header>/<link rel="stylesheet" href="./assets/css/index.css">&/ 
-
-sed -i /</body>/<script src='assets/js/index.js'></script>&/
-
