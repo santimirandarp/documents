@@ -4,6 +4,20 @@ On this repo I store part of the things I've been learning over 2019/2020. I nor
 
 The topics are linux and web development.
 
-You can access the website through [this link](https://santimirandarp.github.io/documents/).
 
-Docs may be wrong or incomplete, feel free to push changes and raise issues.
+## Workflow
+I started this repo writing html documents, but it's way easier to write markdown. 
+
+Markdown is enough for most of this simple documents. The .md files are compiled to html, and then manually add an entry for index.css and index.js
+
+1. If you want to edit or create a file, do it as a markdown file, on md/ folder.
+
+2. If you want to edit a file that **is not** on md/ edit the html file.
+
+I won't write many more documents, but instead will focus on make the workflow easier.
+
+----
+
+You can access the Documents on [this link](https://santimirandarp.github.io/documents/).
+
+DISCLAIMER: Docs may be wrong or incomplete, feel free to push changes and raise issues.

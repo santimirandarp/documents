@@ -1,0 +1,61 @@
+<h1 id="systools">SysTools</h1>
+<p>Once we open up a terminal, we need to know what to do. The first step is to memorize a set of useful commands. </p>
+<p><strong>The history Command</strong></p>
+<p><code>history</code> displays the content of <code>~/bash_history</code> on the screen.</p>
+<p>We can get the line number of a command and run <code>!line number</code>, to repeat a command. We can run <code>^C1^C2^</code> to replace C1 by C2 on the last command. And we can issue <code>!!</code> to re-run the last command on history.</p>
+<pre><code>history
+history | grep &quot;hello&quot;
+man history
+^man^whatis^
+!!</code></pre>
+<p><strong>Explore directories</strong></p>
+<ul>
+<li>pwd to know where we are</li>
+<li>tree for a directory tree-structure
+tree is normally executed as <code>tree -L 1</code> or <code>tree -L 2</code> where 1,2 is the depth of the output.</li>
+</ul>
+<p><strong>Explore files</strong></p>
+<ul>
+<li>head file</li>
+<li>history | tail</li>
+<li>cat filename|less</li>
+<li>less filename </li>
+</ul>
+<p><code>tail history</code> won&#39;t work. <code>history</code> is not a file but a program.</p>
+<p><strong>Get Help!</strong></p>
+<pre><code>man command
+tldr command
+apropos smth</code></pre>
+<p><code>apropos</code> takes a word as argument, and retrieves programs related to that word.</p>
+<p><strong>Find Files</strong></p>
+<ul>
+<li>find where -name filename</li>
+</ul>
+<p><em>where</em> should be replaced by a suitable directory.</p>
+<ul>
+<li>locate filename</li>
+</ul>
+<p>Is another useful option.</p>
+<p><strong>Operate Files and Move around</strong></p>
+<ul>
+<li>mv fileA fileB</li>
+<li>cp fileA fileB</li>
+<li>cd dirName</li>
+</ul>
+<h2 id="terminal-shortcuts">Terminal Shortcuts</h2>
+<pre><code>C + l to clear the cli
+C + u to remove (undo) the typed command
+C + a beginning of line
+C + e end of line.</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>ifconfig (all network cards info)</li>
+<li>iwconfig (wireles card info)</li>
+<li>lsusb (list usb devices)</li>
+<li>lspci (list pci devices: <em>cards</em>, usbs, etc)</li>
+<li>lsblk (list disks attached)</li>
+<li>htop (process viewer)</li>
+<li>journalctl</li>
+<li>systemdctl</li>
+</ul>
+<p>htop or the old variant top opens up a process viewer, where we can identify a particular problem causing troubles, or consuming loads of RAM. Programs can be exited issuing kill PID in the command line. Also <code>killall programname</code></p>

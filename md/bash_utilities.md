@@ -3,29 +3,51 @@ Once we open up a terminal, we need to know what to do. The first step is to mem
 
 **The history Command**
 
-`history` displays the content of `~/bash_history` on STDOUT (screen). Level up using grep `history | grep [-options] 'string'` or fflags `history -c`. 
+`history` displays the content of `~/bash_history` on the screen.
 
-We can get the line number of a command and run `!line number`, to repeat a command. We can run ^C1^C2^ to replace C1 by C2 on the last command. And we can issue !! to re-run the last command on history.
+We can get the line number of a command and run `!line number`, to repeat a command. We can run `^C1^C2^` to replace C1 by C2 on the last command. And we can issue `!!` to re-run the last command on history.
 
+```
+history
+history | grep "hello"
+man history
+^man^whatis^
+!!
+```
+**Explore directories**
 
-**Explore the file**
+* pwd to know where we are
+* tree for a directory tree-structure
+tree is normally executed as `tree -L 1` or `tree -L 2` where 1,2 is the depth of the output.
+
+**Explore files**
+
 * head file
-* tail history
+* history | tail
 * cat filename|less
 * less filename 
+
+`tail history` won't work. `history` is not a file but a program.
 
 **Get Help!**
 
 ```
 man command
 tldr command
+apropos smth
 ```
+
+`apropos` takes a word as argument, and retrieves programs related to that word.
 
 **Find Files**
 
 * find where -name filename
-* where should be replaced by a suitable directory.
+
+*where* should be replaced by a suitable directory.
+
 * locate filename
+
+Is another useful option.
 
 **Operate Files and Move around**
 
@@ -44,17 +66,14 @@ C + e end of line.
     
 ##  Troubleshooting
 
-* ifconfig for network info
-* iwconfig for wireless connection info
-* lsusb list hardware/media connected to the computer
-* lspci list pci devices (cards, keyboard, usbs, etc)
-* lsblk list disks attached
-* htop process viewer
+* ifconfig (all network cards info)
+* iwconfig (wireles card info)
+* lsusb (list usb devices)
+* lspci (list pci devices: *cards*, usbs, etc)
+* lsblk (list disks attached)
+* htop (process viewer)
+* journalctl
+* systemdctl
 
-## Some gnu utilities
+htop or the old variant top opens up a process viewer, where we can identify a particular problem causing troubles, or consuming loads of RAM. Programs can be exited issuing kill PID in the command line. Also `killall programname`
 
-* cat head tail less
-* find (file)
-* grep (find in file or STDOUT)
-* *.txt | grep Hello >> find.txt
-* sed change/write file

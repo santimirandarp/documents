@@ -1,0 +1,28 @@
+<h1 id="programming">Programming</h1>
+<p>There are many reasons to prefer Linux to other OS. First, most binaries are Open Source; second, those binaries are great for automation. On the other hand, the UI is not great.</p>
+<p>To make the most of Linux we need bash. Let&#39;s look into it. </p>
+<h2 id="variables">Variables</h2>
+<p>A variable is a handy name for a piece of data.</p>
+<pre><code class="language-bash">DOG=&quot;Woof&quot;
+DOGS=(&quot;Woof&quot; *.dogs &quot;Wolves&quot;)
+PERMISSIONS=$(ls -l)
+echo ${PERMISSIONS} </code></pre>
+<p>The first one is a string, the second one an array, the third one is the output of a command. Finally we run a command inside the script. Echo prints the value associated with PERMISSIONS.</p>
+<p>The <code>${}</code> is optional, but it&#39;s very useful if the replaced variable:</p>
+<ol>
+<li>contains a <code>-</code>, to avoid being confused with a command&#39;s flag.</li>
+<li>contains a (*), to avoid expansion.</li>
+</ol>
+<p>${variable} is better than $variable, but sometimes it&#39;s just not necessary. Normally variables are uppercase ${STRING} but it&#39;s not a requisite.</p>
+<h2 id="conditionals">Conditionals</h2>
+<h2 id="loops">Loops</h2>
+<p>Looping is an operation run on iterables. For example, arrays are iterables:</p>
+<pre><code>for element in &quot;${array[@]}&quot;
+do 
+#comands here
+done</code></pre>
+<p>A few useful bits:
+&quot;${array[@]}&quot; makes element=&quot;${array[i]}&quot; each time.
+&quot;${!array[@]}&quot; makes element= array index each time.</p>
+<h2 id="switches">Switches</h2>
+<h2 id="functions">Functions</h2>
