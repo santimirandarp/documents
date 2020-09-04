@@ -10,6 +10,7 @@
     <li>for user-scoped <code>~/.bashrc</code>, <code>~/.profile/</code> etc. <code>export MYVAR=name</code>.</li> 
     <li>System wide, persitent can be set on <code>/etc/profile</code> as <code> export MYVAR=name</code>
     </li>
+    <!--not sure why export is needed-->
     <li>System Wide, persistent are also set on <code>/etc/environment/</code>
     </li>
   </ol>
@@ -22,7 +23,7 @@
   <p>The command <b>env</b> outputs all the environment variables. set prints all the shell variables.</p>
   <h2 id="add-a-program-to-path">Add a program to $PATH</h2>
   <p>A very useful system variable is <b>PATH</b>. It stores, directories where the system looks for a command everytime bash is executed.</p>
-  <p>`echo $PATH` prints a <b>list</b> of directories it stores. To add one, edit <b>.bashrc</b> by editing it like so: `export PATH=/directory/to/add:$PATH`</p>
+  <p>`echo $PATH` prints a <b>list</b> of directories it stores. To add one, edit <b>.bashrc</b> by editing it like so: `PATH=/directory/to/add:$PATH`</p>
   <p>On sass, for example, for global installing, the package can be downloaded from github and then the file added to the path, where the path points to the binary/program/executable. A similar installation is using `npm install -g sass`</p>
 
   <h2>Links</h2>
