@@ -5,7 +5,7 @@
   <body>
 
     <h1>Internet(works)</h1>
-    <p>We talked about some ways, namely protocols, in which two computers - in a network -  can interchange data. But...
+    <p>We talked about some ways, namely protocols, in which two computers - in a network -  can exchange data. But...
     <ul>
       <li>Are there types of networks?</li>
       <li>What are the components of a network?</li>
@@ -14,33 +14,33 @@
     </ul>
     </p>
     <h2>Types of Network</h2>
-    <p>Although boring, knowing the types of network makes a lot of sense. We can classify networks depending on the area they span, and whether they are wired or wireless.</p>
-    <p>The smallest one is PAN, personal area network. Devices in a PAN can be connected wireless by bluetooth, IR, NFS, or even by cable.</p>
-    <p>
-    Next is Local Area Network or LAN. This is the network on an office, or a house. LAN uses switches where the devices connect using Ethernet cables. WLAN is wireless instead, and devices need a wifi card, and connect to the Router instead. Nowadays, the Router may contain a switch, and the LAN is composed by wired devices and wireless devices. Same thing goes for CAN (campus area network, usually being wireless).</p>
-    <p>MAN, WAN. And this is Metropolitan or WorldWide area network. These days the connection is mostly by fiber cables. The Internet, or World Wide Web is a WAN. And the devices are connected using fiber cables. In turn, those devices are, for example, routers, delivering data to another device inside a WLAN, etc.</p>
+    <p>Although boring, knowing the types of network simplifies things. We can classify networks depending on the area they span, and whether they are wired or wireless.</p>
+    <ul>
+    <li>PAN, Personal Area Network. Devices in a PAN can be connected wireless via bluetooth, IR, NFS; or they can connect by cable.</li>
+    <li>
+    Local Area Network or LAN, frequent on an office, or a house. Devices connect either to a Switch by Ethernet Cable or to a Router by a Wifi card. LAN is wired-only;  WLAN is wireless instead. The Router connects to the Switch and this creates a closed network between wired and wireless devices.</li>
+    <p>Nowadays, the Router may include the switch. Same thing goes for CAN (campus area network, usually being wireless).</p>
+    <p>MAN, WAN. Metropolitan or Worldwide Area network. These days the connection is mostly by fiber cables. The Internet, or World Wide Web is a WAN. Devices in this network are connected using fiber cables. We reach the WAN from the LAN if the Modem is connected to the WAN.</p>
+    <p>We can run nice LANs without any connection to the WAN.</p>
 
     <h2>WLAN</h2>
-    <p>In a network, we can think of data as an old fashion mail post. The router is the carrier. The address is given by the sender, using IP and PORT of the target computer.</p> 
-    <p>Router means 'the one who draws the route'. This route is the path to the device. Components: An antenna/boost, Ethernet Switches and a WAN or internet port where the Modem connects.</p>
-    <p>Now, we know that without the wan port (that strange cable coming from the outside), we could still have a Local Area Network, and even a WLAN. The outside-cable comes from an antenna.</p>
-    <p>We've said that devices connected to the same wifi-router or ethernet switch are in a Local Area Network (LAN).</p>
-    <h3>How does the Router, Route?</h3>
-    <p> WLAN requires login. Either the Wifi Router or the Switch assigns each device an IP (once they are connected). This is called DHCP. To transfer data the router needs port and ip address of the other computer/device. The port is specific of the application, 8080 for webs, 3636 for windows remote desktop (WRD) etc etc. 
+    <p>Router means 'the one who draws the route'. This route is the path to a set of devices. Components: An antenna/boost, Modem, Router, Ethernet Switches. WAN or internet port where the Modem connects.</p>
+    <h3>Router</h3>
+    <p> WLAN requires login/authentication. Either the Wifi Router or the Switch assigns each device an IP. This is called DHCP. To transfer data the router needs port and ip address of the other computer/device. The port is specific of the application, 8080 for webs, 3636 for windows remote desktop (WRD) etc etc. 
     <!--The router also controls which IPs and Applications are connecting by allowing/disabling ports and IPs (in the router config page). This is the way we can block facebook, youtube, and any other IP address.-->
     </p>
+    <p>Allows to create different networks</p>
 
     <h3>Modem</h3>
-    <p><b>Curiosity:</b> Modem, Router and Switch are now compressed into one device.</p>
-    <p>A Router needs a Modem. It's the last (or first) link with the external world. The word modem comes from modulate/demodulate (of an electric wave). It converts the signal from computer-friendly to antenna friendly and viceversa. A Modem and a Router might be integrated in one unit.  The modems connect straight to the ISP (internet service provider). The connection to the ISP might be Fiber or Cable. They have similitudes and differences to check before set up one ISP. 
+    <p>Modem, Router and Switch may be compressed into one object. They still have very different role.</p>
+    <p>The modem is usually connected to a Fiber Cable or to a Satellite on one end. On the other end it connects to the Router or Switch.</p>
+    <p>The word modem comes from modulate/demodulate. It converts the signal from computer-friendly to antenna friendly and viceversa. The modem connects to the ISP (internet service provider). The connection to the ISP might be Fiber or Cable. 
     </p>
 
     <h2>Details</h2>
-    <p>A typical connection might be depicted PC&mdash;router&mdash;modem&mdash;antennas. In large areas (like a campsite) we may want to extend the Router wifi-range. For this we can use another router, wap, or booster/wifi extender.</p>
-    <p>WAP and booster do not have switches, and <!--allowing ethernet (internet cable connection) for devices,--> they do not assign IPs to devices in the network (the router does).</p>
-    <p>A firewall config is not necessary because again this is done in the router.</p>
-    <p>WAPs do not have a WAN port. These do need wired connection to the router. Wifi extenders or boosters instead do not need a cable connection to the router. WAPs connect to the router using ethernet cables (similar to phone cables, 8 lines on the plug instead). 
-    <h4>Firewall</h4>
+    <p>In large areas we want to extend the Router wifi-range, using WAP or Booster/wifi extender. WAP and Booster do not have switches, <!--allowing ethernet (internet cable connection) for devices,--> do not assign IPs to devices in the network (the Router does) an do not have a WAN port. So these connect to the router, using ethernet cables (like phone cables, 8 lines on the plug instead).</p>
+    <h3>Firewall</h3>
+    <p>A firewall config may not be necessary because this is done in the router.</p>
     <p>A firewall stops the fire, in this case, dangerous data. <b>Host-based</b> firewalls are the ones set up on a computer, and protect only that computer. Windows comes with firewall and also 3rd parties can be installed. Antivirus might come with firewall. <b>Network-based</b> firewall rules are applied to the entire network. This is probably set in the switch or Router, by tweaking its config using the PC.</p>
 
   </body>
