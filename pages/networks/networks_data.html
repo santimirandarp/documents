@@ -1,52 +1,50 @@
 <html>
   <head>
-        <link rel='stylesheet' href='../assets/css/index.css' />
+    <link rel='stylesheet' href='../assets/css/index.css' />
   </head>
   <body>
 
-    <h1>Internet(works)</h1>
-    <p>We talked about some ways, namely protocols, in which two computers - in a network -  can exchange data. But...
-    <ul>
-      <li>Are there types of networks?</li>
-      <li>What are the components of a network?</li>
-      <li>What's a simple example of a network?</li>
-      <li>In short: What are networks?</li>
-    </ul>
+    <h1>Internet</h1>
+    <p>We talked about some ways, namely protocols, in which two computers - in a network -  can exchange data. Let's now see how to set up a network.(Yes, not the what, but the how)</p>
     </p>
+
     <h2>Types of Network</h2>
-    <p>Although boring, knowing the types of network simplifies things. We can classify networks depending on the area they span, and whether they are wired or wireless.</p>
+    <p>Knowing the types of network simplifies the problem. We can classify networks depending on the physical area they span, and whether they are wired or wireless.</p>
     <ul>
-    <li>pan. Devices in a PAN can be connected wireless via bluetooth, ir, nfs; or they can connect by cable.</li>
-    <li>lan. Frequent on an office, or a house. Devices connect either to a Switch by Ethernet Cable or to a Router by a Wifi card. lan is wired-only;  wlan is wireless instead. The Router connects to the Switch and this creates a closed network between wired and wireless devices.</li>
-    <p>Nowadays, the Router may include the switch. Same thing goes for can (campus area network, usually being wireless).</p>
-    <p>man, wan. Metropolitan or Worldwide Area network. These days the connection is mostly by fiber cables. The Internet, or World Wide Web is a wan. Devices in this network are connected using fiber cables. We reach the wan from the lan if the Modem is connected to the wan.</p>
-    <p>We can run nice lans without any connection to the wan.</p>
+      <li>pan. Devices in a pan can be connected via bluetooth, ir, nfs; or by cable.</li>
+      <li>lan, wlan. Offices, houses. Devices connect to the network through a switch by cable or to a router using a wifi card. lan is wired-only;  wlan is wireless instead. Nowadays, the router usually includes the switch. The switch-part are the ports.</p>
+        <p>man, wan. Nowadays connection is usually by fiber cables. World Wide Web is a wan. Devices in this network are connected using fiber cables. We reach the wan from the lan if the Modem is connected to the wan.</p>
+        <p>A lan does not need a wan, but can connect to it.</p>
 
-    <h2>Hardware on a Network</h2>
-    <ul>
-      <li>Modem: for DSL, Satellite, Cable, Fiber. Connects (data) our network with the external world (internet).</li>
-      <li>Router: <em>the one who draws the route</em>. This route is the path the data follows, from a device to a device. It connects different networks.</li>
-      <li>Firewall</li>
-      <li>Switch: connects cabled devices to a network. There are unmanaged and managed switches. The latter ones can be programmed for specific tasks. The switch supports particular speeds.</li>
-      <li>Wireless Access Point or  WAP (optional): connects wifi devices to a network. It's linked to the switch.</li>
-      <li>Computer</li>
-    </ul>
+        <h2>Hardware on a Network</h2>
+        <ol start=4 reversed>
+          <li>Modem: Connects (data) our network with the external world (internet) via DSL, Satellite, Cable or Fiber.</li>
+          <li>Router: <em>the one who draws the route</em>. This route is the path the data follows, from a device to a device. It connects different networks. The way computers find each other is specified in the Internet Protocol (IP). AFAIK any connection between 2 networks needs a router.</li>
+          <li>Firewall</li>
+          <li>Switch: connects cabled devices to a network. There are unmanaged and managed switches. The latter ones can be programmed for specific tasks. The switch supports particular speeds.</li>
+          <li>Wireless Access Point or  WAP (optional): connects wifi devices to a network. It's linked to the switch.</li>
+          <li>Computer</li>
+        </ol>
 
-    <h3>Modem</h3>
-    <p>The modem is usually connected to a Fiber Cable or to a Satellite on one end. On the other end it connects to the Router or Switch.</p>
-    <p>The word modem comes from modulate/demodulate. It converts the signal from computer-friendly to antenna friendly and viceversa. The modem connects to the ISP (internet service provider). The connection to the ISP might be Fiber or Cable. 
-    </p>
-    <h3>WAP speed</h3>
-    <p>Wireless network devices (prefix=802.11). Examples: prefix-a, b, g, n. Most of them are compatible to each other (only a is useless), so buying any network card should work. We should pick up the best speed match though. n cover a good area and are quick.</p>
-    <h3>Firewall</h3>
-    <p>A firewall config may not be necessary because this is done in the router.</p>
-    <p>A firewall stops the fire, in this case, dangerous data. <b>Host-based</b> firewalls are the ones set up on a computer, and protect only that computer. Windows comes with firewall and also 3rd parties can be installed. Antivirus might come with firewall. <b>Network-based</b> firewall rules are applied to the entire network. This is probably set in the switch or Router, by tweaking its config using the PC.</p>
-    <h3>Cabling</h3>
-<p>
+        <h3>Modem</h3>
+        <p>The modem is usually connected to a Fiber Cable or to a Satellite on one end. On the other end it connects to the Router or Switch.</p>
+        <p>The word modem comes from modulate/demodulate. It could be electric to sound (DSL) and viceversa.
+        </p>
+        <h3>WAP</h3>
+        <p><b>Wireless</b> network devices 802.11a, 802.11b, 802.11g, 802.11n. Most of them are compatible to each other (only a is useless), so buying any network card should work. We should pick up the best speed match though. n-type spans a wide area and is quick.</p>
+        <h3>Firewall</h3>
+        <p>A firewall config may not be necessary because this is done in the router.</p>
+        <p>A firewall stops the fire, in this case, dangerous data. <b>Host-based</b> firewalls are the ones set up on a computer, and protect only that computer. Windows comes with firewall and also 3rd parties can be installed. Antivirus might come with firewall. <b>Network-based</b> firewall rules are applied to the entire network. This is probably set in the switch or Router, by tweaking its config using a web-gui.</p>
+        <h3>Cabling</h3>
+        <p>
+        </p>
 
-</p>
-<h2>Small Office, Home Office</h2>
-<p>soho networks are small networks; like a lan at home. For this kind of networks we can buy a particular type of Routers. Enterprise routers only route traffic from the wan, to the lan. soho routers can include many devices apart from the router. Usually a Switch (those phone plugs on the back), a DNS server, DHCP server, Firewall server, and Port forwarding.</p>
-<p>We can configure a soho Router using a web browser, by typing the router's IP in the URL bar. This is not the way to set up an enterprise router.</p>
+        <h2>Small Office, Home Office</h2>
+        <p>soho networks are small networks; like a lan at home. For this kind of networks we can buy a particular type of Routers. Enterprise routers only route traffic over/in/out the lan. Soho routers also include many devices apart from the router: Switch (those phone plugs on the back), DNS server, DHCP server, Firewall server, and Port forwarding.</p>
+        <p>We can configure a soho Router using a web browser, by typing the router's IP in the URL bar. This is not the way to set up an enterprise router.</p>
+        <p>When a device connects to a network, it either has a static or a dynamic IP. Normally, we want the DHCP server to assign all the network parameters automatically. For that, we configure an IP range on the DHCP server.</p>
+        <p>If there is a server on the lan, we want a static ip. Let's say someone in a different part of the world types our domain in a browser. They get the domain's IP from a DNS server. The request lands to the router at a particular port. This depends on the type of request. We need to link the IP of our lan server to the specific port. Web requests arrive at port 80, ftp at 21, etc etc. We can look them up online.</p>
+        <p>Then, in the port forward section, we write our server IP and the port it will be listening to. Example 192.168.0.1:80</p>
+        <p>If the server IP is not static, then the redirection will occur either to another device, or to nowhere, and the request will fail. So, for servers, we need a static IP.</p>
   </body>
 </html>
