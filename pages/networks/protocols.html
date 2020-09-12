@@ -4,47 +4,7 @@
   </head>
   <body>
 
-    <h1>Some Data Transfer protocols</h1>
-    <p>A pre-condition to any of this methods, is two devices connected in a network. All devices with this capability have an IP (internet protocol). With this condition fulfilled, we can exchange data through the following protocols (non-exhaustive list):</p>
-    <ul>
-      <li>http, ftp</li>
-      <li>https, sftp</li>
-      <li>pop3, smtp, imap</p>
-        <li>ssh</li>
-        <li>scp</li>
-        <li>sshfs</li>
-        <li>nfs, samba, giver</li>
-    </ul>
-    <p>sftp, scp, sshfs are all ssh-dependent, i.e they work behind the same security principles than ssh.</p>
-    <p>pop3, smtp, imap are all internet, mail specific protocols</p>
+    <h1>Data Transfer Protocols</h1>
 
-    <h2>FTP, FTPS, HTTP, HTTPS</h2>
-    <p>These are all methods very common, but not limited to, web development</p>
-    <p>http and ftp are not necessarily used inside a GUI like a browser or filezilla, there are other tools using same protocols for communication between devices.
-    </p>
-    <p>Some of those tools are text-based or command line browsers, the http cli-program in linux.     </p>
-    <p>There is also related software to download webpages, for example wget or curl.</p>
-    <h3> File Transfer Protocol (FTP) </h3>
-    <ul>
-      <li>Use port 21 to be secured?</li>
-      <li>exchange files with ftp-server. `ftp` on command line or gui clients.</li> 
-      <li> Apart from port 21, it's not a secure way to transfer files.</li>
-    </ul>
-    <dl>
-      <dt>Example</dt>
-      <dd>On a browser's address bar: ftp://address </dd>
-      <dd>cli: ftp adress</dd>
-      <dd>Filezilla: write adress in search box.</dd>
-    </dl>
-    <p>Without a secure connection hackers can see almost anything transferred through the network (particularly important in open networks where many users are connected). So this is not a secure method to buy things, log into networks etc. but we still can look up the bus.</p>
-    <p>For sensible data SFTP should be used instead. SFTP uses secure shell, encrypts the data. Port 22.</p>
-    <p>In any case, we need the IP, a user and a password.</p>
-
-    <h2>HyperText Transfer Protocol (HTTP)</h2>
-    <p>HyperText Transfer Protocol Access <b>public</b> files of a server. Does not ask for passwords. It's possible (very easy) to download the html, and any files in the public folder.</p>
-    <ul>
-      <li>On a Browser Address Bar: http://www.domainName.subDomain </li>
-      <li>Using wget and curl: wget/curl [options] webaddress; or GET, POST, HTTP + webadress</li>
-    </ul>
 
   </body></html>

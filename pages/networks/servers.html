@@ -3,44 +3,72 @@
     <link rel='stylesheet' href='../assets/css/index.css' />
   </head>
   <body>
-    <h1>Servers</h1>
-    <p>Servers are computers offering services to other computers. They both must be on a network. The consumer computer is the Client.</p>
-    <p>There are specific computers used as servers, but our own computer can be converted into a server.</p>
-    <p>Web Browsers like Mozilla Firefox are HTTP-server (or web) clients. We can access FTP servers using Filezilla, or any other FTP client. We can access SMB servers in a similar way, the server could be set up using SMB. We can also access SSH servers, etc.</p>
-    <p>In general, we connect to particular types of servers using particular clients.</p>
 
-    <h2>Set Up</h2>
+    <h1>Servers</h1>
+    <ol>
+      <li>Servers are computers offering services to other computers (clients). They must be on a network.</li>
+      <li>There are specific computers used as servers, but our own computer can be converted into a server.</li>
+      <li>Depending on the client-server communication protocol, is the software we install on each end.</li>
+    </ol>
 
     <h2>Type of servers</h2>
     <ul>
-      <li>File: shared folder for a network. Different protocol than ftp.</li>
-      <li>FTP</li>
+      <li>File (file): shared folder for a network. Different protocol than ftp.</li>
+      <li>File (ftp, sftp)</li>
       <li>Authentication</li>
-      <li>Web</li>
-      <li>Mail</li>
-      <li>DNS</li>
+      <li>Web (http, https)</li>
+      <li>ssh, scp</li>
+      <li>smb</li>
+      <li>Mail (pop3, smtp, imap)</li>
+      <li>dns, dhcp, Firewall, Port Forward.</li>
       <li>Proxy</li>
       <li>VPN</li>
       <li>Database</li>
     </ul>
     <p>One computer can be multiple servers, it's not just one server on each computer.</p>
 
+    <h2>Software</h2>
+    <p>A browser is just a popular http client; filezilla an ftp one. There are other tools using same protocols for communication between devices. Some of those tools are text-based or command line browsers, the http cli-program in linux.</p>
+    <p>There is also related software to download webpages, for example wget or curl.</p>
+    <p>On the server side, apache is a popular http client, samba an smb client, etc. Setting them up can be tricky.</p>
+
     <h2>Hardware</h2>
     <p>Normally servers use Xeon processors, redundant power supplies (RSP) so if one dies the system keeps running (ideally it runs 24/7). We can take out and replace it. Redundant array of inexpensive disks (RAID). The computer maintains more than one copy of the data, using many hard drives, if one cracks down, we can replace it, and everything is rebuild. Error-code Correction (ECC) RAM runs a check of the RAM.</p>
-    
-    <h2>Software</h2>
-    <p>The server type correlates with a program, not with a machine. A machine could be FTP, SMTP, SSH and HTTP server, for example. Security or Authentication server, so we log in and gain access to a subset of directories in the server. Apache, Nginx are for web servers, SQL for databases.
 
     <h2>DNS server</h2>
-    <p>It's like phone book (we know the name, get the number). DNS resolves domain names to IPs. A domain name could be google.com. If the domain does not exit, we get an error.</p>
-    <p>To access any device in the world wide web (network) we need to be connected to WAN. This is done using a Router/Switch. Which in turn needs to be configured. The IP of the router is retrieved by using: ip route in linux, and similar in windows.(any device on a network is assigned an IP).</p>
+    <p>It's like a phone book (we know the name, get the number). DNS resolves domain names to IPs. A domain name could be <em>https://www.google.com</em>. If the domain does not exist, we get an error.</p>
+    <p>To access any device in the world wide web network, we need to be connected to the wan.</p>
 
     <h2>Proxy Server</h2>
     <p>It's a computer that asks for a webpage for us, so our IP remains hidden. Instead of asking for an address straight to the web-server, we ask to the proxy and this (with its IP) asks for the webpage or data.</p>
     <p>A proxy server can change your IP address, so the web server doesn’t know exactly where you are in the world. It can encrypt your data, so your data is unreadable in transit. And lastly, a proxy server can block access to certain web pages, based on IP address.</p>
     <p> The benefit is surfing the web anonymously.  One problem, it doesn't encrypt data, so in the worse scenario user/pass could be detected by hackers.</p>
-    <h2>VPN server</h2>
+
+    <h2>vpn server</h2>
     <p> Virtual Private Network It encrypts data, and keeps it private. Ex NordVPN</p>
 
-</body>
+    <h2>ftp server</h2>
+    <ul>
+      <li>Use port 21 to be secured?</li>
+      <li>exchange files with ftp-server. `ftp` on command line or gui clients.</li> 
+      <li>Apart from port 21, it's not a secure way to transfer files.</li>
+    </ul>
+    <dl>
+      <dt>Example</dt>
+      <dd>On a browser's address bar: ftp://address </dd>
+      <dd>cli: ftp adress</dd>
+      <dd>Filezilla: write adress in search box.</dd>
+    </dl>
+    <p>Without a secure connection hackers see anything transferred over the network. This is not a secure method to buy things, log into social networks etc. But can do simple stuff.</p>
+    <p>For sensible data SFTP should be used instead. SFTP uses secure shell, encrypts the data. Port 22.</p>
+    <p>In any case, we need the IP, a user and a password.</p>
+    <h2>http server</h2>
+    <p>HyperText Transfer Protocol Access <b>public</b> files of a server. Does not ask for passwords. It's possible (<kbd>C-S</kbd>) to download the html, not just the source code, but all linked files even if they are in a different domain.</p>
+    <ul>
+      <li>On a Browser Address Bar: <em>http://www.domainName.subDomain</em></li>
+      <li>Using wget and curl: wget/curl [options] webaddress; or GET, POST, HTTP + webadress</li>
+    </ul>
+
+    <h2>Setting Up Apache</h2>
+  </body>
 </html>
