@@ -4,18 +4,18 @@
   </head>
   <body>
     <h1>Servers</h1>
-    <p>Servers are computers offering services to other computers. They must be on a network.</p>
-    <p>There are specific computers used as servers, but our own computer can be converted into a server. They are not really made for this and will struggle with large number of users, etc. More on this later.</p>
-    <p>When we use the services of server, we (anything in our computer) are clients. Web Browsers like Mozilla Firefox are HTTP (or web) client , so it's a client that uses services of a server. Namely, a web server. We can access FTP servers using Filezilla, or any other FTP client.</p>
+    <p>Servers are computers offering services to other computers. They both must be on a network. The consumer computer is the Client.</p>
+    <p>There are specific computers used as servers, but our own computer can be converted into a server.</p>
+    <p>Web Browsers like Mozilla Firefox are HTTP-server (or web) clients. We can access FTP servers using Filezilla, or any other FTP client. We can access SMB servers in a similar way, the server could be set up using SMB. We can also access SSH servers, etc.</p>
     <p>In general, we connect to particular types of servers using particular clients.</p>
 
     <h2>Set Up</h2>
 
     <h2>Type of servers</h2>
     <ul>
-      <li>File</li>
+      <li>File: shared folder for a network. Different protocol than ftp.</li>
       <li>FTP</li>
-      <li>Authentication Servers</li>
+      <li>Authentication</li>
       <li>Web</li>
       <li>Mail</li>
       <li>DNS</li>
@@ -29,7 +29,7 @@
     <p>Normally servers use Xeon processors, redundant power supplies (RSP) so if one dies the system keeps running (ideally it runs 24/7). We can take out and replace it. Redundant array of inexpensive disks (RAID). The computer maintains more than one copy of the data, using many hard drives, if one cracks down, we can replace it, and everything is rebuild. Error-code Correction (ECC) RAM runs a check of the RAM.</p>
     
     <h2>Software</h2>
-    <p>The server type correlates with a program. Security or Authentication server, so we log in and gain access to a subset of directories in the server. Apache, Nginx are for web servers, SQL for databases.
+    <p>The server type correlates with a program, not with a machine. A machine could be FTP, SMTP, SSH and HTTP server, for example. Security or Authentication server, so we log in and gain access to a subset of directories in the server. Apache, Nginx are for web servers, SQL for databases.
 
     <h2>DNS server</h2>
     <p>It's like phone book (we know the name, get the number). DNS resolves domain names to IPs. A domain name could be google.com. If the domain does not exit, we get an error.</p>
