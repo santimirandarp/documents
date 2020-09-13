@@ -11,11 +11,18 @@
       <li>web server</li>
       <li>web client (browser)</li>
     </ol>
+
+    <h2>Universal Resourse Locator</h2>
+    <p>A big portion of the web is just URLs and in the end, IPs. A url is a way we can find a site on the internet cloud. The internet is all about protocols; the IP protocol connects 2 computers, the TCP controls the transmission bit by bit, and HTTP is the high level protocol dealing with the data.</p>
+    <p>A url is composed of many pieces: <em>scheme://domain.subdomain/folders/file.ext</em></p>
+    <p>Where a scheme is a protocol like http, ftp, and more. Domain is the name of the site, subdomains are .com, .net, .org. Normally, when we open up a browser, we use https, and what we type is really the domain name.</p>
+
     <h2 id="browsers-i">Browsers I</h2>
     <p>A webpage is very similar to a text file. As Microsoft Word reads .doc files, Web Browsers read .html files. Browsers read local files or request files to the server through a protocol (HTTP). Browsers need an address, called URL or IP, to find and retrieve the file (website).</p>
+
     <h2 id="the-process-of-seeing-a-webpage">The process of seeing a webpage</h2>
-    <p>So you open the browser and type an URL. The browser looks for the file in a remote computer (the web server). Then a webpage or an error is retrieved and displayed on your screen. The browser uses the GET 
-    method (from the http protocol) to retrieve the html file, as well as image files (jpg, png) and some other files too. Each adds to the page load-time.</p>
+    <p>You open the browser and type a domain name (url). A request is sent to a DNS server, to translate the url to an IP. Next, the browser looks for the file in a remote computer with that ip (the web server). Then a webpage or an error is retrieved and displayed on your screen. The browser uses the GET method (from the http protocol) to retrieve the html file. On each GET request a Header and a Body are retrieved (can be seen on the network tab). When parsing the html file, it may find extra links to images, or fonts, javascript, so it requests those files too! Each request adds to the page load-time.</p>
+
     <h2 id="browsers-ii">Browsers II</h2>
     <p>Once the page is retrieved, many things occur. The Browser generates the DOM or Document Object Model. This is a tree-like representation of our HTML document. Each branch is a Node. Nodes are elements, attributes or text. This structure allows developers manipulate the website using javascript.
     </p>
