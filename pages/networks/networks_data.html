@@ -5,7 +5,7 @@
   <body>
 
     <h1>Networks</h1>
-    <p>We talked about some ways, namely protocols, in which two computers - in a network -  can exchange data. Let's now see how to set up a network.(Yes, not the what, but the how)</p>
+    <p>Two computers in a network can exchange data through a given protocol. Let's now see how to set up a network.</p>
     </p>
 
     <h2>Types</h2>
@@ -19,7 +19,7 @@
         <h2>Hardware</h2>
         <ol start=4 reversed>
           <li>Modem: Connects (data) our network with the external world (internet) via DSL, Satellite, Cable or Fiber.</li>
-          <li>Router: <em>the one who draws the route</em>. This route is the path the data follows, from a device to a device. It connects different networks. The way computers find each other is specified in the Internet Protocol (IP). AFAIK any connection between 2 networks needs a router.</li>
+          <li>Router: <em>the one who draws the route</em>. This route is the path the data follows from a device to a device. It connects different networks. </li>
           <li>Firewall</li>
           <li>Switch: connects cabled devices to a network. There are unmanaged and managed switches. The latter ones can be programmed for specific tasks. The switch supports particular speeds.</li>
           <li>Wireless Access Point or  WAP (optional): connects wifi devices to a network. It's linked to the switch.</li>
@@ -27,19 +27,20 @@
         </ol>
 
         <h3>Modem</h3>
-        <p>The modem is usually connected to a Fiber Cable or to a Satellite on one end. On the other end it connects to the Router or Switch.</p>
-        <p>The word modem comes from modulate/demodulate. It could be electric to sound (DSL) and viceversa.
-        </p>
+        <p>The modem is usually connected to a Fiber Cable or to the Phone line (dsl) or to the Cable (tv like). On the other end it connects to the Router or Switch.</p>
+        <p>The word modem comes from modulate/demodulate. It could be electric to sound (DSL) and viceversa.</p>
+        <h3>Router</h3>
+        <p>The way computers find each other is specified in the Internet Protocol (IP). Any connection between 2 networks needs a router. Routers have 2 IP addresses, external and internal. The router connected to the wan (there may be more than one router) is the one with the Public IP of the network, on the outside. The internal ip is called Gateway.</p>
+        <p>Routers may contain other devices and services: switch, wap, nat, dns, dhcp, firewall. Routers need to be configured. For small networks this is pretty straightforward.</p>
         <h3>WAP</h3>
-        <p><b>Wireless</b> network devices 802.11a, 802.11b, 802.11g, 802.11n. Most of them are compatible to each other (only a is useless), so buying any network card should work. We should pick up the best speed match though. n-type spans a wide area and is quick.</p>
+        <p><b>Wireless</b> network devices 802.11a, 802.11b, 802.11g, 802.11n. Most of them are compatible to each other (only a is useless), so buying any network card should work. We should pick up the best speed match though. n-type spans a wide area and is quick. Most times integrated in the Router.</p>
         <h3>Firewall</h3>
-        <p>A firewall config may not be necessary because this is done in the router.</p>
-        <p>A firewall stops the fire, in this case, dangerous data. <b>Host-based</b> firewalls are the ones set up on a computer, and protect only that computer. Windows comes with firewall and also 3rd parties can be installed. Antivirus might come with firewall. <b>Network-based</b> firewall rules are applied to the entire network. This is probably set in the switch or Router, by tweaking its config using a web-gui.</p>
+        <p>A firewall allows us to block ports. <b>Host-based</b> firewalls are the ones set up on a computer, and protect only that computer. Windows comes with firewall and also 3rd parties can be installed. Antivirus might come with firewall. <b>Network-based</b> firewall rules are applied to the entire network. This is probably set in the switch or Router, by tweaking its config using a web-gui.</p>
         <h3>Cabling</h3>
         <p>
         </p>
 
-        <h2>Example:SOHO</h2>
+        <h2>Example: soho network</h2>
         <p>soho networks are small networks; like a lan at home. For this kind of networks we can buy a particular type of Routers. Enterprise routers only route traffic over/in/out the lan. Soho routers also include many devices apart from the router: Switch (those phone plugs on the back), DNS server, DHCP server, Firewall server, and Port forwarding.</p>
         <p>We can configure a soho Router using a web browser, by typing the router's IP in the URL bar. This is not the way to set up an enterprise router.</p>
         <p>When a device connects to a network, it either has a static or a dynamic IP. Normally, we want the DHCP server to assign all the network parameters automatically. For that, we configure an IP range on the DHCP server.</p>
