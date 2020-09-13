@@ -41,7 +41,7 @@ tcp-ip is divided in 4 layers.
 
 4. Application: 7,6,5. Protocols: http, sftp, smb, dns, imap, dhcp, ftp, pop, telnet. Firefox, or Chrome, Outlook etc. make use of protocols on this layer on the client end whereas Apache, Node etc make use on the Server end. PDU: Data.
 3. Transport: 4. Protocols: TCP, UDP. PDU: Segments. 
-2. Internet: 3. Protocols: IPv4, IPv6, etc. Notice **ip** on this layer. PDU: Packets/Datagrams.
+2. Internet: 3. Protocols: IPv4, IPv6, etc. Notice **ip** on this layer. PDU: Packets/Datagrams. Think of all the router configuration (as it appears on the web gui for the router.)
 1. Network: 2,1. Protocols: Ethernet 802.11 and 802.3,  MAC, ARP, DSL, PPP. PDU: Bits. WAP, NIC. PDU: frames.
 
 This model is osi but simplified. But is the actually implemented model.
