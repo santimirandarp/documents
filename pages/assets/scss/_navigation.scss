@@ -1,0 +1,16 @@
+#navigation>dt{
+  display:inline-block;
+  padding:0.3rem;
+  cursor:pointer;
+  text-decoration:underline;
+  &+dd{
+    height:0;
+    overflow:hidden;
+    transition:height 0.3s ease-out;
+  }
+  &::after{
+    content:"▼"
+}}
+.showNavigation{
+  height:auto;
+}
