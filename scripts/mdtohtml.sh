@@ -1,7 +1,7 @@
 #!/bin/bash -x
 #USAGE
 #1. mdtohtml DIRECTORY FILE(S)
-#2. mdtohtml linux *linux.md
+#2. mdtohtml linux linux/*linux.md
 #to run you need to be on the md directory
 
 DIRECTORY=$1
@@ -17,4 +17,5 @@ do
   BASENAME=$(basename $FILE .md)
   marked ${FILENAME}  -o ${BASENAME}.html && echo "Converted" || echo "can't convert ${FILENAME}"
   mv -iv ${BASENAME}.html ../pages/${DIRECTORY}/ && echo "Ok"
+  mv -iv $FILE moved/
 done
