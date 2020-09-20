@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 for file in "$@"
-do sed -i $'s,href=[\'"][^\'"]*index.css.,href="../assets/css/index.css",g' "$file"
+do sed -i $'s,</body>,<script src="../assets/js/index.js"></script></body>,g' "$file"
 done
 #do
  # isIndex=$(grep -F "index.css" ${file})

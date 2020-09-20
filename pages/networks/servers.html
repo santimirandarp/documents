@@ -29,10 +29,10 @@
     <h2>Software</h2>
     <p>A browser is just a popular http client; filezilla an ftp one. There are other tools using same protocols for communication between devices. Some of those tools are text-based or command line browsers, the http cli-program in linux.</p>
     <p>There is also related software to download webpages, for example wget or curl.</p>
-    <p>On the server side, apache is a popular http client, samba an smb client, etc. Setting them up can be tricky.</p>
+    <p>On the server side, apache is a popular http server, samba an smb server, etc.</p>
 
     <h2>Hardware</h2>
-    <p>Normally servers use Xeon processors, redundant power supplies (RSP) so if one dies the system keeps running (ideally it runs 24/7). We can take out and replace it. Redundant array of inexpensive disks (RAID). The computer maintains more than one copy of the data, using many hard drives, if one cracks down, we can replace it, and everything is rebuild. Error-code Correction (ECC) RAM runs a check of the RAM.</p>
+    <p>Servers use Xeon processors, redundant power supplies (RSP) so if one dies the system keeps running (ideally it runs 24/7). We can take out and replace it. Redundant array of inexpensive disks (RAID). The computer maintains more than one copy of the data, using many hard drives, if one cracks down, we can replace it, and everything is rebuild. Error-code Correction (ECC) RAM runs a check of the RAM.</p>
 
     <h2>DNS server</h2>
     <p>It's like a phone book (we know the name, get the number). DNS resolves domain names to IPs. A domain name could be <em>https://www.google.com</em>. If the domain does not exist, we get an error.</p>
@@ -61,13 +61,13 @@
     <p>Without a secure connection hackers see anything transferred over the network. This is not a secure method to buy things, log into social networks etc. But can do simple stuff.</p>
     <p>For sensible data SFTP should be used instead. SFTP uses secure shell, encrypts the data. Port 22.</p>
     <p>In any case, we need the IP, a user and a password.</p>
+
     <h2>http server</h2>
-    <p>HyperText Transfer Protocol Access <b>public</b> files of a server. Does not ask for passwords. It's possible (<kbd>C-S</kbd>) to download the html, not just the source code, but all linked files even if they are in a different domain.</p>
+    <p>HyperText Transfer Protocol Access <b>public</b> files of a server. It's possible (<kbd>C-S</kbd>) to download the html, not just the source code, but all linked files even if they are in a different domain.)</p>
     <ul>
       <li>On a Browser Address Bar: <em>http://www.domainName.subDomain</em></li>
       <li>Using wget and curl: wget/curl [options] webaddress; or GET, POST, HTTP + webadress</li>
     </ul>
-
-    <h2>Setting Up Apache</h2>
+    <p><a href="../web/backend.html">See backend</a> for instructions setting up http servers.</p>
   </body>
 </html>
