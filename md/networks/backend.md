@@ -8,7 +8,7 @@ Architecture example: the client use a browser, the server an HTTP-service like 
 
 A finished up server layout: 
 
-{IMAGE full repl}
+![Example of a backend directory structure and files](./backend.jpg "Backend Example")
 
 ## Basic instructions
 
