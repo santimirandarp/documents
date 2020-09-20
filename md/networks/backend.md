@@ -1,46 +1,47 @@
-# What the heck is a web server
+# What the heck is a web server?
 
-Just as a quick remainder, a connection between 2 computers is described as a Client-Server architecture. One computer asks for a service (client), and the other one provides a service (server). From a simplistic point of view, the only difference between the computers - besides the role - is the software they contain. 
+A connection between 2 computers is described as a Client-Server architecture. One computer asks for a service (client), and the other one provides a service (server). The only difference between the computers - apart from the role - is the software they contain. 
 
-The client might have a browser, the server an HTTP-service (example: apache, node, ...).
+A server can be our own computer. A big company server though, are computers with a specific hardware too. Like Xeon processors, RAID disks.
 
-We need to learn how to set up a server, in order for clients to get the service. A server can be our own computer. A big company server though, are computers with a specific hardware too. Like Xeon processors, RAID disks, and so on, and so forth. 
+Architecture example: the client use a browser, the server an HTTP-service like Apache or Node-Express.
 
 A finished up server layout: 
 
 {IMAGE full repl}
 
-Emulating that set up we should get our server running. Basic steps we will follow are:
+## Basic instructions
 
 1. set up our normal front-end project
 2. install a backend framework 
 3. configure 
 
 ## Data Journey
-To grasp this simple set up we need some context. When a person types a url/domain name, it is requesting a file from a server. The urlis the _location_ of a computer. (Over the journey it gets translated to an ip by means of a DNS server). _requests_ have 2 parts: a Header and a Body. The domain is part of the Header (more on this later). Together Body and Header bundle all the data server needs. 
+To grasp this simple set up we need some context. When a person types a url/domain name, it is requesting a file from a server. The url is the _location_ of a computer. (Over the journey it gets translated to an ip by means of a DNS server). _request_ has a Header and a Body. Together Body and Header bundle all the data the server needs. We think of it as a file.
 
-The file gets to the server (to port 80), and because the server is _listening_ on the door (the target url) it handles the file. The file says "hey server, I want X file". And that's where we come in. 
+The file gets to a server (port 80), it handles the file/request. The file says "hey server, I want X resource". And that's where we come in. 
 
-* We will create a function that _returns the requested file_. 
-That happens all the time! Whether we go to _google.com_,  _amazon_ or to a static github page, we request a file, and a server gives receives the request, and retrieves the file (if it exists!). 
+* We will create a function that responds to a particular request.
 
+This happens all the time! Whether we go to _google.com_,  _amazon_ or to a static github page, we request a file, and a server gives receives the request, and retrieves the file (if it exists!). 
 
 ## The url
-You may wonder, but hey, what domain are you talking about? We may get lost here. 
-
 By the way, a domain name is almost synonym or a URL. Example: _https://www.mozilla.org_, _https://www.google.com_
 
-HTTPS is the scheme/protocol then we have subdomain (www) domain (mozilla, google) top domain (org, com).
+* HTTPS is the scheme/protocol, 
+* www is subdomain, 
+* amazon, google are domains,
+* .com, .org, .net, etc are top domains.
 
-A domain is just a name just maps to our computer's IP. Any device in a network has an IP address. At first, we won't bother about domains, and use the ip address. But let me explain further.
+A domain is just a name that maps to a computer IP. Any device in a network has an IP address. At first, we won't bother about domains, and use the ip address. But let me explain further.
 
-### Server For Free
-1. Local-Local set up: to access the webpage from devices on the lan (anyone at home can access!).
-2. Local-Global: set your router to forward port 80 requests to that IP (visible to the world, or WAN).
+### Set Up a Server For Free
+1. Local-Local: to access the webpage from devices on the lan (anyone at home).
+2. Local-Global: router forwards port 80 requests to our IP (visible to the world, or WAN).
 
-In both cases the users will need to type an IP. In the first case, it is a lan ip, in the second case what is called a Public ip. In due moment, I will show _how to get that ip_.
+In the first case, it is a lan ip, in the second case what is called a Public ip. In due moment, I will show _how to get that ip_.
 
-Those two options do not need anything like a web domain/url. But people will need to type an ip in the Browser url. 
+People will need to type an ip in the Browser url. (unless we own a domain, see below.) 
 
 ### Paying
 Or you can buy a domain and optionally rent a host. 
@@ -52,68 +53,58 @@ Those are rather cheap. What happens here is simple. They link the computer's ip
 
 Obviously, we can buy a domain and link it to our local WAN. (I'm yet to know how.)
 
-
 ## Local Area Network Web Server, for free
-Let's get something running. To get started, we'll do a free, local-local server. Our computer will serve a site on the lan. If you have no idea what lan is, just remember this website will only be visible for people connected to the same wi-fi network than you. So probably your family will, but not your neighbors.
+To get started, we'll do a free local-local server. Our computer will serve a site on the lan. If you have no idea what lan is, just remember this website will only be visible for people connected to the same wi-fi network than you. So probably your family will, but not your neighbors.
 
 ### Using Node and Express
 1. Install Node.js (for Windows, Mac or Linux)
 2. Create a project (using `npm init -y`), or cd into a project.
-3. In any case, install express `npm i express`
-Express makes setting up the server very simple. But it could be done with Node alone. 
+3. Install express `npm i express`
 4. Create a `server.js` file and open it up in an editor. Paste this code in:
-
 ```
 const express =  require("express")
 const app = express()
-const port = process.env.PORT || 3000
+const port = 3456
 console.log("Hello World")
 app.listen(port)
 ```
 5. Open a terminal on the server.js directory. And run `node server.js`. 
-6. (now we "switch to client side) In a browser type: _localhost:3000_
+Now there is a server listening on port 3456. We need to emulate a client. What do clients do?
+6. They make requests! In a browser type: _localhost:3456_ 
 
-You will see "can not GET". We didn't configure it yet!
+You will see "can not GET /". That's fine. Let's fix it.
 
-When we type in _localhost_ the browser looks up in the ip 127.0.0.1 which again, is a loopback to our computer. This ip address has no meaning in a different pc (well, it does, it points to that pc!) so there is no danger in showing this ip.
-
-Let's serve a string.
+When we type in _localhost_ the browser looks up in the ip 127.0.0.1 which again, is a loopback to our computer. This ip address has no meaning in a different pc (well, it does, it points to that pc!). So there is no danger in showing this ip.
 
 Add this 2 lines to `server.js`
 
 ```
 const data="Hello Dude"
 app.get("/", (req, res)=>res.send(data))
-//basically app.method("where are they calling to", "what to do")
-//method might be get, post, delete, put etc.
 ```
+You will get a better idea as we roll along.
 
-First argument is where are we expecting the request url, second is a callback.
+Re-type `localhost`. You should get the string "Hello Dude".
 
-By typing `localhost`, we're _making a request_ to the root (the directory where server.js is located), and retrieving a string ("Hello Dude").
-
-Let's response with a webpage.
+Now, let's response with a webpage.
 
 ```
-//node js defines a variable __dirname, let's test
-
 console.log(__dirname)
-// dirname is the absolute path to the current directory.
-//we need to append the relative path to the index file
-const path = __dirname+"/views/index.html"
-console.log(path)
-//now let's ask retrieve index.html when they type our webpage "url".
+//dirname: absolute path to server.js directory.
+const pathToFile = __dirname+"/views/index.html"
+console.log(pathToFile)
 app.get("/", (req,res)=>res.sendFile(path))
 ```
 
 This will return the file. 
 
-Environmental variables are variables Node.js sets when we lauch the program. If you want to check them out, type `console.log(process.env)` and see the long list of environmental variables. [An intro here](https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html). You will notice that is an object. A variable can be logged this way `console.log("My Variable Is", process.env.varName)`
+* What happens if you type localhost:3456/a?
+* What happens if you change "/" by "/a"? 
 
-Why is this relevant? Some sites will set a few of this variables for us. In particular the `process.env.PORT`. Be aware!
+Environmental variables are variables Node.js sets when we lauch the program. If you want to check them out, type `console.log(process.env)`. [An intro here](https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html). You will notice that is a standard object (we can change it). 
 
-* What do you think will happen if, instead of localhost, we write `localhost/directory`?
+* `localhost:3456/psycopath` will return can not GET. But why?
 
-Essentially, this will return not found, because we're not handling such a request.
+Essentially, because we're not handling such a request.
 
 ### Using Apache in Linux
