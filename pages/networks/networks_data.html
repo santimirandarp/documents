@@ -5,7 +5,13 @@
   <body>
 
     <h1>Networks</h1>
+    <p>When needing to <b>share</b> resources between computers, think of networks. 
+
+    <p>Sidenote: Using cd, dvd, usb, is called sneakernet. In some sense, this is a network. A human carries the CD from one computer to another. This process is slow, but sometimes useful. Here we talk about cables or wi-fi networks.</p>
+
     <p>Two computers on a network can exchange data through a given protocol. Let's now see how to set up such a network.</p>
+
+    <p>As said, on a network computers can <b>share</b> resources like files, folders, music, films, books, almost anything. Even the data of a flash drive (usb) or a hard drive connected to a laptop. Even internet connection can be shared.</p>
 
     <h2>Types</h2>
     <p>Knowing the types of network simplifies the problem. We can classify networks depending on the physical area they span, and whether they are wired or wireless.</p>
@@ -20,7 +26,7 @@
     <p>We know there are pan, lan and wan networks depending on the size. Let's now see the hardware.</p>
     <ol start=4 reversed>
       <li>Modem. Converts the signal-type coming from ISPs to computer friendly signal. ISPs deliver data using Broadband Technologies: DSL, Satellite, Cable,  Fiber, P2P, Wireless.</li>
-      <li>Router. The Router is essential to connect 2 different networks, it uses the IP protocol for this.</li>
+      <li>Router. Connects 2 different networks, it uses the IP protocol for this.</li>
       <li>Firewall. Allows or Rejects requests and pings to particular ports and sites.</li>
       <li>Switch: connects wired devices. There are unmanaged and managed switches. The latter ones can be programmed for specific tasks. The switch supports particular speeds.</li>
       <li>Wireless Access Point or  WAP (optional): connects wifi devices. It's linked to the switch.</li>
@@ -32,6 +38,7 @@
     <p>The modem is usually connected to a Fiber Cable or to the Phone line (dsl) or to the Cable (tv like). On the other end it connects to the Router or Switch.</p>
     <p>The word modem comes from modulate/demodulate. It could be electric to sound (DSL) and viceversa.</p>
     <h3>Router</h3>
+    <p>The router connects 2 different networks. Normally, we connect the WAN (internet) on one port, and our devices using wireless access points or cables. But we can connect any two networks!</p>
     <p>The way computers find each other is specified in the Internet Protocol (IP). Any connection between 2 networks needs a router. Routers have 2 IP addresses, external and internal. The router connected to the wan (there may be more than one router) is the one with the Public IP of the network, on the outside. The internal ip is called Gateway.</p>
     <p>Routers contain other devices and services: switch, wap, nat, dns, dhcp, firewall. Routers need to be configured. For small networks this is pretty straight-forward.</p>
     <h3>WAP</h3>
@@ -39,8 +46,15 @@
     <h3>Firewall</h3>
     <p>A firewall allows us to block ports. <b>Host-based</b> firewalls are the ones set up on a computer, and protect only that computer. Windows comes with firewall and also 3rd parties can be installed. Antivirus might come with firewall. <b>Network-based</b> firewall rules are applied to the entire network. This is probably set in the switch or Router, by tweaking its config using a web-gui.</p>
     <h3>Cabling</h3>
-    <p> CAT5e are used for networking. Supports Gb/s speed.  </p>
-
+    <ul>
+      <li>CAT5e are used for networking. Supports Gb/s speed.</li>
+      <li>Plugs. RJ45 (ethernet), RJ11 (phones). Don't confuse them.</li>
+      <li>Tools. Electrician Scissors, to cut the cables. Crim, to tight jack and cables in the end. Punchdown, for patch cables. Cable Tester, to check if the line is brake or we confuse cables order in the jack. Tonning device, to find our cable among the crowd.</li>
+    </ul>
+    <p>The proceduce consist on cutting out the shield, untwisting the cables, tight them and put inside the Jack, in consisteng order on each side. The standard is: white orange, orange, white green, blue, white blue, green, brown white brown. We use the crim to cut evenly.
+    </p>
+    <p>There are 2 types of Jack, Male and Female. Females are the ones where people plugs the ethernet cables. Males are the ethernet cables. There is a different color order indicated in the cable itself (dont memorize). Here we use the punchdown tool.</p>
+    <p>It can't be easier!</p>
     <h2>Example: soho network</h2>
     <p>soho networks are small networks; like a lan at home. For this kind of networks we can buy a particular type of Routers. Enterprise routers only route traffic over/in/out the lan. Soho routers include many other devices.</p>
     <p>We can configure a soho Router using a web browser, by typing the router's IP in the URL bar. This is not the way to set up an enterprise router.</p>
@@ -48,5 +62,5 @@
     <p>If there is a server on the lan, we want a static ip. Let's say someone in a different part of the world types our domain in a browser. They get the domain's IP from a DNS server. The request lands to the router at a particular port. This depends on the type of request. We need to link the IP of our lan server to the specific port. Web requests arrive at port 80, ftp at 21, etc etc. We can look them up online.</p>
     <p>Then, in the port forward section, we write our server IP and the port it will be listening to. Example 192.168.0.1:80</p>
     <p>If the server IP is not static, then the redirection will occur either to another device, or to nowhere, and the request will fail. So, for servers, we need a static IP.</p>
-  <script src="../assets/js/index.js"></script></body>
+    <script src="../assets/js/index.js"></script></body>
 </html>

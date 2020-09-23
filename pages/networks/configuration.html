@@ -17,11 +17,20 @@
 <h2 id="network-parameters">Network Parameters</h2>
 <ul>
 <li>inet 192.168.1.25  IP address of a computer in a network</li>
-<li>broadcast 192.168.1.255 internal Router ip?</li>
-<li>netmask 255.255.255.0 subnet mask. 
-Shows that only the last number identifies a host (device) on the network. And there are 254 IPs. This means we gave the last octet (8 bits) for hosts on the network. This number is 2^n -2 (254). One is for the broadcast, the other one I don&#39;t know. And 2^n for the number of subnetworks. Which is 2^24 here.  </li>
-<li>Classify subnet according to that netmask ip. A: 255.0.0.0, B:255.255.0.0, C:255.255.255.0</li>
+<li>broadcast 192.168.1.255 is an internal ip but is it Router ip?</li>
+<li>[sub]netmask 255.255.255.0</li>
 </ul>
+<h2>More on Subnet Mask</h2>
+<p>
+255.255.255.0 helps us to read IPs addresses and understand them. Helps us to identify the subnetwork, and the devices on it. 
+</p>
+<p>
+Devices under 192.168.1.X are on the same subnetwork. 
+  For example, 192.168.1.25 and 192.168.1.255 are on the same subnetwork. 192.168.2.X is meaningless here (because no devices will be assigned that ip). But were the subnet mask 255.255.X.Y then it would be meaningful.
+</p>
+<p>The left side from the 0 indicates the network part of the IP, and the right side are numbers left for devices.</p>
+<p> Classify subnet according to that subnetmask ip. A: 255.0.0.0, B:255.255.0.0, C:255.255.255.0</p>
+
 <script src="../assets/js/index.js"></script>
   </body>
 </html>
