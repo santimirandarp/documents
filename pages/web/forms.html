@@ -1,19 +1,18 @@
+<html>
 <h1 id="basics-of-forms">Basics of Forms</h1>
-<p>The most common elements:</p>
+<p>
+Form: Wraps all the form. Attributes: action, method. Action is a redirection, method get or post.
+Input is the most common form element. The most important attributes are: type, name and value. Others are: placeholder, 
+required, etc. It's good to know the basic types. The ones in bold do no need a value attribute (any value given will be a default).
 <ul>
-<li>Form: Wraps all the form. Attributes: action, method.</li>
-<li>Input: the user types, selects, or uploads data. Type, Placeholder, required, checked, name/value, id.</li>
-<li>Label this is for the user. It binds a piece of text to the for element. Always should use the <em>for</em> attribute to make should the label is understood by SRs.</li>
-<li>Fieldset-legend: to group widgets with the same purpose. Radio buttons should be nested inside a fieldset.</li>
-<li>Textarea</li>
-<li>Button</li>
+  <li>
+    <b>text, search, email, url, age, textarea</b>. May be wrapped in a label.
+  </li>
+  <li> checkbox, radio. Always wrapped in label.  </li>
+  <li>Button</li>
+  <li>select-option. Select needs a name, the value is on the options.</li>
 </ul>
-<p>Most of text-kindof inputs like text, email, url, age, need a name but the value is derived fromt the input itself, when the data is sent. If we give them a value, it&#39;s just gonna be a default. </p>
-<p>Similar inputs like checkboxes and radios, need name and value.</p>
-<p>Select needs a name, and he value is on the options.</p>
-<p>Validation</p>
-<ul>
-<li>Required, </li>
-<li>min, max, pattern</li>
-</ul>
-<p>Related css pseudoclasses: :invalid, :required...</p>
+<p>
+Label this is for the user. It binds a piece of text to the for element. Always should use the <em>for</em> attribute to make should the label is understood by SRs.</p>
+<p>Fieldset-legend: to group widgets with the same purpose. Radio buttons should be nested inside a fieldset.</p>
+</html>
