@@ -17,7 +17,9 @@ When a computer sends a message, the phenomenon involved is very complex, but it
 
 In the application layer (7) we choose an application to connect to a server. We will need to input an address, and maybe a port (or it will use the default port). The switch has a MAC table, mapping MAC addresses to Port Numbers. When a device sends a message for the first time, it links its MAC address to the Port. 
 
-But wait. We're on layer 7. When we press "connect" a session is started between host and server; the data is broken into packages, and some information is added. The packet is capped in the Router/IP/Network layer if the IPs are known. And they are capped again in layer 2 Switch/MAC/Data Link Layer using the MAC addresses from the mentioned table. (this is the capsulation process) 
+But wait. We're on layer 7. When we press "connect" a session is started between host and server; the data might be encrypted (layer 6) and later on is broken into packages. Some extra information is added. The packet is capped in the Router/IP/Network layer if the IPs are known. And they are capped again in layer 2 Switch/MAC/Data Link Layer using the MAC addresses from the mentioned table. (this is the capsulation process) 
+
+In the reverse process, data is decrypted on layer 6.
 
 If the MAC address is not known Address Resolution Protocol comes into play. And it's a way to find MACs from IPs. 
 
