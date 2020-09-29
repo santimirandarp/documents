@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../assets/css/index.css"/>
+  </head>
+  <body>
+    <h1 id="what-the-heck-is-a-web-server">What the heck is a web server?</h1>
+    <p>A connection between 2 computers is described as a Client-Server architecture. One computer asks for a service (client), and the other one provides a service (server). The only difference between the computers - apart from the role - is the software they contain. A web Client is Firefox, a web Server is an http-service-software like Apache, Node, Flask. This runs on the server.</p>
+    <p>A server can be our own computer. A big company server though, are computers with a specific hardware too. Like Xeon processors, RAID disks.</p>
+    <p>A finished up server layout: </p>
+    <p><img src="./backend2.jpg" alt="Example of a backend directory structure and files" title="Backend Example"></p>
+
+    <h2 id="basic-instructions">Basic instructions</h2>
+    <ol>
+      <li>set up our normal front-end project</li>
+      <li>install a backend framework </li>
+      <li>configure </li>
+    </ol>
+
+    <h2 id="data-journey">Data Journey</h2>
+    <p>To grasp this simple set up we need some context. When a person types a url/domain name, it is requesting a file from a server. The url is the <em>location</em> of a computer. (Over the journey it gets translated to an IP by means of a DNS server). The <em>request</em> has a Header and a Body. Together Body and Header bundle all the data the server needs. We think of it as a file.</p>
+    <p>The file gets to a server (port 80), it handles the file/request. The file says &quot;hey server, I want X resource&quot;. And that&#39;s where we come in. </p>
+    <ul>
+      <li>We will create a function that responds to a particular request.</li>
+    </ul>
+    <p>This happens all the time! Whether we go to <em>google.com</em>,  <em>amazon.com</em>, to a static github page, we request a file, server receives the request, and retrieves the file (if it exists!).</p>
+
+    <h2 id="the-url">Network Tab</h2>
+    <p>One of the most interesting things when learning about backend programming of web servers (back end being the code we write in the server), is get to understand the full cycle of the information.</p>
+    <p>We will find 3 important tabs in the dev tools:</p>
+    <ul>
+      <li>Headers: Contains Response and Request. And many details about the URL.</li>
+      <li>Request Body: only contains data when posting to the server (don't worry for now). But it will be normally empty!</li>
+      <li>Response Body: data retrieved by the server, normally we can see the html page, etc.</li>
+    </ul>
+    <p>Of course there is not just one request-response, you will see maybe hundreds of files, all of those were individual requests. And this adds up to the loading time of the page.</p>
+    <h3>Brief About URLs</h3>
+    <p>By the way, a domain name is a subset - and almost synonym - of a URL. But "almost" is important. Example of URLs: <em>https://www.mozilla.org</em>, <em>https://www.google.com</em>.</p>
+    <ul>
+      <li>HTTPS is the scheme/protocol, </li>
+      <li>www is subdomain,</li>
+      <li>amazon, google are domains,</li>
+      <li>.com, .org, .net, etc are top domains.</li>
+      <li>sub, top, and domain form the base url</li>
+      <li>If we request a page from https://www.mozilla.org/meow the full path is called referer.</li>
+    </ul>
+    <p>A sub-domain-top is just a name that maps to a public IP. Any device in a network has an IP address. At first, we won&#39;t bother about domains, and use the ip address. But let me explain further.</p>
+
+    <h2 id="set-up-a-server-for-free">Set Up a Web Server</h2>
+    <ol>
+      <li>Local-Local: to access the webpage from devices on the lan (anyone at home).</li>
+      <li>Local-Global: router forwards port 80 requests to our IP (visible to the world, or WAN).</li>
+    </ol>
+    <p>In the first case, it is a lan ip, in the second case what is called a Public ip. In due moment, I will show <em>how to get that ip</em>.</p>
+    <p>People will need to type an ip in the Browser url. (unless we own a domain, see below.) </p>
+    <h3 id="paying">Or Paying</h3>
+    <p>Or you can buy a domain and optionally rent a host. </p>
+    <ol>
+      <li>Buy a domain + host. They will provide you a computer that you can access remotely with an already set up server. Example: Hostgator.</li>
+      <li>Buy a domain anywhere and then set up the server locally.</li>
+    </ol>
+    <p>Those are rather cheap. What happens here is simple. They link the computer&#39;s ip with the domain name, so don&#39;t worry about it.</p>
+    <p>Obviously, we can buy a domain and link it to our local WAN. (I&#39;m yet to know how.)</p>
+    <h3 id="local-area-network-web-server-for-free">Local Area Network Web Server, for free</h3>
+    <p>To get started, we&#39;ll do a free local-local server. Our computer will serve a site on the lan. If you have no idea what lan is, just remember this website will only be visible for people connected to the same wi-fi network than you. So probably your family will, but not your neighbors.</p>
+
+    <h2 id="using-node-and-express">Real Case: Server Using Node & Express</h2>
+    <ol>
+      <li>Install Node.js (for Windows, Mac or Linux)</li>
+      <li>Create a project (using <code>npm init -y</code>), or cd into a project.</li>
+      <li>Install express <code>npm i express</code></li>
+      <li>Create a <code>server.js</code> file and open it up in an editor. Paste this code in:<pre><code>const express =  require(&quot;express&quot;)
+const app = express()
+const port = 3456
+console.log(&quot;Hello World&quot;)
+app.listen(port)</code></pre>
+      </li>
+      <li>Open a terminal on the server.js directory. And run <code>node server.js</code>. 
+        Now there is a server listening on port 3456. We need to emulate a client. What do clients do?</li>
+      <li>They make requests! In a browser type: <em>localhost:3456</em> </li>
+    </ol>
+    <p>You will see &quot;can not GET /&quot;. That&#39;s fine. Let&#39;s fix it.</p>
+    <p>When we type in <em>localhost</em> the browser looks up in the ip 127.0.0.1 which again, is a loopback to our computer. This ip address has no meaning in a different pc (well, it does, it points to that pc!). So there is no danger in showing this ip.</p>
+    <p>Add this 2 lines to <code>server.js</code></p>
+    <pre><code>const data=&quot;Hello Dude&quot;
+app.get(&quot;/&quot;, (req, res)=&gt;res.send(data))</code></pre>
+    <p>You will get a better idea as we roll along.</p>
+    <p>Re-type <code>localhost</code>. You should get the string &quot;Hello Dude&quot;.</p>
+    <p>Now, let&#39;s response with a webpage.</p>
+    <pre><code>console.log(__dirname)
+//dirname: absolute path to server.js directory.
+const pathToFile = __dirname+&quot;/views/index.html&quot;
+console.log(pathToFile)
+app.get(&quot;/&quot;, (req,res)=&gt;res.sendFile(path))</code></pre>
+    <p>This will return the file. </p>
+    <ul>
+      <li>What happens if you type localhost:3456/a?</li>
+      <li>What happens if you change &quot;/&quot; by &quot;/a&quot;? </li>
+    </ul>
+    <p>Environmental variables are variables Node.js sets when we lauch the program. If you want to check them out, type <code>console.log(process.env)</code>. <a href="https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html">An intro here</a>. You will notice that is a standard object (we can change it). </p>
+    <ul>
+      <li><code>localhost:3456/psycopath</code> will return can not GET. But why?</li>
+    </ul>
+    <p>Essentially, because we&#39;re not handling such a request.</p>
+    <h3 id="using-apache-in-linux">Using Apache in Linux</h3>
+    <script src="../assets/js/index.js"></script>
+  </body>
+</html>

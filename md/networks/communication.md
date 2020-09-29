@@ -9,7 +9,7 @@ We still don't quite get the whole picture.
 How does communication occur between devices on a network?
 
 ## Communication in a lan
-So we layed out a network. There are wired devices connected through a switch, maybe a patch panel. Patch cables are cat5e, or even cat6. There may be a WAP wired to the switch, to provide wireless connection. 
+So we layed out a network. There are wired devices connected through a switch, maybe a patch panel. Patch cables are cat5e, or even cat6. There may be a WAP wired to the switch, to provide wireless connection. All this is under the 802.3 or 802.11 protocol. The wired part is 802.3X, wireless is 802.11Y. Instead of reading the standards we can make sense through a numbering system where 10GBASE-T indicates is a meaninful name for 802.3a, and means 10Gibabit speed, Baseband cable, Unshielded Twisted Pairs.
 
 The switch has Ethernet ports, and know which device is connected to which port. In particular, it knows the MAC address, which is an unique identifier for the Network Interface or Network Adapter.
 
