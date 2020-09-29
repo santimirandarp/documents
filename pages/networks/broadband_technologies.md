@@ -1,4 +1,5 @@
 # Broadband Technologies
+Broadband and Baseband, inside and outside. Broadband are the huge tentacles of the network, the big cables and infrastructure (satellites, etc); Baseband are just hairs, small wires in our house. Yet they follow similar rules coming from the Ethernet Protocol.
 
 Both DSL and Cable the infrastructure is already there. In contrast, Optic Fibre requires loads of money to build structure and throw the fiber cable lines.
 
