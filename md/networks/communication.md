@@ -29,3 +29,10 @@ When the data starts flowing through the ports, TCP (layer 4) controls the trans
 Luckily, all what is said is still valid here. The main difference is the role of a new device on the network: The Router.
 
 In the capsulation process the target IP is added. This is the Public IP of the router from a different lan. And the sender IP. When it reaches the gateway (our router) the sender IP is replaced by the Router's Public IP. This is called NAT or Network Address Translation. And the info travels to a new lan, where a similar process happens; by Port Forwarding, the router knows to which device send the incoming packet (as there is one device connected to a port). And replaces its own IP by that one, which is then converted into a MAC address.
+
+## End on the Beginning
+As we find problems and then brake down to parts, I believe _data_ the most fundamental part of this play, should appear at the end. So we have a model or idea about how communication works, what could we add?
+
+Data, data, data. The word here is Packet. A computer sends a packet to another one over the network. Each piece of the packet -we will brake it down- makes sense on the previous data-journey.
+
+We will imagine the data, and each component as a block. A packet is composed by a payload and a set of caps. The data itself (our message, picture, binary, or part of these) is the _payload_. The set of caps contain information about the sender and the receiver IP, and MAC address. Although the result is called Packet, also the combine of payload+IP caps is called packet. So we have: IP(sender)-Payload-IP(receiver) =  Packet. And then a frame is MAC-Packet-MAC supposing both addreses are known. Then there are a couple more headers we don't care about now (because it's rather complex already). The result is called Packet (too) and it's what is sent over the network. 
