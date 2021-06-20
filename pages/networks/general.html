@@ -8,13 +8,21 @@
     <p>When needing to <b>share</b> resources between computers, think of networks.</p>
     <blockquote><p>A network is nothing more than two or more computers connected by a cable or by a wireless radio connection so that they can exchange information.</p>
       <footer><cite>Networking All-in-One For Dummies</cite></footer></blockquote>
+    <p>Or from <cite><a href="https://ubuntu.com/server/docs/network-introduction">Ubuntu</a></cite>
+    <blockquote>
+  Networks consist of two or more devices, such as computer systems, printers, and related equipment which are connected by either physical cabling or wireless links for the purpose of sharing and distributing information among the connected devices.
+    </blockquote>
+    </p>
     <p class="sidenote-block">Sidenote: Using cd, dvd, usb, is called <em>sneakernet</em>. In some sense, this is a network. A human carries the cd from one computer to another. This process is slow, but sometimes useful. Here we talk about wireless or wired networks.</p>
     <p>Two computers on a network can exchange data. Let's now see how to set up a simple network.</p>
     <p>As said, on a network computers can <b>share</b> resources like files, folders, music, films, books, almost anything. Even the data of a flash drive (usb) or a hard drive connected to a laptop. Even internet connection can be shared.</p>
-
+    <h2>Idea:Tables</h2>
+    <p>A useful idea on networking is thinking about tables. ARP translates (creates an equivalence table) IPs to MACs and the opposite, DNS tdomain names to IPs.
+    </p>
     <h2>Types</h2>
     <p>Knowing the types of network simplifies the problem. We can classify networks depending on the physical area they span, and whether they are wired or wireless.</p>
     <ul>
+      <li><b>ban</b>. Ban are devices in the person's body</li>
       <li><b>pan</b>. Devices in a pan can be connected via bluetooth, ir, nfs; or by cable.</li>
       <li><b>lan</b>, <b>wlan</b>. Offices, houses. Devices connect to switch by cable or to a router using a wifi card. lan is wired-only;  wlan is wireless instead. The router normally includes a switch. The switch-part are the ports.</li>
       <li><b>man</b>, <b>wan</b>. Nowadays connection is usually by fiber cables. World Wide Web is a wan. Devices in this network are connected using fiber cables. We reach the wan from the lan if the Modem is connected to the wan.</li>
@@ -37,7 +45,6 @@
       <li>Computer</li>
     </ol>
     <p>This hardware is in the client side, there is different hardware for ISPs</p>
-
     <h3>Modem</h3>
     <p>The modem is usually connected to a Fiber Cable or to the Phone line (dsl) or to the Cable (tv like). On the other end it connects to the Router or Switch.</p>
     <p>The word modem comes from modulate/demodulate. It could be electric to sound (DSL) and viceversa.</p>
@@ -66,5 +73,21 @@
     <p>If there is a server on the lan, we want a static ip. Let's say someone in a different part of the world types our domain in a browser. They get the domain's IP from a DNS server. The request lands to the router at a particular port. This depends on the type of request. We need to link the IP of our lan server to the specific port. Web requests arrive at port 80, ftp at 21, etc etc. We can look them up online.</p>
     <p>Then, in the port forward section, we write our server IP and the port it will be listening to. Example 192.168.0.1:80</p>
     <p>If the server IP is not static, then the redirection will occur either to another device, or to nowhere, and the request will fail. So, for servers, we need a static IP.</p>
+
+    <h2>Protocols</h2>
+    <p>The main protocols are IP and TCP. IP is in charge of the routing, TCP on sending packets in order and making sure they are received, and on setting a proper speed of transmission.</p>
+    <h3>Configuration</h3>
+    <p>The TCP/IP protocol configuration consists of several elements which must be set by editing the appropriate configuration files, or deploying solutions such as the Dynamic Host Configuration Protocol (DHCP) server which in turn, can be configured to provide the proper TCP/IP configuration settings to network clients automatically.
+    </p>
+    <p>Main configuration elements are:
+    <ul>
+      <li>IP address</li>
+      <li>Netmask or SubnetMask: Useful for internal communication. Separates the portions of an IP address significant to the network from the bits significant to the subnetwork. For class C is 255.255.255.0. We would specify: netmask, range of IPs, etc on DHCP. Then we can ** create subnets with same netmask different second *byte*: 192.168.2.0 **.</li>
+      <li>Network address: for class C is 192.168.1.0, using the last byte for devices. For class A using last 3 bytes.</li>
+      <li>Broadcast address: 192.168.1.255, used by ARP and RIP. Sends a message to all hosts.</li>
+      <li>Gateway: Router IP, useful for external comm (send data out of network). It passes data to ISP or other router.</li>
+      <li>Nameserver Addresses are names for the IP, that the DNS will resolve.</li>
+      <li>All this is specified under `/etc/network/interfaces`. Check `man interfaces`.</li>
+    </p> 
     <script src="../assets/js/index.js"></script></body>
 </html>

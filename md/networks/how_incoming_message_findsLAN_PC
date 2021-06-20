@@ -1,0 +1,6 @@
+The router has a stateful system, that recognizes outgoing connections. Responses to those connections are understood to belong to the LAN host that created the connection. 
+
+Connections to LAN hosts that are initiated from outside the LAN, such as a web server on a LAN that is addressed from the Internet by web browser clients. In this case, there is no connection tracking possible, since the connection destination IP is the router itself. 
+
+The only way to handle that case is for specific NATs to be performed, based on the port number of the destination address. The router must be configured to port forward by NATing the packet, and sending the packets to a specified LAN host. Port forwarding uniquely maps a port on the Internet facing interface of the router to one LAN host. On Linux, this is also accomplished in the netfilter module, and configured as rules with iptables.
+

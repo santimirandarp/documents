@@ -1,0 +1,26 @@
+TLS is a protocol for secure connections between computers. Secure means:
+ * Encrypted (nobody reads)
+ * Authenticated (the emitter is the emitter)
+(This handles the privacy part, encrypting the body of the data packet.
+Header is not encrypted, this data is not private, but can be improved using VPNs.)
+
+
+To stablish the secure connection, x509 - or TLS - certificates are emitted in the TLS handshake, where computers exchange public keys, etc. The certificate only holds the public key. x509 binds key pairs to entities (websites, IPs).
+They hold:
+* Public key,
+* Digital Signature (Private Key hash, by trusted authority),
+* Metadata
+
+(Digital signature helps to prove authenticity.)
+
+TLS uses the handshake to share public keys, and layer, asymmetric cryptography to share the symmetric keys (encrypted using public keys). SSH and PGP use a similar system. (So for github we generate pub and private key using rsa or ecdhe or something).
+
+A certificate authority is an organism that validates (signs) the x509 itself, so the browsers trust our encryption. ] "LAN"(private) certificates are easier to create than public(WAN) ones. Once a certificate is validated it will be trusted by end users' browser. 
+
+The process would be: 
+1. Generate private and public key (for asymmetric crypto)
+2. Make a CSR (certificate signing request) to a trusted certificate authority (to sign our certificate).
+3. Install it on the server.
+4. Share it with clients (tls handshake).
+
+The x509 certificate holds a public key (to send data).
