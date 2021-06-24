@@ -2,16 +2,22 @@
 Cryptography library to generate private and public keys.
 
 
-For a detailed comparison of the two most widely used digital signature algorithms used in SSL/TLS, please read our article, Comparing ECDSA vs RSA.
+Two most widely used digital signature algorithms used in SSL/TLS: ECDSA & RSA.
+
 ```f(key, text) = ciphertext```
+
 ## Use OpenSSL for
  o  Creation and management of private keys, public keys and parameters
  o  Creation of X.509 certificates, CSRs and CRLs
  o  Encryption and Decryption with Ciphers
 
+## Use OpenSSH
+* Generate keypairs 
+* Use keys to encrypt communication
+
 ## Configuration
 OpenSSL: `/usr/lib/ssl/` symlink to `/etc/ssl`
-OpenSSH:`/etc/ssh`
+OpenSSH:`/etc/ssh`, `/etc/sshd/..`
 
 Binaries at: `/usr/bin/openssl` and `/usr/bin/ssh` (non essential binaries). 
 
@@ -23,11 +29,11 @@ PEM (privacy enhanced mail) is a file format for storing general cryptgraphic in
 ## Differences with openssh key generation
 For/From OpenSSH:
 
-> ssh-keygen(1): write OpenSSH format private keys by default instead of using OpenSSL's PEM format. The OpenSSH format, supported in OpenSSH releases since 2014 and described in the PROTOCOL.key file in the source distribution, offers substantially better protection against offline password guessing and supports key comments in private keys. If necessary, it is possible to write old PEM-style keys by adding "-m PEM" to ssh-keygen's arguments when generating or updating a key. [2018]
+> ssh-keygen(1): write OpenSSH format private keys by default instead of using OpenSSL's PEM format. Offers better protection against offline password guessing and supports key comments in private keys. If necessary, it is possible to write old PEM-style keys by adding "-m PEM" to ssh-keygen's arguments when generating or updating a key. [2018]
 
 
 ## Concepts
-**Block** key and message is the number of bits of the key, or the ciphertext (message). Encripted text is called **cipher**. 
+**Block** key and message is the number of bits of the key, or the ciphertext (encrypted message).
 
 Large message block sizes are faster, large key block sizes are more secure.
 
@@ -40,7 +46,7 @@ AES uses 128,192,256 bits keys, and encodes 128-block of text (cipher).
 openssl enc -ciphers #or
 openssl list -cipher-algorithms
 ```
-* Symmetric Crypto: each user has single key for enc & dec. It's faster than assymetric encription. But each user would need a new key. Server and client exchange the key.
+* Symmetric Crypto: each user has single key for enc & dec. It's faster than assymetric encription. But each user would need a new key. Server and client exchange the key. The problem is how to share that key without being discovered.
 
 The symmetric encryption method works great for fast encryption of large data.
 
