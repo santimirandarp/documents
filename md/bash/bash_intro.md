@@ -1,9 +1,6 @@
 # Bash
 
-From the user point of view a programming language consist on a script
-plus an interpreter (or program). The program that runs the script is
-either python, node, bash, etc. depending on the language we wrote the
-script. Bash then, is a scripting language and an interpreter.
+From the user point of view a programming language consist on a script plus an interpreter (or program). The program that runs the script is either python, node, bash, etc. depending on the language we wrote the script. Bash then, is a scripting language and an interpreter.
 
 ## Bites of Bash
 

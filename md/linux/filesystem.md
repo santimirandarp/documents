@@ -24,27 +24,16 @@ root folder. Here root means the top of the filesystem.
 
 ## The Home Directory
 
-So the root directory contains many folders. The most important ones for beginners are: `/usr` and `/etc`. Programs and even wallpapers are on *usr* folder. Config files on *etc* folder. All of these are system-wide settings: they affect all users.
+Programs and even wallpapers are on *usr* folder. Config files on *etc* folder. All of these are system-wide settings: they affect all users.
 
-The home directory contains the following directories: *Desktop*, *Downloads*\..., dirs and files we create, and
-
-.dotfiles as well as *.dotdirectories*. The dot (`.`) in a file hides the file. There are some important dot directories and files:
+The home directory contains the following directories: *Desktop*, *Downloads*..., dirs and files we create, .dotfiles & .dotdirs. The dot (`.`) in a file hides the file. There are some important dot directories and files:
 
 1.  .bashrc, .bash_aliases, .profile
 2.  .local, .config, .cache
-3.  .program (.vimrc etc. etc.)
+3.  .vimrc etc.
 
-The first ones are config files, and also where variables are stored,
-exported, etc. The second ones are directories. *.local* contain user
-scoped programs; *.config* contains user-scoped config files (this
-config overwrittes etc config files as expected). The last one might be
-a files or a directory. They should be placed under *.config* but for
-some reason they are not, and this can\'t be changed as the files are
-created on every program-session (if they do not exist). They are
-configuration files.
+The first ones are config files, and also where variables are stored, exported, etc. The second ones are directories. *.local* contain user bins & stuff; *.config* contains user-scoped config files (overwrittes etc config files as expected). The last one might be a files or a directory. They should be placed under *.config* but for some reason they are not, and this can\'t be changed as the files are created on every program-session (if they do not exist). They are configuration files.
 
 ### Symlinks in the filesystem
 
-bin, sbin and all libs are symlinks, not real folders. All of them link
-to a correspondent folder under `usr`. For example, `bin` is really a
-link to `usr/bin` and so on.
+bin, sbin and all libs are symlinks, not real folders. All of them link to a correspondent folder under `usr`. For example, `bin` is really a link to `usr/bin` and so on.
