@@ -1,7 +1,3 @@
-<div>
-
-</div>
-
 # Software Sources
 
 ## Software Sources {#linux-installation-methods}

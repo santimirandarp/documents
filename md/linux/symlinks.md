@@ -1,7 +1,3 @@
-<div>
-
-</div>
-
 # Variables, Symlinks, Aliases
 
 ## Setting a Variable in Linux
