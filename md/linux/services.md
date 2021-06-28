@@ -166,3 +166,22 @@ We can connect a USB device to a router and start service. From the router confi
 
 From the client side on computers is normally straight forward (a folder), and from phones we need to download a samba or file share client and insert the router IP (normally 192.168.1.1). Those clients can sometimes initiate services on the phone too (create phone samba shares is useful to share files).
 
+
+## DNS server
+
+It\'s like a phone book (we know the name, get the number). DNS resolves domain names to IPs. A domain name could be *https://www.google.com*. If the domain does not exist, we get an error.
+
+To access any device in the world wide web network, we need to be connected to the wan.
+
+## Proxy Server
+
+It\'s a computer that asks for a webpage for us, so our IP remains hidden. Instead of asking for an address straight to the web-server, we ask to the proxy and this (with its IP) asks for the webpage or data.
+
+A proxy server can change your IP address, so the web server doesn't know exactly where you are in the world. It can encrypt your data, so your data is unreadable in transit. And lastly, a proxy server can block access to certain web pages, based on IP address.
+
+The benefit is surfing the web anonymously. One problem, it doesn\'t encrypt data, so in the worse scenario user/pass could be detected by hackers.
+
+## vpn server
+
+Virtual Private Network It encrypts data, and keeps it private. Ex NordVPN, protonVPN, mozillaVPN, expressVPN...
+

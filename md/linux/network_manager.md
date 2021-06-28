@@ -28,6 +28,8 @@ network:
 ```
 
 ## Network Tools
+* netstat, ss to see active connection ports and addresses for UTP, TCP and internal
+
 Configure our local network interfaces:
 
 * ifconfig
@@ -47,7 +49,7 @@ ip link set <iface> up / ip link set <iface> down
 
 ip route show
 ```
-
+* Another permanent network config can be done with `ifup` in the `/etc/network/interfaces` config file.
 * netplan: permanent changes can be made using netplan. Example:
 ```  
 network:
