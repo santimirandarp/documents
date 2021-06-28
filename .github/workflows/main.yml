@@ -27,20 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: sh run.sh
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: cd md        
-             for directory in *; do
-               cd $directory/
-               for file in *.md; do
-                 thename=$(basename $file .md)
-                 echo $thename
-                 pandoc $thename.md -o $thename.html
-                 done
-               mv -iv *.html ../../html/$directory/
-               cd ..
-               done
+        run: echo hell
 
         
