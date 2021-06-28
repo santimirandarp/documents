@@ -1,0 +1,42 @@
+# DNS server
+Name servers translate Domain Names into IP addresses
+
+Computers on a network follow the Domain Name System standard way to name them.
+
+Domain names are bought to Registrars (they registrate it), in turn buying this to Regristries (operators of TLD servers).
+
+## Registrar
+
+https://en.wikipedia.org/wiki/Domain_name_registrar
+
+Registration of a domain name establishes a set of name server records in the DNS servers of the parent domain, indicating the IP addresses[5] of DNS servers that are authoritative for the domain. This provides a reference for direct queries of domain data.
+
+Registration of a domain does not automatically imply the provision of DNS services for the registered domain. Most registrars do offer DNS hosting as an optional free service for domains registered through them. If DNS services are not offered, or the end-user opts out, the end-user is responsible for procuring or self-hosting DNS services. Registrars require the specification of usually at least two name servers. 
+
+A ‘name server’ is a specialized server that hosts DNS zone files and plays a vital role in the Domain Name System (DNS). It helps translate domain names into IP addresses and helps browsers make connections between URLs and websites.
+
+
+Download 
+Pingtools and Network info II for android.
+use nslookup on linux.
+
+network analyzer for iOS
+
+READ
+https://superuser.com/questions/778640/do-you-need-a-static-ip-address-to-setup-a-web-server
+
+The separator within domain names is the dot (or period) symbol. We read them from left to right, but the hierarchy goes the other way. So, .com is a top-level domain (TLD), podfeet.com is a sub-domain of .com, and www.podfeet.com is a sub domain of podfeet.com.
+
+There are 2 types of DNS servers:
+
+Authoritative Name Servers (publish data), or DNS recursive resolvers (lookup data). There are also stub resolvers (on linux pc, systemd; and probably on home routers.) this only pass the query to a recursive resolver, and get the results back. Most of them stub or recursor cache the information (cache resolvers).
+
+Google, CLoudflare, Openserver etc are recursive resolvers, and can be set in place of our ISP rec res.
+
+The primary Authoritative Name Server (ANS) stores all the records for a zone, the secondary holds a copy.
+
+The fully qualified domain names of the ANS of a zone are listed in the NS records of that zone
+Primary server is defined in SOA (start of authority) resource record. 
+
+Each ANS is responsible for a zone in the DNS spectrum. We can set up those servers, and change them in which case the zone ANS is re labelled. The registrar sends this data to the registry, and they set the ANS in the TLD servers record (The TLD responsible for that parent zone).
+
