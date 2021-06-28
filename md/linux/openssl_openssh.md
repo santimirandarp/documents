@@ -1,27 +1,18 @@
 # OpenSSL & OpenSSH
-Cryptography library to generate private and public keys.
-
+Generate private and public keys.
 
 Digital signature algorithms used in SSL/TLS: **ECDSA** & **RSA**.
 
 ```alg(key, text) = ciphertext```
 
-## Use OpenSSL for
- o  Generate keys and parameters
- o  Create of X.509 certificates, CSRs and CRLs
- o  Encryption and Decryption with Ciphers
+Use OpenSSL for:  Generate keys and parameters, Create of X.509 certificates or sign requests
 
-## Use OpenSSH
-* Generate keypairs 
-* Use keys to authenticate to server
+Use OpenSSH: Generate keypairs, Use keys to authenticate to server
 
-## Configuration
+## Configs
 OpenSSL: `/usr/lib/ssl/` symlink to `/etc/ssl`
 OpenSSH:`/etc/ssh`, `/etc/sshd/..`(client public key should be linked inside)
 
-Binaries at: `/usr/bin/openssl` and `/usr/bin/ssh` (non essential binaries). 
-
-`openssl version -a`
 
 ## File Formats
 PEM (privacy enhanced mail) is a file format for storing general cryptgraphic information, but other file formats exist. PEM can be used to store private keys, certificates, or the text of an email that you want to encrypt or sign. It's just "cryptographic stuff". 
@@ -46,25 +37,19 @@ AES uses 128,192,256 bits keys, and encodes 128-block of text (cipher).
 openssl enc -ciphers #or
 openssl list -cipher-algorithms
 ```
-* Symmetric Crypto: each user has single key for enc & dec. It's faster than assymetric encription. But each user would need a new key. Server and client exchange the key. The problem is how to share that key without being discovered.
+* Symmetric Crypto: each user has single key for enc & dec. It's faster than assymetric encription. But each user would need a new key. Server and client exchange the key. The problem is how to share that key without being discovered. We can use assymetric enc for this.
 
 The symmetric encryption method works great for fast encryption of large data.
 
-Examples: 
 AES, RC4, DES, 3DES, RC5, RC6, etc. DES (data encryption standard) was superseeeded by AES (advanced encryption standard), a common standard.
 
 DES (cracked) was used on TLS1.0 and 1.1; superseeded by 3DES also deprecated in 2019. Now AES is used in wifi protected access (wpa), tls/ssl (websites), file encription, VPNs.
 
 * Asymmetric Crypto: Common ones are RSA, diffie-hellman, ECC, etc.
 
-Each user has 2 keys, they share the public, and keep the private. 
-One signs with the other person public key and the other person cracks using its own the private key. Asymmetric encryption method is also known as "public key cryptography.", part of pki (public key infraestructure).
+Each user has 2 keys, they share the public, and keep the private. One signs with the other person public key and the other person cracks using its own the private key. Asymmetric encryption method is also known as "public key cryptography.", part of pki.
 
 Asymmetric encryption (particularly RSA) is used in many communication protocols / transport layers: TLS/SSL, SSH, Cryptocurrencies, Email, etc.
-
-* It protects -partially- against MITM attacks bcz we don't exchange the private key. 
-* Public key cryptography allows creating an encrypted connection without having to meet offline to exchange keys first. (Again, bcz we exchange public key, not private/single key). 
-* Also, the server needs a single key-pair!
 
 ## What do websites actually use
 Hybrid encryption: Asymmetric and Symmetric. RSA for starting the comm and exchanging the Private symmetric key. This is bcz symmetric cryptography is faster.
@@ -81,4 +66,3 @@ openssl genpkey -aes256 -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out privat
 
 It will ask for a passphrase (we can press enter or even remove -aes256 is we don't want it).
 
-## Encoding and decoding files
