@@ -1,3 +1,32 @@
+# osi and tcp-ip models
+
+When you walk-in to a situation, you have no idea where the problem is.  These Models give us a framework to troubleshoot the problem.
+
+The models split a network in a number of pieces.
+
+## tcp-ip model
+There is also open systems interconnection OSI model. TPC/IP is better model.
+
+tcp-ip is divided in 4 layers.
+
+1.  Application: 7,6,5. Protocols: http, sftp, smb, dns, imap, dhcp,
+    ftp, pop, telnet. Firefox, or Chrome, Outlook etc. make use of
+    protocols on this layer on the client end whereas Apache, Node etc
+    make use on the Server end. PDU: Data.
+2.  Transport: 4. Protocols: TCP, UDP. PDU: Segments.
+3.  Internet: 3. Protocols: IPv4, IPv6, etc. Notice **ip** on this
+    layer. PDU: Packets/Datagrams. Think of all the router configuration
+    (as it appears on the web gui for the router.)
+4.  Network: 2,1. Protocols: Wireless Ethernet 802.11 and Wired Ethernet
+    802.3, MAC, ARP, DSL, PPP. PDU: Bits. WAP, NIC. PDU: frames.
+
+## tcp and ip protocols
+
+IP or Internet Protocol is a routable protocol. Which means we can have subnetworks, that can be linked using a Router. In fact, part of the IP specifically defines the network, part defines the host. IP protocol is on OS-3. IP makes sure one computer finds another and are properly linked.
+
+When a piece of data reaches the target LAN, is has only the public IP.  The router user NAT to find the server IP. The ARP or Address Resolution Protocol is in charge of mapping the IP to a MAC address, to the data flows to the particular port of the switch corresponding to the target device.
+
+Transfer Control Protocol. Windowing. The Window can be thought as an area, and it can be closed or open. Through the window, segments of data are sent in a particular way (theoretically they multiply on every send).
 # Communication in a lan
 
 The switch has Ethernet ports, and knows which device is connected to which port (interface). In particular, it knows the MAC address, which is an unique identifier for the Network Card or Network Adapter.

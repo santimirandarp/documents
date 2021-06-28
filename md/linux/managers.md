@@ -43,8 +43,6 @@ should do the job (tar files are different than .deb). (So make is some kind of 
 Links to package sources */etc/apt/sources.lists*, and that's the files the command looks for to update. 
 
 
-------------------------------------------------------------------------
-
 ## Sound Manager
 
 Alsa connects the audio card and the operating system. (Network Manager connects the Network cards to the OS.) It also provides an sound controller, i.e an user interface called alsamixer, to tweak the volume. Another sound controller is pulseaudio. Pulseaudio relays on Alsa SM.
@@ -68,7 +66,58 @@ The third one is managed by openbox-menu, don't know where the config file is, b
 
 After installing a WM a new session option is available for us. 
 
---------------
+
+## Network managers
+There are 2 network managers installed by default in ubuntu:
+- Network Manager: `/lib/systemd/system/Network-Manager.service`
+- systemd-networkd: `/lib/systemd/system/systemd-networkd.service`
+
+Clients
+* systemd-networkd may be introspected and controlled at runtime
+       using networkctl
+* for NetworkManager is nm-cli. There is a gui also (nm-connection-editor).
+
+### NETPLAN
+It allows to configure any of those backends and network properties. For example:
+```
+#/etc/netplan/this.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s1:
+      dhcp4: false 
+      addresses:
+        - 192.168.0.100/24
+      gateway4: 192.168.0.1
+      nameservers: 
+        search: [example.com, another.com]
+        addresses: [1.2.1.1, 8.8.8.8]
+```
+```
+sudo netplan --debug generate
+sudo netplan apply
+```
+### Network Tools
+* netstat, ss: see active TCP, UDP ports
+
+Interface config
+
+* ifconfig `ifconfig eth0 192.168.1.5 netmask 255.255.255.0 up`
+* route: for the default gateway `route add default gw 192.168.1.1`
+* `ip` is more complete, but changes aren't permanent
+
+```
+ip addr show === ifconfig a # for all
+
+ip addr show enp2s0 === ifconfig enp2s0 # Or short output:
+
+ip link set <iface> up / ip link set <iface> down
+
+ip route show
+```
+* ifup in the `/etc/network/interfaces` config file.
+* netplan: permanent changes can be made using netplan. 
 
 ## Useful Links
 * [Openbox Hotkeys Wiki](http://openbox.org/wiki/Help:Bindings)
