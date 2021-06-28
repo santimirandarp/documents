@@ -1,4 +1,5 @@
 cd md        
+sudo apt-get install pandoc
 for directory in *; do
   echo "the directory is $directory\n\n"
   cd $directory/
